@@ -1,0 +1,708 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F45FB5541CD266F7006510CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5531CD266F7006510CF /* AppDelegate.swift */; };
+		F45FB5561CD266F7006510CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5551CD266F7006510CF /* ViewController.swift */; };
+		F45FB5591CD266F7006510CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45FB5571CD266F7006510CF /* Main.storyboard */; };
+		F45FB55C1CD266F7006510CF /* DailyList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F45FB55A1CD266F7006510CF /* DailyList.xcdatamodeld */; };
+		F45FB55E1CD266F7006510CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45FB55D1CD266F7006510CF /* Assets.xcassets */; };
+		F45FB5611CD266F7006510CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45FB55F1CD266F7006510CF /* LaunchScreen.storyboard */; };
+		F45FB56C1CD266F7006510CF /* DailyListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB56B1CD266F7006510CF /* DailyListTests.swift */; };
+		F45FB5771CD266F7006510CF /* DailyListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5761CD266F7006510CF /* DailyListUITests.swift */; };
+		F45FB58B1CD26754006510CF /* background_image1.png in Resources */ = {isa = PBXBuildFile; fileRef = F45FB5891CD26754006510CF /* background_image1.png */; };
+		F45FB58C1CD26754006510CF /* background_image2.png in Resources */ = {isa = PBXBuildFile; fileRef = F45FB58A1CD26754006510CF /* background_image2.png */; };
+		F45FB58F1CD2675E006510CF /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB58D1CD2675E006510CF /* UIColor+hex.swift */; };
+		F45FB5901CD2675E006510CF /* UIView+RoundingCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB58E1CD2675E006510CF /* UIView+RoundingCorners.swift */; };
+		F45FB5921CD26765006510CF /* LGHorizontalLinearFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5911CD26765006510CF /* LGHorizontalLinearFlowLayout.swift */; };
+		F45FB5971CD267B0006510CF /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5951CD267B0006510CF /* CustomColors.swift */; };
+		F45FB5981CD267B0006510CF /* DateCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5961CD267B0006510CF /* DateCenter.swift */; };
+		F45FB5AD1CD2681B006510CF /* Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB59A1CD2681B006510CF /* Additions.swift */; };
+		F45FB5AE1CD2681B006510CF /* DateInRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB59B1CD2681B006510CF /* DateInRegion.swift */; };
+		F45FB5AF1CD2681B006510CF /* DateInRegion+Comparisons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB59C1CD2681B006510CF /* DateInRegion+Comparisons.swift */; };
+		F45FB5B01CD2681B006510CF /* DateInRegion+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB59D1CD2681B006510CF /* DateInRegion+Components.swift */; };
+		F45FB5B11CD2681B006510CF /* DateInRegion+Equations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB59E1CD2681B006510CF /* DateInRegion+Equations.swift */; };
+		F45FB5B21CD2681B006510CF /* DateInRegion+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB59F1CD2681B006510CF /* DateInRegion+Formatter.swift */; };
+		F45FB5B31CD2681B006510CF /* DateInRegion+NSDatePort.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5A01CD2681B006510CF /* DateInRegion+NSDatePort.swift */; };
+		F45FB5B41CD2681B006510CF /* DateInRegion+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5A11CD2681B006510CF /* DateInRegion+Operations.swift */; };
+		F45FB5B51CD2681B006510CF /* DateInRegion+StartEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5A21CD2681B006510CF /* DateInRegion+StartEnd.swift */; };
+		F45FB5B61CD2681B006510CF /* Dictionary+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5A31CD2681B006510CF /* Dictionary+SwiftDate.swift */; };
+		F45FB5B71CD2681B006510CF /* NSCalendar+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5A41CD2681B006510CF /* NSCalendar+SwiftDate.swift */; };
+		F45FB5B81CD2681B006510CF /* NSDate+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5A51CD2681B006510CF /* NSDate+SwiftDate.swift */; };
+		F45FB5B91CD2681B006510CF /* NSDateComponents+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5A61CD2681B006510CF /* NSDateComponents+SwiftDate.swift */; };
+		F45FB5BA1CD2681B006510CF /* NSDateFormatter+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5A71CD2681B006510CF /* NSDateFormatter+SwiftDate.swift */; };
+		F45FB5BB1CD2681B006510CF /* NSDateInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5A81CD2681B006510CF /* NSDateInterval.swift */; };
+		F45FB5BC1CD2681B006510CF /* NSLocale+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5A91CD2681B006510CF /* NSLocale+SwiftDate.swift */; };
+		F45FB5BD1CD2681B006510CF /* NSTimeInterval+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5AA1CD2681B006510CF /* NSTimeInterval+SwiftDate.swift */; };
+		F45FB5BE1CD2681B006510CF /* NSTimeZone+SwiftDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5AB1CD2681B006510CF /* NSTimeZone+SwiftDate.swift */; };
+		F45FB5BF1CD2681B006510CF /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5AC1CD2681B006510CF /* Region.swift */; };
+		F45FB5C61CD26866006510CF /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5C41CD26866006510CF /* HomeCollectionViewCell.swift */; };
+		F45FB5C71CD26866006510CF /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F45FB5681CD266F7006510CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F45FB5481CD266F7006510CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F45FB54F1CD266F7006510CF;
+			remoteInfo = DailyList;
+		};
+		F45FB5731CD266F7006510CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F45FB5481CD266F7006510CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F45FB54F1CD266F7006510CF;
+			remoteInfo = DailyList;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F45FB5501CD266F7006510CF /* DailyList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F45FB5531CD266F7006510CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F45FB5551CD266F7006510CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F45FB5581CD266F7006510CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F45FB55B1CD266F7006510CF /* DailyList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DailyList.xcdatamodel; sourceTree = "<group>"; };
+		F45FB55D1CD266F7006510CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F45FB5601CD266F7006510CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F45FB5621CD266F7006510CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F45FB5671CD266F7006510CF /* DailyListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F45FB56B1CD266F7006510CF /* DailyListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListTests.swift; sourceTree = "<group>"; };
+		F45FB56D1CD266F7006510CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F45FB5721CD266F7006510CF /* DailyListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F45FB5761CD266F7006510CF /* DailyListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListUITests.swift; sourceTree = "<group>"; };
+		F45FB5781CD266F7006510CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F45FB5891CD26754006510CF /* background_image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_image1.png; sourceTree = "<group>"; };
+		F45FB58A1CD26754006510CF /* background_image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_image2.png; sourceTree = "<group>"; };
+		F45FB58D1CD2675E006510CF /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		F45FB58E1CD2675E006510CF /* UIView+RoundingCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RoundingCorners.swift"; sourceTree = "<group>"; };
+		F45FB5911CD26765006510CF /* LGHorizontalLinearFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGHorizontalLinearFlowLayout.swift; sourceTree = "<group>"; };
+		F45FB5951CD267B0006510CF /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		F45FB5961CD267B0006510CF /* DateCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCenter.swift; sourceTree = "<group>"; };
+		F45FB59A1CD2681B006510CF /* Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Additions.swift; path = Lib/SwiftDate/Additions.swift; sourceTree = "<group>"; };
+		F45FB59B1CD2681B006510CF /* DateInRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateInRegion.swift; path = Lib/SwiftDate/DateInRegion.swift; sourceTree = "<group>"; };
+		F45FB59C1CD2681B006510CF /* DateInRegion+Comparisons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Comparisons.swift"; path = "Lib/SwiftDate/DateInRegion+Comparisons.swift"; sourceTree = "<group>"; };
+		F45FB59D1CD2681B006510CF /* DateInRegion+Components.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Components.swift"; path = "Lib/SwiftDate/DateInRegion+Components.swift"; sourceTree = "<group>"; };
+		F45FB59E1CD2681B006510CF /* DateInRegion+Equations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Equations.swift"; path = "Lib/SwiftDate/DateInRegion+Equations.swift"; sourceTree = "<group>"; };
+		F45FB59F1CD2681B006510CF /* DateInRegion+Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Formatter.swift"; path = "Lib/SwiftDate/DateInRegion+Formatter.swift"; sourceTree = "<group>"; };
+		F45FB5A01CD2681B006510CF /* DateInRegion+NSDatePort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateInRegion+NSDatePort.swift"; path = "Lib/SwiftDate/DateInRegion+NSDatePort.swift"; sourceTree = "<group>"; };
+		F45FB5A11CD2681B006510CF /* DateInRegion+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateInRegion+Operations.swift"; path = "Lib/SwiftDate/DateInRegion+Operations.swift"; sourceTree = "<group>"; };
+		F45FB5A21CD2681B006510CF /* DateInRegion+StartEnd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DateInRegion+StartEnd.swift"; path = "Lib/SwiftDate/DateInRegion+StartEnd.swift"; sourceTree = "<group>"; };
+		F45FB5A31CD2681B006510CF /* Dictionary+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+SwiftDate.swift"; path = "Lib/SwiftDate/Dictionary+SwiftDate.swift"; sourceTree = "<group>"; };
+		F45FB5A41CD2681B006510CF /* NSCalendar+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSCalendar+SwiftDate.swift"; path = "Lib/SwiftDate/NSCalendar+SwiftDate.swift"; sourceTree = "<group>"; };
+		F45FB5A51CD2681B006510CF /* NSDate+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+SwiftDate.swift"; path = "Lib/SwiftDate/NSDate+SwiftDate.swift"; sourceTree = "<group>"; };
+		F45FB5A61CD2681B006510CF /* NSDateComponents+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDateComponents+SwiftDate.swift"; path = "Lib/SwiftDate/NSDateComponents+SwiftDate.swift"; sourceTree = "<group>"; };
+		F45FB5A71CD2681B006510CF /* NSDateFormatter+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDateFormatter+SwiftDate.swift"; path = "Lib/SwiftDate/NSDateFormatter+SwiftDate.swift"; sourceTree = "<group>"; };
+		F45FB5A81CD2681B006510CF /* NSDateInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDateInterval.swift; path = Lib/SwiftDate/NSDateInterval.swift; sourceTree = "<group>"; };
+		F45FB5A91CD2681B006510CF /* NSLocale+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSLocale+SwiftDate.swift"; path = "Lib/SwiftDate/NSLocale+SwiftDate.swift"; sourceTree = "<group>"; };
+		F45FB5AA1CD2681B006510CF /* NSTimeInterval+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSTimeInterval+SwiftDate.swift"; path = "Lib/SwiftDate/NSTimeInterval+SwiftDate.swift"; sourceTree = "<group>"; };
+		F45FB5AB1CD2681B006510CF /* NSTimeZone+SwiftDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSTimeZone+SwiftDate.swift"; path = "Lib/SwiftDate/NSTimeZone+SwiftDate.swift"; sourceTree = "<group>"; };
+		F45FB5AC1CD2681B006510CF /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Region.swift; path = Lib/SwiftDate/Region.swift; sourceTree = "<group>"; };
+		F45FB5C41CD26866006510CF /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F45FB54D1CD266F7006510CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F45FB5641CD266F7006510CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F45FB56F1CD266F7006510CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F45FB5471CD266F7006510CF = {
+			isa = PBXGroup;
+			children = (
+				F45FB5521CD266F7006510CF /* DailyList */,
+				F45FB56A1CD266F7006510CF /* DailyListTests */,
+				F45FB5751CD266F7006510CF /* DailyListUITests */,
+				F45FB5511CD266F7006510CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F45FB5511CD266F7006510CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB5501CD266F7006510CF /* DailyList.app */,
+				F45FB5671CD266F7006510CF /* DailyListTests.xctest */,
+				F45FB5721CD266F7006510CF /* DailyListUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F45FB5521CD266F7006510CF /* DailyList */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB5881CD26739006510CF /* Images */,
+				F45FB5871CD26716006510CF /* Extension */,
+				F45FB5861CD2670F006510CF /* Controller */,
+				F45FB5851CD26709006510CF /* Model */,
+				F45FB5841CD26700006510CF /* View */,
+				F45FB5531CD266F7006510CF /* AppDelegate.swift */,
+				F45FB55A1CD266F7006510CF /* DailyList.xcdatamodeld */,
+				F45FB5941CD2678C006510CF /* Utilities */,
+				F45FB5931CD26785006510CF /* Lib */,
+				F45FB5C01CD26835006510CF /* Resource */,
+			);
+			path = DailyList;
+			sourceTree = "<group>";
+		};
+		F45FB56A1CD266F7006510CF /* DailyListTests */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB56B1CD266F7006510CF /* DailyListTests.swift */,
+				F45FB56D1CD266F7006510CF /* Info.plist */,
+			);
+			path = DailyListTests;
+			sourceTree = "<group>";
+		};
+		F45FB5751CD266F7006510CF /* DailyListUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB5761CD266F7006510CF /* DailyListUITests.swift */,
+				F45FB5781CD266F7006510CF /* Info.plist */,
+			);
+			path = DailyListUITests;
+			sourceTree = "<group>";
+		};
+		F45FB5841CD26700006510CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB5571CD266F7006510CF /* Main.storyboard */,
+				F45FB55F1CD266F7006510CF /* LaunchScreen.storyboard */,
+				F45FB5C41CD26866006510CF /* HomeCollectionViewCell.swift */,
+				F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F45FB5851CD26709006510CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F45FB5861CD2670F006510CF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB5551CD266F7006510CF /* ViewController.swift */,
+				F45FB5911CD26765006510CF /* LGHorizontalLinearFlowLayout.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F45FB5871CD26716006510CF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB58D1CD2675E006510CF /* UIColor+hex.swift */,
+				F45FB58E1CD2675E006510CF /* UIView+RoundingCorners.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		F45FB5881CD26739006510CF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB5891CD26754006510CF /* background_image1.png */,
+				F45FB58A1CD26754006510CF /* background_image2.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		F45FB5931CD26785006510CF /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB5991CD26808006510CF /* SwiftDate */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		F45FB5941CD2678C006510CF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB5951CD267B0006510CF /* CustomColors.swift */,
+				F45FB5961CD267B0006510CF /* DateCenter.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		F45FB5991CD26808006510CF /* SwiftDate */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB59A1CD2681B006510CF /* Additions.swift */,
+				F45FB59B1CD2681B006510CF /* DateInRegion.swift */,
+				F45FB59C1CD2681B006510CF /* DateInRegion+Comparisons.swift */,
+				F45FB59D1CD2681B006510CF /* DateInRegion+Components.swift */,
+				F45FB59E1CD2681B006510CF /* DateInRegion+Equations.swift */,
+				F45FB59F1CD2681B006510CF /* DateInRegion+Formatter.swift */,
+				F45FB5A01CD2681B006510CF /* DateInRegion+NSDatePort.swift */,
+				F45FB5A11CD2681B006510CF /* DateInRegion+Operations.swift */,
+				F45FB5A21CD2681B006510CF /* DateInRegion+StartEnd.swift */,
+				F45FB5A31CD2681B006510CF /* Dictionary+SwiftDate.swift */,
+				F45FB5A41CD2681B006510CF /* NSCalendar+SwiftDate.swift */,
+				F45FB5A51CD2681B006510CF /* NSDate+SwiftDate.swift */,
+				F45FB5A61CD2681B006510CF /* NSDateComponents+SwiftDate.swift */,
+				F45FB5A71CD2681B006510CF /* NSDateFormatter+SwiftDate.swift */,
+				F45FB5A81CD2681B006510CF /* NSDateInterval.swift */,
+				F45FB5A91CD2681B006510CF /* NSLocale+SwiftDate.swift */,
+				F45FB5AA1CD2681B006510CF /* NSTimeInterval+SwiftDate.swift */,
+				F45FB5AB1CD2681B006510CF /* NSTimeZone+SwiftDate.swift */,
+				F45FB5AC1CD2681B006510CF /* Region.swift */,
+			);
+			name = SwiftDate;
+			sourceTree = "<group>";
+		};
+		F45FB5C01CD26835006510CF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB55D1CD266F7006510CF /* Assets.xcassets */,
+				F45FB5621CD266F7006510CF /* Info.plist */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F45FB54F1CD266F7006510CF /* DailyList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F45FB57B1CD266F7006510CF /* Build configuration list for PBXNativeTarget "DailyList" */;
+			buildPhases = (
+				F45FB54C1CD266F7006510CF /* Sources */,
+				F45FB54D1CD266F7006510CF /* Frameworks */,
+				F45FB54E1CD266F7006510CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DailyList;
+			productName = DailyList;
+			productReference = F45FB5501CD266F7006510CF /* DailyList.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F45FB5661CD266F7006510CF /* DailyListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F45FB57E1CD266F7006510CF /* Build configuration list for PBXNativeTarget "DailyListTests" */;
+			buildPhases = (
+				F45FB5631CD266F7006510CF /* Sources */,
+				F45FB5641CD266F7006510CF /* Frameworks */,
+				F45FB5651CD266F7006510CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F45FB5691CD266F7006510CF /* PBXTargetDependency */,
+			);
+			name = DailyListTests;
+			productName = DailyListTests;
+			productReference = F45FB5671CD266F7006510CF /* DailyListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F45FB5711CD266F7006510CF /* DailyListUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F45FB5811CD266F7006510CF /* Build configuration list for PBXNativeTarget "DailyListUITests" */;
+			buildPhases = (
+				F45FB56E1CD266F7006510CF /* Sources */,
+				F45FB56F1CD266F7006510CF /* Frameworks */,
+				F45FB5701CD266F7006510CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F45FB5741CD266F7006510CF /* PBXTargetDependency */,
+			);
+			name = DailyListUITests;
+			productName = DailyListUITests;
+			productReference = F45FB5721CD266F7006510CF /* DailyListUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F45FB5481CD266F7006510CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = JesseLin;
+				TargetAttributes = {
+					F45FB54F1CD266F7006510CF = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					F45FB5661CD266F7006510CF = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = F45FB54F1CD266F7006510CF;
+					};
+					F45FB5711CD266F7006510CF = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = F45FB54F1CD266F7006510CF;
+					};
+				};
+			};
+			buildConfigurationList = F45FB54B1CD266F7006510CF /* Build configuration list for PBXProject "DailyList" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F45FB5471CD266F7006510CF;
+			productRefGroup = F45FB5511CD266F7006510CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F45FB54F1CD266F7006510CF /* DailyList */,
+				F45FB5661CD266F7006510CF /* DailyListTests */,
+				F45FB5711CD266F7006510CF /* DailyListUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F45FB54E1CD266F7006510CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45FB5611CD266F7006510CF /* LaunchScreen.storyboard in Resources */,
+				F45FB5C71CD26866006510CF /* HomeCollectionViewCell.xib in Resources */,
+				F45FB55E1CD266F7006510CF /* Assets.xcassets in Resources */,
+				F45FB5591CD266F7006510CF /* Main.storyboard in Resources */,
+				F45FB58C1CD26754006510CF /* background_image2.png in Resources */,
+				F45FB58B1CD26754006510CF /* background_image1.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F45FB5651CD266F7006510CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F45FB5701CD266F7006510CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F45FB54C1CD266F7006510CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45FB5BF1CD2681B006510CF /* Region.swift in Sources */,
+				F45FB5BB1CD2681B006510CF /* NSDateInterval.swift in Sources */,
+				F45FB5B41CD2681B006510CF /* DateInRegion+Operations.swift in Sources */,
+				F45FB5AF1CD2681B006510CF /* DateInRegion+Comparisons.swift in Sources */,
+				F45FB5BD1CD2681B006510CF /* NSTimeInterval+SwiftDate.swift in Sources */,
+				F45FB5B81CD2681B006510CF /* NSDate+SwiftDate.swift in Sources */,
+				F45FB5B51CD2681B006510CF /* DateInRegion+StartEnd.swift in Sources */,
+				F45FB5C61CD26866006510CF /* HomeCollectionViewCell.swift in Sources */,
+				F45FB5B31CD2681B006510CF /* DateInRegion+NSDatePort.swift in Sources */,
+				F45FB5AE1CD2681B006510CF /* DateInRegion.swift in Sources */,
+				F45FB5B61CD2681B006510CF /* Dictionary+SwiftDate.swift in Sources */,
+				F45FB5561CD266F7006510CF /* ViewController.swift in Sources */,
+				F45FB58F1CD2675E006510CF /* UIColor+hex.swift in Sources */,
+				F45FB5BC1CD2681B006510CF /* NSLocale+SwiftDate.swift in Sources */,
+				F45FB5B11CD2681B006510CF /* DateInRegion+Equations.swift in Sources */,
+				F45FB5981CD267B0006510CF /* DateCenter.swift in Sources */,
+				F45FB5971CD267B0006510CF /* CustomColors.swift in Sources */,
+				F45FB5B21CD2681B006510CF /* DateInRegion+Formatter.swift in Sources */,
+				F45FB5B01CD2681B006510CF /* DateInRegion+Components.swift in Sources */,
+				F45FB5B91CD2681B006510CF /* NSDateComponents+SwiftDate.swift in Sources */,
+				F45FB55C1CD266F7006510CF /* DailyList.xcdatamodeld in Sources */,
+				F45FB5541CD266F7006510CF /* AppDelegate.swift in Sources */,
+				F45FB5AD1CD2681B006510CF /* Additions.swift in Sources */,
+				F45FB5901CD2675E006510CF /* UIView+RoundingCorners.swift in Sources */,
+				F45FB5B71CD2681B006510CF /* NSCalendar+SwiftDate.swift in Sources */,
+				F45FB5921CD26765006510CF /* LGHorizontalLinearFlowLayout.swift in Sources */,
+				F45FB5BA1CD2681B006510CF /* NSDateFormatter+SwiftDate.swift in Sources */,
+				F45FB5BE1CD2681B006510CF /* NSTimeZone+SwiftDate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F45FB5631CD266F7006510CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45FB56C1CD266F7006510CF /* DailyListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F45FB56E1CD266F7006510CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45FB5771CD266F7006510CF /* DailyListUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F45FB5691CD266F7006510CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F45FB54F1CD266F7006510CF /* DailyList */;
+			targetProxy = F45FB5681CD266F7006510CF /* PBXContainerItemProxy */;
+		};
+		F45FB5741CD266F7006510CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F45FB54F1CD266F7006510CF /* DailyList */;
+			targetProxy = F45FB5731CD266F7006510CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F45FB5571CD266F7006510CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F45FB5581CD266F7006510CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F45FB55F1CD266F7006510CF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F45FB5601CD266F7006510CF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F45FB5791CD266F7006510CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F45FB57A1CD266F7006510CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F45FB57C1CD266F7006510CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DailyList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyList.DailyList;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F45FB57D1CD266F7006510CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DailyList/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyList.DailyList;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F45FB57F1CD266F7006510CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DailyListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyList.DailyListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyList.app/DailyList";
+			};
+			name = Debug;
+		};
+		F45FB5801CD266F7006510CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DailyListTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyList.DailyListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyList.app/DailyList";
+			};
+			name = Release;
+		};
+		F45FB5821CD266F7006510CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DailyListUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyList.DailyListUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DailyList;
+			};
+			name = Debug;
+		};
+		F45FB5831CD266F7006510CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DailyListUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyList.DailyListUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DailyList;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F45FB54B1CD266F7006510CF /* Build configuration list for PBXProject "DailyList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45FB5791CD266F7006510CF /* Debug */,
+				F45FB57A1CD266F7006510CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F45FB57B1CD266F7006510CF /* Build configuration list for PBXNativeTarget "DailyList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45FB57C1CD266F7006510CF /* Debug */,
+				F45FB57D1CD266F7006510CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F45FB57E1CD266F7006510CF /* Build configuration list for PBXNativeTarget "DailyListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45FB57F1CD266F7006510CF /* Debug */,
+				F45FB5801CD266F7006510CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F45FB5811CD266F7006510CF /* Build configuration list for PBXNativeTarget "DailyListUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45FB5821CD266F7006510CF /* Debug */,
+				F45FB5831CD266F7006510CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F45FB55A1CD266F7006510CF /* DailyList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F45FB55B1CD266F7006510CF /* DailyList.xcdatamodel */,
+			);
+			currentVersion = F45FB55B1CD266F7006510CF /* DailyList.xcdatamodel */;
+			path = DailyList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F45FB5481CD266F7006510CF /* Project object */;
+}
