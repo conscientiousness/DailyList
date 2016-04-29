@@ -352,6 +352,7 @@
 				TargetAttributes = {
 					F45FB54F1CD266F7006510CF = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = X69W8ZBR5M;
 					};
 					F45FB5661CD266F7006510CF = {
 						CreatedOnToolsVersion = 7.3;
@@ -589,9 +590,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DailyList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyList.DailyList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -600,9 +603,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DailyList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyList.DailyList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -672,6 +677,7 @@
 				F45FB57D1CD266F7006510CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F45FB57E1CD266F7006510CF /* Build configuration list for PBXNativeTarget "DailyListTests" */ = {
 			isa = XCConfigurationList;
@@ -680,6 +686,7 @@
 				F45FB5801CD266F7006510CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F45FB5811CD266F7006510CF /* Build configuration list for PBXNativeTarget "DailyListUITests" */ = {
 			isa = XCConfigurationList;
@@ -688,6 +695,7 @@
 				F45FB5831CD266F7006510CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -8,14 +8,6 @@
 
 import UIKit
 
-// protocol
-@objc protocol currentCollectionViewCellIdxDelegate
-{
-    optional func getCurrentIdx() -> Int
-    optional func getLastIdx() -> Int
-    optional func setCurrentIdx(idx: Int)
-}
-
 class ViewController: UIViewController {
     
     // @IBOutlet
@@ -27,7 +19,7 @@ class ViewController: UIViewController {
     // properties
     private var flowLayout: LGHorizontalLinearFlowLayout!
     private var currentIdx :Int?
-    private var lastIdx :Int?
+    private var _lastVisableCellIdx :Int?
     private var _currentDate :NSDate?
     
     // getter & setter
@@ -47,9 +39,9 @@ class ViewController: UIViewController {
     private var currentDate: NSDate {
         get {
             if let cd = _currentDate {
-                let date: NSDate = DateCenter.currentDate(cd, calDayNumber: self.getCurrentIdx() - self.getLastIdx())
-                _currentDate = date
-                return date
+                //let date: NSDate = DateCenter.currentDate(cd, calDayNumber: self.getCurrentIdx() - self.getLastIdx())
+                //_currentDate = date
+                return cd
             }
             else {
                 let date: NSDate = NSDate()
@@ -66,14 +58,17 @@ class ViewController: UIViewController {
     // life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         
         self.configureViewController()
         self.configureCollectionView()
-        print("viewWillAppear = \(getCurrentIdx())")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+
+        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: NSDate().day - 1, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)
+        
     }
     
     private func configureViewController() {
@@ -99,13 +94,13 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20;
+        return 30;
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
-        
+        print("cell idx = \(indexPath.row)")
         return cell
     }
     
@@ -139,47 +134,5 @@ extension ViewController: UIScrollViewDelegate {
         }
         
         rowAry = rowAry.sort()
-        
-        if(rowAry.count == 3) {
-            setCurrentIdx(rowAry[1])
-        }
-        else {
-            setCurrentIdx(rowAry[0])
-        }
-        
-        print("did scroll = \(getCurrentIdx()) last = \(getLastIdx()), date = \(self.currentDate)")
     }
 }
-
-extension ViewController: currentCollectionViewCellIdxDelegate {
-    
-    func setCurrentIdx(idx: Int) {
-        currentIdx = idx
-        if(getCurrentIdx() != 0) {
-            lastIdx = getCurrentIdx() - 1
-        }
-    }
-    
-    func getCurrentIdx() -> Int {
-        
-        if let idx = currentIdx {
-            return idx
-        }
-        else {
-            return 0
-        }
-    }
-    
-    func getLastIdx() -> Int {
-        
-        if let idx = lastIdx {
-            return idx
-        }
-        else {
-            return 0
-        }
-    }
-    
-}
-
-

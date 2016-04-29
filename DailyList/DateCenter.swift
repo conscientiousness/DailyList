@@ -11,7 +11,7 @@ import Foundation
 struct DateCenter {
     
     static func currentDate(date: NSDate, calDayNumber: Int) -> NSDate {
-        return 4.days.ago
+        return calDayNumber.days.fromDate(date)
     }
     
 }
