@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40175021CD506C800F27461 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40175011CD506C800F27461 /* ShadowView.swift */; };
 		F45FB5541CD266F7006510CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5531CD266F7006510CF /* AppDelegate.swift */; };
 		F45FB5561CD266F7006510CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5551CD266F7006510CF /* ViewController.swift */; };
 		F45FB5591CD266F7006510CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45FB5571CD266F7006510CF /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F40175011CD506C800F27461 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		F45FB5501CD266F7006510CF /* DailyList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45FB5531CD266F7006510CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F45FB5551CD266F7006510CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -190,10 +192,11 @@
 		F45FB5841CD26700006510CF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F45FB5571CD266F7006510CF /* Main.storyboard */,
 				F45FB55F1CD266F7006510CF /* LaunchScreen.storyboard */,
+				F45FB5571CD266F7006510CF /* Main.storyboard */,
 				F45FB5C41CD26866006510CF /* HomeCollectionViewCell.swift */,
 				F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */,
+				F40175011CD506C800F27461 /* ShadowView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				F45FB5BB1CD2681B006510CF /* NSDateInterval.swift in Sources */,
 				F45FB5B41CD2681B006510CF /* DateInRegion+Operations.swift in Sources */,
 				F45FB5AF1CD2681B006510CF /* DateInRegion+Comparisons.swift in Sources */,
+				F40175021CD506C800F27461 /* ShadowView.swift in Sources */,
 				F45FB5BD1CD2681B006510CF /* NSTimeInterval+SwiftDate.swift in Sources */,
 				F45FB5B81CD2681B006510CF /* NSDate+SwiftDate.swift in Sources */,
 				F45FB5B51CD2681B006510CF /* DateInRegion+StartEnd.swift in Sources */,

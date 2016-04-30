@@ -11,18 +11,16 @@ import UIKit
 class ViewController: UIViewController {
     
     // @IBOutlet
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var yearMonthLabel: UILabel!
     @IBOutlet weak var weekLabel: UILabel!
-    // properties
+    //MARK: properties
     private var flowLayout: LGHorizontalLinearFlowLayout!
-    private var currentIdx :Int?
-    private var _lastVisableCellIdx :Int?
-    private var _currentDate :NSDate?
+    private var currentDate :NSDate = NSDate()
+    private var firstLaunch = true
     
-    // getter & setter
+    //MARK: getter & setter
     private var pageWidth: CGFloat {
         return self.flowLayout.itemSize.width + self.flowLayout.minimumLineSpacing
     }
@@ -33,29 +31,10 @@ class ViewController: UIViewController {
     
     private var itemCGSize: CGSize {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
-        return CGSizeMake(screenSize.size.width*0.75, self.collectionView.bounds.size.height*0.7)
+        return CGSizeMake(screenSize.size.width*0.75, self.collectionView.bounds.size.height*0.85)
     }
     
-    private var currentDate: NSDate {
-        get {
-            if let cd = _currentDate {
-                //let date: NSDate = DateCenter.currentDate(cd, calDayNumber: self.getCurrentIdx() - self.getLastIdx())
-                //_currentDate = date
-                return cd
-            }
-            else {
-                let date: NSDate = NSDate()
-                _currentDate = date
-                return date
-            }
-        }
-        
-        set {
-            _currentDate = newValue
-        }
-    }
-    
-    // life cycle
+    //MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,14 +45,17 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-
-        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: NSDate().day - 1, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)
-        
+        // 移動到今天的cell
+        if(firstLaunch) {
+            firstLaunch = false
+            self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: NSDate().day - 1, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)
+        }
     }
     
+    //MARK: private method
     private func configureViewController() {
         self.view.backgroundColor = CustomColors.getBackgroundColor()
-        self.dateLabel.textColor = CustomColors.getMainColor()
+        self.dayLabel.textColor = CustomColors.getMainColor()
         self.yearMonthLabel.textColor = CustomColors.getMainColor()
         self.weekLabel.textColor = CustomColors.getMainColor()
     }
@@ -86,26 +68,52 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBarHidden = true
     }
     
-    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
-        print("scroll didi end animation")
+    private func getCurrentCellRow() -> Int {
+        
+        var rowAry = [Int]()
+        for cell in self.collectionView.visibleCells() {
+            let indexPath: NSIndexPath? = self.collectionView.indexPathForCell(cell)
+            if let ip = indexPath {
+                rowAry.append(ip.row)
+            }
+        }
+        rowAry = rowAry.sort()
+        //print("rowAry = \(rowAry))")
+        if(rowAry.count == 3) {
+            return rowAry[1]
+        }
+        else if(rowAry.count == 2) {
+            return rowAry[0] == 0 ? 0:rowAry[1]
+        }
+        
+        return rowAry[0]
+    }
+    
+    private func updateDateTitleLabel() {
+        //print("cell idx = \(self.getCurrentCellRow())")
+        let currentIdx = self.getCurrentCellRow()
+        self.currentDate = DateCenter.getCurrentDate(self.currentDate, currentCellIdx: currentIdx)
+        self.dayLabel.text = String(self.currentDate.day)
     }
 }
 
+
+//MARK: UICollectionViewDelegate
 extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30;
+        return self.currentDate.monthDays;
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
-        print("cell idx = \(indexPath.row)")
+        
         return cell
     }
-    
 }
 
+//MARK: UICollectionViewDelegateFlowLayout
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
     /*
@@ -121,18 +129,15 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
      */
 }
 
+//MARK: UIScrollViewDelegate
 extension ViewController: UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        
-        var rowAry = [Int]()
-        for cell in self.collectionView.visibleCells() {
-            let indexPath: NSIndexPath? = self.collectionView.indexPathForCell(cell)
-            if let ip = indexPath {
-                rowAry.append(ip.row)
-            }
-        }
-        
-        rowAry = rowAry.sort()
+        self.updateDateTitleLabel()
+    }
+    
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        self.updateDateTitleLabel()
+        //print("scrollViewDidEndScrollingAnimation")
     }
 }

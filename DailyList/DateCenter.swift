@@ -10,8 +10,11 @@ import Foundation
 
 struct DateCenter {
     
-    static func currentDate(date: NSDate, calDayNumber: Int) -> NSDate {
-        return calDayNumber.days.fromDate(date)
+    static func getCurrentDate(date: NSDate, currentCellIdx: Int) -> NSDate {
+        
+        let day = currentCellIdx + 1
+        let newDate = NSDate(year: date.year, month: date.month, day: day)
+        return newDate
     }
     
 }

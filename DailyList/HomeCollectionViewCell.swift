@@ -16,7 +16,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         self.fullyRound(10, borderColor: CustomColors.getMainColor(), borderWidth: 0)
-        
         //self.collectionView!.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
     }
 
