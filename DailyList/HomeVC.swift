@@ -25,13 +25,9 @@ class HomeVC: UIViewController {
         return self.flowLayout.itemSize.width + self.flowLayout.minimumLineSpacing
     }
     
-    private var contentOffset: CGFloat {
-        return self.collectionView.contentOffset.x + self.collectionView.contentInset.left
-    }
-    
     private var itemCGSize: CGSize {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
-        return CGSizeMake(screenSize.size.width*0.75, self.collectionView.bounds.size.height*0.85)
+        return CGSizeMake(screenSize.size.width*0.86, self.collectionView.bounds.size.height*0.85)
     }
     
     //MARK: life cycle
@@ -63,7 +59,7 @@ class HomeVC: UIViewController {
     private func configureCollectionView() {
         
         self.collectionView!.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
-        self.flowLayout = LGHorizontalLinearFlowLayout.configureLayout(collectionView: self.collectionView, itemSize: self.itemCGSize, minimumLineSpacing: -5)
+        self.flowLayout = LGHorizontalLinearFlowLayout.configureLayout(collectionView: self.collectionView, itemSize: self.itemCGSize, minimumLineSpacing: -23)
         self.collectionView.backgroundColor = UIColor.clearColor()
         self.navigationController?.navigationBarHidden = true
     }
