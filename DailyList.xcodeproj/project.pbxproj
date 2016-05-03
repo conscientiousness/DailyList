@@ -50,6 +50,10 @@
 		F45FB5BF1CD2681B006510CF /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5AC1CD2681B006510CF /* Region.swift */; };
 		F45FB5C61CD26866006510CF /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5C41CD26866006510CF /* HomeCollectionViewCell.swift */; };
 		F45FB5C71CD26866006510CF /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */; };
+		F4EE94AD1CD87B3B00105A70 /* Page+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE94A91CD87B3B00105A70 /* Page+CoreDataProperties.swift */; };
+		F4EE94AE1CD87B3B00105A70 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE94AA1CD87B3B00105A70 /* Page.swift */; };
+		F4EE94AF1CD87B3B00105A70 /* PageItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE94AB1CD87B3B00105A70 /* PageItem+CoreDataProperties.swift */; };
+		F4EE94B01CD87B3B00105A70 /* PageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE94AC1CD87B3B00105A70 /* PageItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +123,10 @@
 		F45FB5AC1CD2681B006510CF /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Region.swift; path = Lib/SwiftDate/Region.swift; sourceTree = "<group>"; };
 		F45FB5C41CD26866006510CF /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		F4EE94A91CD87B3B00105A70 /* Page+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Page+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F4EE94AA1CD87B3B00105A70 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		F4EE94AB1CD87B3B00105A70 /* PageItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F4EE94AC1CD87B3B00105A70 /* PageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +235,7 @@
 		F45FB5851CD26709006510CF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F4EE94B11CD87B5700105A70 /* CoreData */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -311,6 +320,25 @@
 				F45FB5621CD266F7006510CF /* Info.plist */,
 			);
 			name = Resource;
+			sourceTree = "<group>";
+		};
+		F4EE94B11CD87B5700105A70 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F4EE94AA1CD87B3B00105A70 /* Page.swift */,
+				F4EE94AC1CD87B3B00105A70 /* PageItem.swift */,
+				F4EE94B21CD87B6600105A70 /* Generated */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		F4EE94B21CD87B6600105A70 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				F4EE94A91CD87B3B00105A70 /* Page+CoreDataProperties.swift */,
+				F4EE94AB1CD87B3B00105A70 /* PageItem+CoreDataProperties.swift */,
+			);
+			name = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,7 +495,11 @@
 				F45FB5B61CD2681B006510CF /* Dictionary+SwiftDate.swift in Sources */,
 				F401750F1CD62DF700F27461 /* TaskTableViewCell.swift in Sources */,
 				F45FB5561CD266F7006510CF /* HomeVC.swift in Sources */,
+				F4EE94AF1CD87B3B00105A70 /* PageItem+CoreDataProperties.swift in Sources */,
 				F45FB58F1CD2675E006510CF /* UIColor+hex.swift in Sources */,
+				F4EE94AD1CD87B3B00105A70 /* Page+CoreDataProperties.swift in Sources */,
+				F4EE94B01CD87B3B00105A70 /* PageItem.swift in Sources */,
+				F4EE94AE1CD87B3B00105A70 /* Page.swift in Sources */,
 				F45FB5BC1CD2681B006510CF /* NSLocale+SwiftDate.swift in Sources */,
 				F45FB5B11CD2681B006510CF /* DateInRegion+Equations.swift in Sources */,
 				F45FB5981CD267B0006510CF /* DateCenter.swift in Sources */,

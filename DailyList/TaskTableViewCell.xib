@@ -19,11 +19,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="419" height="189.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-GI-Ca9">
-                        <rect key="frame" x="8" y="2" width="405" height="188"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-GI-Ca9">
+                        <rect key="frame" x="12" y="2" width="395" height="188"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMJ-ux-FC7">
-                                <rect key="frame" x="20" y="17" width="377" height="21"/>
+                                <rect key="frame" x="20" y="17" width="367" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="VCT-qr-mBM"/>
                                 </constraints>
@@ -31,7 +31,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgN-Da-PuW">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgN-Da-PuW">
                                 <rect key="frame" x="0.0" y="0.0" width="15" height="188"/>
                                 <color key="backgroundColor" red="0.20902244792674107" green="0.71862598851453108" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -61,10 +61,16 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="CNS-GI-Ca9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="3Sh-qB-bjf"/>
+                    <constraint firstItem="CNS-GI-Ca9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="PM7-tc-Que"/>
                     <constraint firstItem="CNS-GI-Ca9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="m1i-b2-b0p"/>
-                    <constraint firstAttribute="trailing" secondItem="CNS-GI-Ca9" secondAttribute="trailing" constant="6" id="nPX-Hn-GbG"/>
+                    <constraint firstAttribute="trailing" secondItem="CNS-GI-Ca9" secondAttribute="trailing" constant="12" id="nPX-Hn-GbG"/>
                     <constraint firstAttribute="bottom" secondItem="CNS-GI-Ca9" secondAttribute="bottom" id="yMk-Y3-ufX"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="3Sh-qB-bjf"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="415.5" y="220"/>
