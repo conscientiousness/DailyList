@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F40175021CD506C800F27461 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40175011CD506C800F27461 /* ShadowView.swift */; };
+		F40175021CD506C800F27461 /* UIView+ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40175011CD506C800F27461 /* UIView+ShadowView.swift */; };
 		F40175051CD618A500F27461 /* DetailItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40175041CD618A500F27461 /* DetailItemVC.swift */; };
 		F401750A1CD620B700F27461 /* NotoSansCJKtc-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40175071CD620B700F27461 /* NotoSansCJKtc-Medium.otf */; };
 		F401750B1CD620B700F27461 /* NotoSansCJKtc-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40175081CD620B700F27461 /* NotoSansCJKtc-Regular.otf */; };
@@ -50,6 +50,10 @@
 		F45FB5BF1CD2681B006510CF /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5AC1CD2681B006510CF /* Region.swift */; };
 		F45FB5C61CD26866006510CF /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5C41CD26866006510CF /* HomeCollectionViewCell.swift */; };
 		F45FB5C71CD26866006510CF /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */; };
+		F4E217D01CE4F1B50025F361 /* CircleDateCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E217CF1CE4F1B50025F361 /* CircleDateCollectionCell.xib */; };
+		F4E217D21CE4F1D80025F361 /* CircleDateCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E217D11CE4F1D80025F361 /* CircleDateCollectionCell.swift */; };
+		F4E217D41CE587160025F361 /* CircleDateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E217D31CE587160025F361 /* CircleDateFlowLayout.swift */; };
+		F4E217DA1CE590B50025F361 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E217D91CE590B50025F361 /* QuartzCore.framework */; };
 		F4EE94AD1CD87B3B00105A70 /* Page+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE94A91CD87B3B00105A70 /* Page+CoreDataProperties.swift */; };
 		F4EE94AE1CD87B3B00105A70 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE94AA1CD87B3B00105A70 /* Page.swift */; };
 		F4EE94AF1CD87B3B00105A70 /* PageItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE94AB1CD87B3B00105A70 /* PageItem+CoreDataProperties.swift */; };
@@ -74,7 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F40175011CD506C800F27461 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		F40175011CD506C800F27461 /* UIView+ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ShadowView.swift"; sourceTree = "<group>"; };
 		F40175041CD618A500F27461 /* DetailItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailItemVC.swift; sourceTree = "<group>"; };
 		F40175071CD620B700F27461 /* NotoSansCJKtc-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKtc-Medium.otf"; sourceTree = "<group>"; };
 		F40175081CD620B700F27461 /* NotoSansCJKtc-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKtc-Regular.otf"; sourceTree = "<group>"; };
@@ -123,6 +127,10 @@
 		F45FB5AC1CD2681B006510CF /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Region.swift; path = Lib/SwiftDate/Region.swift; sourceTree = "<group>"; };
 		F45FB5C41CD26866006510CF /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		F4E217CF1CE4F1B50025F361 /* CircleDateCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleDateCollectionCell.xib; sourceTree = "<group>"; };
+		F4E217D11CE4F1D80025F361 /* CircleDateCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDateCollectionCell.swift; sourceTree = "<group>"; };
+		F4E217D31CE587160025F361 /* CircleDateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDateFlowLayout.swift; sourceTree = "<group>"; };
+		F4E217D91CE590B50025F361 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F4EE94A91CD87B3B00105A70 /* Page+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Page+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F4EE94AA1CD87B3B00105A70 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		F4EE94AB1CD87B3B00105A70 /* PageItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -134,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E217DA1CE590B50025F361 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +176,7 @@
 		F45FB5471CD266F7006510CF = {
 			isa = PBXGroup;
 			children = (
+				F4E217D91CE590B50025F361 /* QuartzCore.framework */,
 				F45FB5521CD266F7006510CF /* DailyList */,
 				F45FB56A1CD266F7006510CF /* DailyListTests */,
 				F45FB5751CD266F7006510CF /* DailyListUITests */,
@@ -189,11 +199,9 @@
 			children = (
 				F45FB5881CD26739006510CF /* Images */,
 				F45FB5871CD26716006510CF /* Extension */,
-				F45FB5861CD2670F006510CF /* Controller */,
 				F45FB5851CD26709006510CF /* Model */,
 				F45FB5841CD26700006510CF /* View */,
-				F45FB5531CD266F7006510CF /* AppDelegate.swift */,
-				F45FB55A1CD266F7006510CF /* DailyList.xcdatamodeld */,
+				F45FB5861CD2670F006510CF /* Controller */,
 				F45FB5941CD2678C006510CF /* Utilities */,
 				F45FB5931CD26785006510CF /* Lib */,
 				F45FB5C01CD26835006510CF /* Resource */,
@@ -223,11 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				F45FB5571CD266F7006510CF /* Main.storyboard */,
-				F40175011CD506C800F27461 /* ShadowView.swift */,
-				F45FB5C41CD26866006510CF /* HomeCollectionViewCell.swift */,
-				F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */,
-				F401750D1CD62DF700F27461 /* TaskTableViewCell.swift */,
-				F401750E1CD62DF700F27461 /* TaskTableViewCell.xib */,
+				F4E217D51CE587A50025F361 /* Home */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -244,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				F45FB5551CD266F7006510CF /* HomeVC.swift */,
-				F45FB5911CD26765006510CF /* LGHorizontalLinearFlowLayout.swift */,
 				F40175041CD618A500F27461 /* DetailItemVC.swift */,
 			);
 			name = Controller;
@@ -255,6 +258,7 @@
 			children = (
 				F45FB58D1CD2675E006510CF /* UIColor+hex.swift */,
 				F45FB58E1CD2675E006510CF /* UIView+RoundingCorners.swift */,
+				F40175011CD506C800F27461 /* UIView+ShadowView.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -279,6 +283,7 @@
 		F45FB5941CD2678C006510CF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F45FB5531CD266F7006510CF /* AppDelegate.swift */,
 				F45FB5951CD267B0006510CF /* CustomColors.swift */,
 				F45FB5961CD267B0006510CF /* DateCenter.swift */,
 			);
@@ -314,12 +319,52 @@
 		F45FB5C01CD26835006510CF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				F45FB55A1CD266F7006510CF /* DailyList.xcdatamodeld */,
 				F40175061CD6203B00F27461 /* Fonts */,
 				F45FB55F1CD266F7006510CF /* LaunchScreen.storyboard */,
 				F45FB55D1CD266F7006510CF /* Assets.xcassets */,
 				F45FB5621CD266F7006510CF /* Info.plist */,
 			);
 			name = Resource;
+			sourceTree = "<group>";
+		};
+		F4E217D51CE587A50025F361 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F4E217D81CE587F90025F361 /* TableViewCell */,
+				F4E217D71CE587E20025F361 /* CollectionViewCell */,
+				F4E217D61CE587C50025F361 /* CollectionViewFlowLayout */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		F4E217D61CE587C50025F361 /* CollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB5911CD26765006510CF /* LGHorizontalLinearFlowLayout.swift */,
+				F4E217D31CE587160025F361 /* CircleDateFlowLayout.swift */,
+			);
+			name = CollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		F4E217D71CE587E20025F361 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F45FB5C41CD26866006510CF /* HomeCollectionViewCell.swift */,
+				F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */,
+				F4E217D11CE4F1D80025F361 /* CircleDateCollectionCell.swift */,
+				F4E217CF1CE4F1B50025F361 /* CircleDateCollectionCell.xib */,
+			);
+			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		F4E217D81CE587F90025F361 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F401750D1CD62DF700F27461 /* TaskTableViewCell.swift */,
+				F401750E1CD62DF700F27461 /* TaskTableViewCell.xib */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 		F4EE94B11CD87B5700105A70 /* CoreData */ = {
@@ -453,6 +498,7 @@
 				F40175101CD62DF700F27461 /* TaskTableViewCell.xib in Resources */,
 				F45FB5591CD266F7006510CF /* Main.storyboard in Resources */,
 				F401750A1CD620B700F27461 /* NotoSansCJKtc-Medium.otf in Resources */,
+				F4E217D01CE4F1B50025F361 /* CircleDateCollectionCell.xib in Resources */,
 				F45FB58C1CD26754006510CF /* background_image2.png in Resources */,
 				F45FB58B1CD26754006510CF /* background_image1.png in Resources */,
 				F401750C1CD620B700F27461 /* NotoSansCJKtc-Thin.otf in Resources */,
@@ -484,7 +530,7 @@
 				F45FB5BB1CD2681B006510CF /* NSDateInterval.swift in Sources */,
 				F45FB5B41CD2681B006510CF /* DateInRegion+Operations.swift in Sources */,
 				F45FB5AF1CD2681B006510CF /* DateInRegion+Comparisons.swift in Sources */,
-				F40175021CD506C800F27461 /* ShadowView.swift in Sources */,
+				F40175021CD506C800F27461 /* UIView+ShadowView.swift in Sources */,
 				F45FB5BD1CD2681B006510CF /* NSTimeInterval+SwiftDate.swift in Sources */,
 				F45FB5B81CD2681B006510CF /* NSDate+SwiftDate.swift in Sources */,
 				F45FB5B51CD2681B006510CF /* DateInRegion+StartEnd.swift in Sources */,
@@ -503,8 +549,10 @@
 				F45FB5BC1CD2681B006510CF /* NSLocale+SwiftDate.swift in Sources */,
 				F45FB5B11CD2681B006510CF /* DateInRegion+Equations.swift in Sources */,
 				F45FB5981CD267B0006510CF /* DateCenter.swift in Sources */,
+				F4E217D41CE587160025F361 /* CircleDateFlowLayout.swift in Sources */,
 				F45FB5971CD267B0006510CF /* CustomColors.swift in Sources */,
 				F45FB5B21CD2681B006510CF /* DateInRegion+Formatter.swift in Sources */,
+				F4E217D21CE4F1D80025F361 /* CircleDateCollectionCell.swift in Sources */,
 				F45FB5B01CD2681B006510CF /* DateInRegion+Components.swift in Sources */,
 				F45FB5B91CD2681B006510CF /* NSDateComponents+SwiftDate.swift in Sources */,
 				F45FB55C1CD266F7006510CF /* DailyList.xcdatamodeld in Sources */,

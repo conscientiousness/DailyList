@@ -12,6 +12,10 @@ import CoreData
 
 class PageItem: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    override func awakeFromInsert() {
+        super.awakeFromInsert()
+        
+        self.createDate = NSDate()
+    }
 
 }

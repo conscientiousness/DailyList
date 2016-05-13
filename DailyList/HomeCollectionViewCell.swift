@@ -18,7 +18,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
         //self.fullyRound(10, borderColor: CustomColors.getMainColor(), borderWidth: 0)
         self.taskTableView.registerNib(UINib(nibName: "TaskTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
         self.taskTableView.separatorStyle = .None
-        
     }
 
 }
@@ -41,6 +40,6 @@ extension HomeCollectionViewCell: UITableViewDataSource {
 extension HomeCollectionViewCell: UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 200;
+        return 120;
     }
 }

@@ -12,19 +12,15 @@ class HomeVC: UIViewController {
     
     // @IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var circleDateCollectionView: UICollectionView!
     @IBOutlet weak var yearMonthLabel: UILabel!
-    @IBOutlet weak var weekLabel: UILabel!
+
     //MARK: properties
-    private var flowLayout: LGHorizontalLinearFlowLayout!
     private var currentDate :NSDate = NSDate()
     private var firstLaunch = true
+    private var circleDateItemCGSize :CGSize = CGSizeMake(65, 65)
     
     //MARK: getter & setter
-    private var pageWidth: CGFloat {
-        return self.flowLayout.itemSize.width + self.flowLayout.minimumLineSpacing
-    }
-    
     private var itemCGSize: CGSize {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         return CGSizeMake(screenSize.size.width*0.86, self.collectionView.bounds.size.height*0.85)
@@ -51,16 +47,23 @@ class HomeVC: UIViewController {
     //MARK: private method
     private func configureViewController() {
         self.view.backgroundColor = CustomColors.getBackgroundColor()
-        self.dayLabel.textColor = CustomColors.getMainColor()
+        //self.dayLabel.textColor = CustomColors.getMainColor()
         self.yearMonthLabel.textColor = CustomColors.getMainColor()
-        self.weekLabel.textColor = CustomColors.getMainColor()
+        //self.weekLabel.textColor = CustomColors.getMainColor()
     }
     
     private func configureCollectionView() {
         
-        self.collectionView!.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
-        self.flowLayout = LGHorizontalLinearFlowLayout.configureLayout(collectionView: self.collectionView, itemSize: self.itemCGSize, minimumLineSpacing: -23)
+        // config main Collection View
+        self.collectionView.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCollectionViewCell")
+        self.collectionView.collectionViewLayout = LGHorizontalLinearFlowLayout.configureLayout(collectionView: self.collectionView, itemSize: self.itemCGSize, minimumLineSpacing: -23)
         self.collectionView.backgroundColor = UIColor.clearColor()
+        
+        // config circle date Collection View
+        self.circleDateCollectionView.registerNib(UINib(nibName: "CircleDateCollectionCell", bundle: nil), forCellWithReuseIdentifier: "circleDateCollectionCell")
+        self.circleDateCollectionView.collectionViewLayout = CircleDateFlowLayout.configureLayout(collectionView: self.circleDateCollectionView, itemSize: self.circleDateItemCGSize, minimumLineSpacing: 10)
+        self.circleDateCollectionView.backgroundColor = UIColor.clearColor()
+
         self.navigationController?.navigationBarHidden = true
     }
     
@@ -89,7 +92,7 @@ class HomeVC: UIViewController {
         //print("cell idx = \(self.getCurrentCellRow())")
         let currentIdx = self.getCurrentCellRow()
         self.currentDate = DateCenter.getCurrentDate(self.currentDate, currentCellIdx: currentIdx)
-        self.dayLabel.text = String(self.currentDate.day)
+        //self.dayLabel.text = String(self.currentDate.day)
     }
 }
 
@@ -103,26 +106,16 @@ extension HomeVC: UICollectionViewDataSource,UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
-        
-        return cell
+        if(collectionView == self.collectionView) {
+            return collectionView.dequeueReusableCellWithReuseIdentifier("homeCollectionViewCell", forIndexPath: indexPath)
+        }
+        else {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("circleDateCollectionCell", forIndexPath: indexPath) as! CircleDateCollectionCell
+            cell.configCell()
+            
+            return cell
+        }
     }
-}
-
-//MARK: UICollectionViewDelegateFlowLayout
-extension HomeVC: UICollectionViewDelegateFlowLayout {
-    
-    /*
-     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-     
-     return CGSizeMake(collectionView.bounds.width*0.8, collectionView.bounds.height*0.8)
-     }
-     
-     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-     
-     return 20;
-     }
-     */
 }
 
 //MARK: UIScrollViewDelegate

@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 <subviews>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9zS-ak-E6d">
-                        <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                        <rect key="frame" x="0.0" y="20" width="600" height="560"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <connections>
@@ -26,7 +26,7 @@
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="9zS-ak-E6d" secondAttribute="bottom" id="B3L-a1-7wc"/>
+                <constraint firstAttribute="bottom" secondItem="9zS-ak-E6d" secondAttribute="bottom" constant="20" id="B3L-a1-7wc"/>
                 <constraint firstAttribute="trailing" secondItem="9zS-ak-E6d" secondAttribute="trailing" id="L1v-Nb-3d6"/>
                 <constraint firstItem="9zS-ak-E6d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Rpi-sm-iKP"/>
                 <constraint firstItem="9zS-ak-E6d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="Wtt-8R-qcc"/>

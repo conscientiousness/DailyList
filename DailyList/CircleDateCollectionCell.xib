@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="NotoSansCJKtc-Regular.otf">
+            <string>NotoSansCJKtc-Regular</string>
+            <string>NotoSansCJKtc-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CircleDateCollectionCell" customModule="DailyList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="週六" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Td-le-4wU">
+                    <rect key="frame" x="15" y="7" width="270" height="113"/>
+                    <fontDescription key="fontDescription" name="NotoSansCJKtc-Regular" family="Noto Sans CJK TC" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="p5P-kZ-lQo">
+                    <rect key="frame" x="15" y="115" width="270" height="180"/>
+                    <fontDescription key="fontDescription" name="NotoSansCJKtc-Regular" family="Noto Sans CJK TC" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.23296622048359494" green="0.70785389274170407" blue="0.75439893234780819" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="p5P-kZ-lQo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-20" id="1Wt-bY-aDx"/>
+                <constraint firstAttribute="bottom" secondItem="p5P-kZ-lQo" secondAttribute="bottom" constant="5" id="6Lf-c1-fKT"/>
+                <constraint firstAttribute="trailing" secondItem="7Td-le-4wU" secondAttribute="trailing" constant="15" id="74Y-K9-vxZ"/>
+                <constraint firstItem="p5P-kZ-lQo" firstAttribute="top" secondItem="7Td-le-4wU" secondAttribute="bottom" constant="-5" id="7XG-I0-hAh"/>
+                <constraint firstAttribute="trailing" secondItem="p5P-kZ-lQo" secondAttribute="trailing" constant="15" id="BsT-wl-MUA"/>
+                <constraint firstItem="7Td-le-4wU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="IMn-ju-9f8"/>
+                <constraint firstItem="7Td-le-4wU" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.28" id="J7l-GT-2Hq"/>
+                <constraint firstItem="7Td-le-4wU" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OE2-mu-DPQ"/>
+                <constraint firstItem="p5P-kZ-lQo" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.65" id="PDv-Gd-WId"/>
+                <constraint firstItem="p5P-kZ-lQo" firstAttribute="top" secondItem="7Td-le-4wU" secondAttribute="bottom" id="hyQ-GU-sva"/>
+                <constraint firstAttribute="bottom" secondItem="p5P-kZ-lQo" secondAttribute="bottom" constant="308" id="mEx-v6-hrR"/>
+                <constraint firstAttribute="bottom" secondItem="p5P-kZ-lQo" secondAttribute="bottom" constant="15" id="qgw-Ag-opK"/>
+                <constraint firstItem="p5P-kZ-lQo" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.6" id="wEv-4c-9Fq"/>
+                <constraint firstItem="7Td-le-4wU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="xgk-87-Xb2"/>
+                <constraint firstItem="p5P-kZ-lQo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="z3o-kD-G0C"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="J7l-GT-2Hq"/>
+                    <exclude reference="OE2-mu-DPQ"/>
+                    <exclude reference="1Wt-bY-aDx"/>
+                    <exclude reference="PDv-Gd-WId"/>
+                    <exclude reference="hyQ-GU-sva"/>
+                    <exclude reference="mEx-v6-hrR"/>
+                    <exclude reference="qgw-Ag-opK"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>
