@@ -36,5 +36,4 @@ class CircleDateCollectionCell: UICollectionViewCell {
             self.backgroundColor = CustomColors.getMainColor()
         }
     }
-    
 }

@@ -41,7 +41,7 @@ class HomeVC: UIViewController {
         if(firstLaunch) {
             firstLaunch = false
             self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: NSDate().day - 1, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)
-        }
+            self.circleDateCollectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: NSDate().day - 1, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)        }
     }
     
     //MARK: private method
@@ -94,6 +94,35 @@ class HomeVC: UIViewController {
         self.currentDate = DateCenter.getCurrentDate(self.currentDate, currentCellIdx: currentIdx)
         //self.dayLabel.text = String(self.currentDate.day)
     }
+    
+    private func changeCellBgColorWithIndexPath(indexPath: NSIndexPath, didSelected: Bool) {
+        
+        if(didSelected) {
+            let cell = self.circleDateCollectionView.cellForItemAtIndexPath(indexPath) as? CircleDateCollectionCell
+            if let cell = cell {
+                cell.backgroundColor = CustomColors.getLightGreenColor()
+            }
+            for i in 0 ... (self.currentDate.monthDays - 1) {
+                if indexPath.row != i {
+
+                    let deIndexPath: NSIndexPath = NSIndexPath(forRow: i, inSection: 0)
+                    self.collectionView(self.circleDateCollectionView, didDeselectItemAtIndexPath: deIndexPath)
+                }
+            }
+        }
+        else {
+            let cell = self.circleDateCollectionView.cellForItemAtIndexPath(indexPath) as? CircleDateCollectionCell
+            if let cell = cell {
+                if((indexPath.row + 1) != self.currentDate.day) {
+                    cell.backgroundColor = UIColor.clearColor()
+                } else {
+                    cell.backgroundColor = CustomColors.getMainColor()
+                }
+            }
+        }
+        
+
+    }
 }
 
 //MARK: UICollectionViewDelegate
@@ -122,28 +151,40 @@ extension HomeVC: UICollectionViewDataSource,UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         if(collectionView == self.circleDateCollectionView) {
-            collectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: .CenteredHorizontally)
+            self.circleDateCollectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: .CenteredHorizontally)
+            self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: true)
+            self.changeCellBgColorWithIndexPath(indexPath, didSelected: true)
         }
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         
         if(collectionView == self.circleDateCollectionView) {
-            collectionView.deselectItemAtIndexPath(indexPath, animated: false)
+            self.circleDateCollectionView.deselectItemAtIndexPath(indexPath, animated: false)
+            self.changeCellBgColorWithIndexPath(indexPath, didSelected: false)
         }
     }
-
 }
 
 //MARK: UIScrollViewDelegate
 extension HomeVC: UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        self.updateDateTitleLabel()
+        
+        if let view: UIView = scrollView.subviews.first {
+            
+            let className = NSStringFromClass(view.classForCoder).componentsSeparatedByString(".").last!
+            if(className == "HomeCollectionViewCell") {
+                
+                let indexPath: NSIndexPath = NSIndexPath(forRow: self.getCurrentCellRow(), inSection: 0)
+                // 同步移動快捷日曆列
+                self.circleDateCollectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: .CenteredHorizontally)
+                self.collectionView(self.circleDateCollectionView, didSelectItemAtIndexPath: indexPath)
+            }
+            
+        }
     }
     
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
-        self.updateDateTitleLabel()
-        //print("scrollViewDidEndScrollingAnimation")
     }
 }
