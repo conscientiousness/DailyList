@@ -27,10 +27,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1hK-gp-2nN">
-                                <rect key="frame" x="0.0" y="161" width="600" height="439"/>
+                                <rect key="frame" x="0.0" y="164" width="600" height="436"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="mainList" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fq7-kj-lWI">
-                                <rect key="frame" x="0.0" y="161" width="600" height="439"/>
+                                <rect key="frame" x="0.0" y="164" width="600" height="436"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pGK-ZC-i2f">
                                     <size key="itemSize" width="50" height="50"/>
@@ -55,8 +55,8 @@
                                     <segue destination="iCR-Lc-Ugo" kind="presentation" id="Li0-K9-EVr"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sg3-pQ-mR9">
-                                <rect key="frame" x="5" y="81" width="590" height="80"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sg3-pQ-mR9">
+                                <rect key="frame" x="5" y="84" width="590" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="owF-bD-gZJ"/>
                                 </constraints>
@@ -73,7 +73,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016年3月" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1j-gJ-VC2">
-                                <rect key="frame" x="259" y="35" width="83" height="26"/>
+                                <rect key="frame" x="259" y="38" width="83" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="83" id="Ueq-5T-PTP"/>
                                 </constraints>
@@ -96,7 +96,7 @@
                             <constraint firstItem="1hK-gp-2nN" firstAttribute="leading" secondItem="KSe-bZ-LsG" secondAttribute="leading" id="HSX-gc-b4f"/>
                             <constraint firstAttribute="trailing" secondItem="1hK-gp-2nN" secondAttribute="trailing" id="Ktc-4h-akN"/>
                             <constraint firstItem="AYJ-H2-HIJ" firstAttribute="centerX" secondItem="KSe-bZ-LsG" secondAttribute="centerX" id="N8g-Gu-deg"/>
-                            <constraint firstItem="H1j-gJ-VC2" firstAttribute="top" secondItem="I95-MW-gfE" secondAttribute="bottom" constant="15" id="cpO-SX-nsl"/>
+                            <constraint firstItem="H1j-gJ-VC2" firstAttribute="top" secondItem="I95-MW-gfE" secondAttribute="bottom" constant="18" id="cpO-SX-nsl"/>
                             <constraint firstItem="Fq7-kj-lWI" firstAttribute="top" secondItem="sg3-pQ-mR9" secondAttribute="bottom" id="i7H-ht-Ncu"/>
                             <constraint firstItem="sg3-pQ-mR9" firstAttribute="top" secondItem="H1j-gJ-VC2" secondAttribute="bottom" constant="20" id="lyB-bT-FHH"/>
                             <constraint firstItem="1B4-UU-ce8" firstAttribute="top" secondItem="AYJ-H2-HIJ" secondAttribute="bottom" constant="20" id="mC9-2N-9Jw"/>

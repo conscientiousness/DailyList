@@ -40,11 +40,18 @@ extension UIView {
      - parameter borderColor: The border color
      - parameter borderWidth: The border width
      */
-    func fullyRound(diameter: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
+    func fullyRound(diameter: CGFloat, borderColor: UIColor?, borderWidth: CGFloat?) {
         layer.masksToBounds = true
         layer.cornerRadius = diameter / 2
-        layer.borderWidth = borderWidth
-        layer.borderColor = borderColor.CGColor;
+        
+        if let bw = borderWidth {
+            layer.borderWidth = bw
+        }
+        
+        if let bc = borderColor {
+            layer.borderColor = bc.CGColor;
+        }
+        
     }
     
 }

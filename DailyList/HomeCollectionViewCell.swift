@@ -11,6 +11,8 @@ import UIKit
 class HomeCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var taskTableView: UITableView!
+    @IBOutlet weak var emptyImageView: UIImageView!
+    @IBOutlet weak var emptyLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,8 +20,14 @@ class HomeCollectionViewCell: UICollectionViewCell {
         //self.fullyRound(10, borderColor: CustomColors.getMainColor(), borderWidth: 0)
         self.taskTableView.registerNib(UINib(nibName: "TaskTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
         self.taskTableView.separatorStyle = .None
+        self.fullyRound(8, borderColor: nil, borderWidth: nil)
     }
-
+    
+    func configCell(indexPath: NSIndexPath, currentDate: NSDate) {
+        
+        let imgName: String = "empty_photo\((indexPath.row % 6) + 1)"
+        self.emptyImageView.image = UIImage(named: imgName)
+    }
 }
 
 extension HomeCollectionViewCell: UITableViewDataSource {

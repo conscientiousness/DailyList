@@ -23,7 +23,7 @@ class HomeVC: UIViewController {
     //MARK: getter & setter
     private var itemCGSize: CGSize {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
-        return CGSizeMake(screenSize.size.width*0.86, self.collectionView.bounds.size.height*0.85)
+        return CGSizeMake(screenSize.size.width*0.86, self.collectionView.bounds.size.height*0.88)
     }
     
     //MARK: life cycle
@@ -96,7 +96,6 @@ class HomeVC: UIViewController {
     }
 }
 
-
 //MARK: UICollectionViewDelegate
 extension HomeVC: UICollectionViewDataSource,UICollectionViewDelegate {
     
@@ -107,15 +106,33 @@ extension HomeVC: UICollectionViewDataSource,UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         if(collectionView == self.collectionView) {
-            return collectionView.dequeueReusableCellWithReuseIdentifier("homeCollectionViewCell", forIndexPath: indexPath)
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("homeCollectionViewCell", forIndexPath: indexPath) as! HomeCollectionViewCell
+            cell.configCell(indexPath, currentDate: self.currentDate)
+            
+            return cell
         }
         else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("circleDateCollectionCell", forIndexPath: indexPath) as! CircleDateCollectionCell
-            cell.configCell()
+            cell.configCell(indexPath, currentDate: self.currentDate)
             
             return cell
         }
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if(collectionView == self.circleDateCollectionView) {
+            collectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: .CenteredHorizontally)
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if(collectionView == self.circleDateCollectionView) {
+            collectionView.deselectItemAtIndexPath(indexPath, animated: false)
+        }
+    }
+
 }
 
 //MARK: UIScrollViewDelegate

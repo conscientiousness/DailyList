@@ -25,4 +25,7 @@ struct CustomColors{
     static func getLightGreyColor() -> UIColor{
         return UIColor(hex: "A4A4A4", alpha: 1)
     }
+    static func getLightGreenColor() -> UIColor{
+        return UIColor(hex: "2ECC87", alpha: 1)
+    }
 }

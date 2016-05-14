@@ -50,7 +50,7 @@ public class LGHorizontalLinearFlowLayout: UICollectionViewFlowLayout {
         }
         
         let inset = self.collectionView!.bounds.size.width / 2 - self.itemSize.width / 2
-        self.collectionView!.contentInset = UIEdgeInsetsMake(-15, inset, 15, inset)
+        self.collectionView!.contentInset = UIEdgeInsetsMake(-20, inset, 20, inset)
         self.collectionView!.contentOffset = CGPointMake(-inset, 0)
     }
     
