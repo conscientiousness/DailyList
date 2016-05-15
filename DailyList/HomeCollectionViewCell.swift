@@ -27,6 +27,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
         
         let imgName: String = "empty_photo\((indexPath.row % 6) + 1)"
         self.emptyImageView.image = UIImage(named: imgName)
+        
+        let date = DateCenter.getCurrentDateWithCellIndex(indexPath.row, date: currentDate)
+        self.emptyLabel.text = "You have nothing on \(date.month)/\(date.day)"
     }
 }
 

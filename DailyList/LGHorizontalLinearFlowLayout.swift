@@ -90,7 +90,6 @@ public class LGHorizontalLinearFlowLayout: UICollectionViewFlowLayout {
             return proposedContentOffset
         }
         
-        //print("candidateAttributes=\(candidateAttributes!.center.x) ,  collectionView=\(self.collectionView!.bounds.size.width / 2)")
         var newOffsetX = candidateAttributes!.center.x - self.collectionView!.bounds.size.width / 2
         
         let offset = newOffsetX - self.collectionView!.contentOffset.x
@@ -100,7 +99,6 @@ public class LGHorizontalLinearFlowLayout: UICollectionViewFlowLayout {
             newOffsetX += velocity.x > 0 ? pageWidth : -pageWidth
         }
         
-        //print("newOffsetX=\(newOffsetX) ,  proposedContentOffset.y=\( proposedContentOffset.y)")
         return CGPointMake(newOffsetX, proposedContentOffset.y)
     }
     

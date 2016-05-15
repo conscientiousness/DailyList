@@ -8,7 +8,11 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+@objc protocol currentDateDelegate: class {
+    optional func didChangeCurrentDate(date: NSDate)
+}
+
+class HomeVC: UIViewController,currentDateDelegate {
     
     // @IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
@@ -19,6 +23,7 @@ class HomeVC: UIViewController {
     private var currentDate :NSDate = NSDate()
     private var firstLaunch = true
     private var circleDateItemCGSize :CGSize = CGSizeMake(65, 65)
+    weak var delegate: currentDateDelegate?
     
     //MARK: getter & setter
     private var itemCGSize: CGSize {
@@ -30,6 +35,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.delegate = self
         self.configureViewController()
         self.configureCollectionView()
     }
@@ -47,9 +53,9 @@ class HomeVC: UIViewController {
     //MARK: private method
     private func configureViewController() {
         self.view.backgroundColor = CustomColors.getBackgroundColor()
-        //self.dayLabel.textColor = CustomColors.getMainColor()
         self.yearMonthLabel.textColor = CustomColors.getMainColor()
-        //self.weekLabel.textColor = CustomColors.getMainColor()
+        self.yearMonthLabel.text = "\(self.currentDate.year)年\(self.currentDate.month)月"
+        
     }
     
     private func configureCollectionView() {
@@ -91,7 +97,7 @@ class HomeVC: UIViewController {
     private func updateDateTitleLabel() {
         //print("cell idx = \(self.getCurrentCellRow())")
         let currentIdx = self.getCurrentCellRow()
-        self.currentDate = DateCenter.getCurrentDate(self.currentDate, currentCellIdx: currentIdx)
+        self.currentDate = DateCenter.getCurrentDateWithCellIndex(currentIdx, date: self.currentDate)
         //self.dayLabel.text = String(self.currentDate.day)
     }
     
@@ -122,6 +128,12 @@ class HomeVC: UIViewController {
         }
         
 
+    }
+    
+    //MARK: date delegate
+    func didChangeCurrentDate(date: NSDate) {
+        print("This is delegate date = \(date)")
+        self.currentDate = date
     }
 }
 
