@@ -28,4 +28,10 @@ struct CustomColors{
     static func getLightGreenColor() -> UIColor{
         return UIColor(hex: "2ECC87", alpha: 1)
     }
+    static func getDarkBlueColor() -> UIColor{
+        return UIColor(hex: "004773", alpha: 1)
+    }
+    static func getTextFieldBgGreyColor() -> UIColor{
+        return UIColor(hex: "F1F4F9", alpha: 1)
+    }
 }

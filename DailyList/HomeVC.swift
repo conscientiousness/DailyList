@@ -20,6 +20,7 @@ class HomeVC: UIViewController,currentDateDelegate {
     @IBOutlet weak var yearMonthLabel: UILabel!
 
     //MARK: properties
+    private let transitionManager = TransitionManager()
     private var currentDate :NSDate = NSDate()
     private var firstLaunch = true
     private var circleDateItemCGSize :CGSize = CGSizeMake(65, 65)
@@ -126,8 +127,15 @@ class HomeVC: UIViewController,currentDateDelegate {
                 }
             }
         }
-        
-
+    }
+    
+    //MARK: prepareForSegue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddTaskSegue" {
+            
+            let addTaskVC = segue.destinationViewController as! AddTaskVC
+            addTaskVC.transitioningDelegate = self.transitionManager
+        }
     }
     
     //MARK: date delegate
