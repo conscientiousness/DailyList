@@ -2,11 +2,16 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NotoSansCJKtc-Regular.otf">
-            <string>NotoSansCJKtc-Regular</string>
+        <mutableArray key="NotoSansCJKtc-Medium.otf">
+            <string>NotoSansCJKtc-Medium</string>
+        </mutableArray>
+        <mutableArray key="NotoSansCJKtc-Thin.otf">
+            <string>NotoSansCJKtc-Thin</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -16,55 +21,111 @@
             <rect key="frame" x="0.0" y="0.0" width="419" height="190"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="419" height="190"/>
+                <rect key="frame" x="0.0" y="0.0" width="419" height="189.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-GI-Ca9">
-                        <rect key="frame" x="12" y="2" width="395" height="188"/>
+                        <rect key="frame" x="8" y="4" width="403" height="181.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMJ-ux-FC7">
-                                <rect key="frame" x="20" y="17" width="367" height="21"/>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_test_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-YZ-pr3" customClass="DesignableImageView" customModule="DailyList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="403" height="98"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WMJ-ux-FC7">
+                                <rect key="frame" x="33.5" y="106" width="364.5" height="24.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="VCT-qr-mBM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Regular" family="Noto Sans CJK TC" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VCT-qr-mBM"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DH8-hL-oRG">
+                                <rect key="frame" x="5" y="135" width="393" height="43"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Thin" family="Noto Sans CJK TC" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgN-Da-PuW">
-                                <rect key="frame" x="0.0" y="0.0" width="15" height="188"/>
-                                <color key="backgroundColor" red="0.20902244792674107" green="0.71862598851453108" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="task_done_icon" translatesAutoresizingMaskIntoConstraints="NO" id="hdK-VD-1OX">
+                                <rect key="frame" x="5" y="106.5" width="23.5" height="23.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="15" id="0M0-YP-Clg"/>
+                                    <constraint firstAttribute="width" secondItem="hdK-VD-1OX" secondAttribute="height" multiplier="1:1" id="Xa9-4F-fah"/>
                                 </constraints>
-                            </view>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="WMJ-ux-FC7" secondAttribute="trailing" constant="8" id="0GH-5g-NCI"/>
-                            <constraint firstItem="WMJ-ux-FC7" firstAttribute="leading" secondItem="NgN-Da-PuW" secondAttribute="trailing" constant="5" id="1k2-bx-de6"/>
                             <constraint firstItem="WMJ-ux-FC7" firstAttribute="leading" secondItem="CNS-GI-Ca9" secondAttribute="leading" constant="5" id="36S-vb-B2z"/>
-                            <constraint firstItem="NgN-Da-PuW" firstAttribute="top" secondItem="CNS-GI-Ca9" secondAttribute="top" id="JMI-07-DgV"/>
-                            <constraint firstAttribute="bottom" secondItem="NgN-Da-PuW" secondAttribute="bottom" id="P1w-ng-4il"/>
+                            <constraint firstItem="WMJ-ux-FC7" firstAttribute="centerY" secondItem="hdK-VD-1OX" secondAttribute="centerY" id="54T-Z4-IyN"/>
+                            <constraint firstItem="WMJ-ux-FC7" firstAttribute="leading" secondItem="CNS-GI-Ca9" secondAttribute="leading" constant="5" id="6jf-z0-g3r"/>
+                            <constraint firstItem="WMJ-ux-FC7" firstAttribute="leading" secondItem="CNS-GI-Ca9" secondAttribute="leading" constant="8" id="AGI-Gs-Yot"/>
+                            <constraint firstItem="WMJ-ux-FC7" firstAttribute="height" secondItem="hdK-VD-1OX" secondAttribute="height" constant="1" id="BIf-Mu-XLe"/>
+                            <constraint firstAttribute="bottom" secondItem="WMJ-ux-FC7" secondAttribute="bottom" constant="80" id="FCT-4n-g6p"/>
+                            <constraint firstAttribute="bottom" secondItem="DH8-hL-oRG" secondAttribute="bottom" constant="3" id="HrU-Ug-RDQ"/>
+                            <constraint firstItem="Ifh-YZ-pr3" firstAttribute="top" secondItem="CNS-GI-Ca9" secondAttribute="top" id="J8j-Tl-CEd"/>
+                            <constraint firstAttribute="trailing" secondItem="DH8-hL-oRG" secondAttribute="trailing" constant="5" id="JDU-gn-Eyj"/>
+                            <constraint firstItem="WMJ-ux-FC7" firstAttribute="height" secondItem="CNS-GI-Ca9" secondAttribute="height" multiplier="0.65/5" id="KMT-OK-J0Y"/>
+                            <constraint firstItem="Ifh-YZ-pr3" firstAttribute="height" secondItem="CNS-GI-Ca9" secondAttribute="height" multiplier="2.7/5" id="PCA-lI-uAU"/>
+                            <constraint firstItem="Ifh-YZ-pr3" firstAttribute="leading" secondItem="CNS-GI-Ca9" secondAttribute="leading" id="PUs-t5-qer"/>
+                            <constraint firstItem="hdK-VD-1OX" firstAttribute="leading" secondItem="CNS-GI-Ca9" secondAttribute="leading" constant="5" id="Swc-GZ-tVF"/>
+                            <constraint firstItem="WMJ-ux-FC7" firstAttribute="leading" secondItem="hdK-VD-1OX" secondAttribute="trailing" constant="5" id="Z8v-tv-LGh"/>
                             <constraint firstItem="WMJ-ux-FC7" firstAttribute="top" secondItem="CNS-GI-Ca9" secondAttribute="top" constant="17" id="cQu-72-aSD"/>
-                            <constraint firstItem="NgN-Da-PuW" firstAttribute="leading" secondItem="CNS-GI-Ca9" secondAttribute="leading" id="gxM-a7-WrF"/>
+                            <constraint firstItem="DH8-hL-oRG" firstAttribute="leading" secondItem="CNS-GI-Ca9" secondAttribute="leading" constant="5" id="gCB-k9-vb6"/>
+                            <constraint firstAttribute="trailing" secondItem="WMJ-ux-FC7" secondAttribute="trailing" constant="5" id="jOf-ht-quB"/>
+                            <constraint firstItem="WMJ-ux-FC7" firstAttribute="top" secondItem="Ifh-YZ-pr3" secondAttribute="bottom" constant="8" id="l8W-aK-rqD"/>
+                            <constraint firstAttribute="trailing" secondItem="Ifh-YZ-pr3" secondAttribute="trailing" id="nts-00-DyU"/>
+                            <constraint firstItem="WMJ-ux-FC7" firstAttribute="top" secondItem="CNS-GI-Ca9" secondAttribute="top" constant="79" id="oYO-xS-JTg"/>
+                            <constraint firstItem="DH8-hL-oRG" firstAttribute="top" secondItem="WMJ-ux-FC7" secondAttribute="bottom" constant="5" id="ttS-wu-7nO"/>
+                            <constraint firstAttribute="trailing" secondItem="WMJ-ux-FC7" secondAttribute="trailing" constant="34" id="x0D-hO-th5"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="0.80000000000000004"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="shadowDesign" value="YES"/>
                         </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="0GH-5g-NCI"/>
                                 <exclude reference="36S-vb-B2z"/>
+                                <exclude reference="6jf-z0-g3r"/>
+                                <exclude reference="AGI-Gs-Yot"/>
+                                <exclude reference="FCT-4n-g6p"/>
+                                <exclude reference="cQu-72-aSD"/>
+                                <exclude reference="oYO-xS-JTg"/>
+                                <exclude reference="x0D-hO-th5"/>
                             </mask>
                         </variation>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="CNS-GI-Ca9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="3Sh-qB-bjf"/>
-                    <constraint firstItem="CNS-GI-Ca9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="PM7-tc-Que"/>
-                    <constraint firstItem="CNS-GI-Ca9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="m1i-b2-b0p"/>
-                    <constraint firstAttribute="trailing" secondItem="CNS-GI-Ca9" secondAttribute="trailing" constant="12" id="nPX-Hn-GbG"/>
-                    <constraint firstAttribute="bottom" secondItem="CNS-GI-Ca9" secondAttribute="bottom" id="yMk-Y3-ufX"/>
+                    <constraint firstItem="CNS-GI-Ca9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="PM7-tc-Que"/>
+                    <constraint firstItem="CNS-GI-Ca9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="m1i-b2-b0p"/>
+                    <constraint firstAttribute="trailing" secondItem="CNS-GI-Ca9" secondAttribute="trailing" constant="8" id="nPX-Hn-GbG"/>
+                    <constraint firstAttribute="bottom" secondItem="CNS-GI-Ca9" secondAttribute="bottom" constant="4" id="yMk-Y3-ufX"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -73,7 +134,14 @@
                 </variation>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="taskIconImageView" destination="hdK-VD-1OX" id="DZR-4q-pWM"/>
+            </connections>
             <point key="canvasLocation" x="415.5" y="220"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="cell_test_photo.png" width="618" height="412"/>
+        <image name="task_done_icon" width="32" height="32"/>
+    </resources>
 </document>

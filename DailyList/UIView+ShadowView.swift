@@ -20,10 +20,10 @@ extension UIView {
             
             if shadowKey {
                 self.layer.masksToBounds = false
-                self.layer.cornerRadius = 3.0
-                self.layer.shadowOpacity = 0.8
+                self.layer.cornerRadius = 3.5
+                self.layer.shadowOpacity = 0.85
                 self.layer.shadowRadius = 1.5
-                self.layer.shadowOffset = CGSizeMake(1.5, 0.0)
+                self.layer.shadowOffset = CGSizeMake(1.5, -1.0)
                 self.layer.shadowColor = UIColor(hex: "E3E3E3", alpha: 1).CGColor
             } else {
                 self.layer.cornerRadius = 0

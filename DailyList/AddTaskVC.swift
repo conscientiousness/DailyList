@@ -23,7 +23,10 @@ class AddTaskVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var saveButton: DesignableButton!
     @IBOutlet weak var backBtn: UIButton!
-
+    
+    // property
+    var currentDate: NSDate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configVC()

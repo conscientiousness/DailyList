@@ -17,9 +17,10 @@ class HomeCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        //self.fullyRound(10, borderColor: CustomColors.getMainColor(), borderWidth: 0)
+        self.backgroundColor = CustomColors.getTextFieldBgGreyColor()
         self.taskTableView.registerNib(UINib(nibName: "TaskTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
         self.taskTableView.separatorStyle = .None
+        self.taskTableView.backgroundColor = CustomColors.getTextFieldBgGreyColor()
         self.fullyRound(8, borderColor: nil, borderWidth: nil)
     }
     
@@ -42,7 +43,8 @@ extension HomeCollectionViewCell: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TaskTableViewCell
+        cell.configCell(indexPath)
         
         return cell
     }
@@ -51,6 +53,6 @@ extension HomeCollectionViewCell: UITableViewDataSource {
 extension HomeCollectionViewCell: UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 120;
+        return 180;
     }
 }

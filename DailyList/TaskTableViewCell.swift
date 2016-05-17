@@ -10,15 +10,29 @@ import UIKit
 
 class TaskTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var taskIconImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.backgroundColor = CustomColors.getTextFieldBgGreyColor()
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configCell(indexPath: NSIndexPath) {
+        
+        if indexPath.row % 5 == 0 {
+            
+            self.taskIconImageView.image = UIImage(named: "task_done_icon")
+            
+        } else if indexPath.row % 5 == 1 {
+            
+            self.taskIconImageView.image = UIImage(named: "task_todo_icon")
+            
+        } else {
+            
+            self.taskIconImageView.image = UIImage(named: "task_expired_icon")
+            
+        }
     }
     
 }

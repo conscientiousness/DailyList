@@ -8,11 +8,7 @@
 
 import UIKit
 
-@objc protocol currentDateDelegate: class {
-    optional func didChangeCurrentDate(date: NSDate)
-}
-
-class HomeVC: UIViewController,currentDateDelegate {
+class HomeVC: UIViewController {
     
     // @IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
@@ -24,7 +20,6 @@ class HomeVC: UIViewController,currentDateDelegate {
     private var currentDate :NSDate = NSDate()
     private var firstLaunch = true
     private var circleDateItemCGSize :CGSize = CGSizeMake(65, 65)
-    weak var delegate: currentDateDelegate?
     
     //MARK: getter & setter
     private var itemCGSize: CGSize {
@@ -36,7 +31,6 @@ class HomeVC: UIViewController,currentDateDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.delegate = self
         self.configureViewController()
         self.configureCollectionView()
     }
@@ -134,6 +128,7 @@ class HomeVC: UIViewController,currentDateDelegate {
         if segue.identifier == "AddTaskSegue" {
             
             let addTaskVC = segue.destinationViewController as! AddTaskVC
+            addTaskVC.currentDate = self.currentDate
             addTaskVC.transitioningDelegate = self.transitionManager
         }
     }
