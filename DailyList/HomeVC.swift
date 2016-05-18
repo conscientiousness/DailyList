@@ -12,6 +12,7 @@ class HomeVC: UIViewController {
     
     // @IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewHeightCT: NSLayoutConstraint!
     @IBOutlet weak var circleDateCollectionView: UICollectionView!
     @IBOutlet weak var yearMonthLabel: UILabel!
 
@@ -19,20 +20,25 @@ class HomeVC: UIViewController {
     private let transitionManager = TransitionManager()
     private var currentDate :NSDate = NSDate()
     private var firstLaunch = true
-    private var circleDateItemCGSize :CGSize = CGSizeMake(65, 65)
+    let screenSize: CGRect = UIScreen.mainScreen().bounds
     
     //MARK: getter & setter
     private var itemCGSize: CGSize {
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
-        return CGSizeMake(screenSize.size.width*0.86, self.collectionView.bounds.size.height*0.88)
+        return CGSizeMake(screenSize.size.width*0.86, self.collectionView.bounds.size.height)
+    }
+    
+    private var circleDateItemCGSize: CGSize {
+        let circleCVHeight: CGFloat = self.circleDateCollectionView.frame.size.height * 0.8
+        return CGSizeMake(circleCVHeight, circleCVHeight)
     }
     
     //MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.configureViewController()
-        self.configureCollectionView()
+        self.configLayout()
+        self.configViewController()
+        self.configCollectionView()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -42,18 +48,28 @@ class HomeVC: UIViewController {
         if(firstLaunch) {
             firstLaunch = false
             self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: NSDate().day - 1, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)
-            self.circleDateCollectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: NSDate().day - 1, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)        }
+            self.circleDateCollectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: NSDate().day - 1, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)
+        }
     }
     
     //MARK: private method
-    private func configureViewController() {
+    private func configLayout() {
+        print(self.screenSize.height)
+        let sh = self.screenSize.height
+        //4=480 5=568  6=667 6plus=736
+        if sh == 568 {
+            self.collectionViewHeightCT.constant = -20
+        }
+    }
+    
+    private func configViewController() {
         self.view.backgroundColor = CustomColors.getBackgroundColor()
         self.yearMonthLabel.textColor = CustomColors.getMainColor()
         self.yearMonthLabel.text = "\(self.currentDate.year)年\(self.currentDate.month)月"
         
     }
     
-    private func configureCollectionView() {
+    private func configCollectionView() {
         
         // config main Collection View
         self.collectionView.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCollectionViewCell")

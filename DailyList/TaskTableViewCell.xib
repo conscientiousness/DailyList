@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-GI-Ca9">
-                        <rect key="frame" x="8" y="4" width="403" height="181.5"/>
+                        <rect key="frame" x="8" y="4" width="403" height="182"/>
                         <subviews>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_test_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-YZ-pr3" customClass="DesignableImageView" customModule="DailyList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="403" height="98"/>
@@ -36,7 +36,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WMJ-ux-FC7">
-                                <rect key="frame" x="33.5" y="106" width="364.5" height="24.5"/>
+                                <rect key="frame" x="33" y="106" width="365" height="23.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="VCT-qr-mBM"/>
                                 </constraints>
@@ -50,13 +50,13 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔我是內容喔" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DH8-hL-oRG">
-                                <rect key="frame" x="5" y="135" width="393" height="43"/>
+                                <rect key="frame" x="5" y="134" width="393" height="44.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKtc-Thin" family="Noto Sans CJK TC" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="task_done_icon" translatesAutoresizingMaskIntoConstraints="NO" id="hdK-VD-1OX">
-                                <rect key="frame" x="5" y="106.5" width="23.5" height="23.5"/>
+                                <rect key="frame" x="5" y="107" width="23" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hdK-VD-1OX" secondAttribute="height" multiplier="1:1" id="Xa9-4F-fah"/>
                                 </constraints>
@@ -89,21 +89,6 @@
                             <constraint firstAttribute="trailing" secondItem="WMJ-ux-FC7" secondAttribute="trailing" constant="34" id="x0D-hO-th5"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                <real key="value" value="3"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                <real key="value" value="0.80000000000000004"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="4"/>
-                            </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="shadowDesign" value="YES"/>
                         </userDefinedRuntimeAttributes>
                         <variation key="default">
