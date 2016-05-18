@@ -46,7 +46,7 @@ class HomeVC: UIViewController {
                 cvh = self.collectionView.bounds.size.height + 20;
             }
         }
-        return CGSizeMake(screenSize.size.width*0.86, cvh)
+        return CGSizeMake(screenSize.size.width * 0.8, cvh)
     }
     
     private var circleDateItemCGSize: CGSize {
@@ -118,7 +118,7 @@ class HomeVC: UIViewController {
         
         // config main Collection View
         self.collectionView.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCollectionViewCell")
-        self.collectionView.collectionViewLayout = LGHorizontalLinearFlowLayout.configureLayout(collectionView: self.collectionView, itemSize: self.itemCGSize, minimumLineSpacing: -23)
+        self.collectionView.collectionViewLayout = LGHorizontalLinearFlowLayout.configureLayout(collectionView: self.collectionView, itemSize: self.itemCGSize, minimumLineSpacing: -15)
         self.collectionView.backgroundColor = UIColor.clearColor()
         
         // config circle date Collection View

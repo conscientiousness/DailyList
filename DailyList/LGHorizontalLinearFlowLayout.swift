@@ -13,7 +13,7 @@ public class LGHorizontalLinearFlowLayout: UICollectionViewFlowLayout {
     private var lastCollectionViewSize: CGSize = CGSizeZero
     
     public var scalingOffset: CGFloat = 200 //for offsets >= scalingOffset scale factor is minimumScaleFactor
-    public var minimumScaleFactor: CGFloat = 0.75
+    public var minimumScaleFactor: CGFloat = 0.77
     public var scaleItems: Bool = true
     
     
@@ -50,9 +50,10 @@ public class LGHorizontalLinearFlowLayout: UICollectionViewFlowLayout {
         }
         
         let inset = self.collectionView!.bounds.size.width / 2 - self.itemSize.width / 2
-        //self.collectionView!.contentInset = UIEdgeInsetsMake(-30, inset, 30, inset)
+        self.collectionView!.contentInset = UIEdgeInsetsMake(0, inset, 0, inset)
         self.collectionView!.contentOffset = CGPointMake(-inset, 0)
     }
+    
     
     public override func targetContentOffsetForProposedContentOffset(proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         if self.collectionView == nil {
