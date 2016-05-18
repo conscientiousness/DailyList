@@ -15,6 +15,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var collectionViewHeightCT: NSLayoutConstraint!
     @IBOutlet weak var circleDateCollectionView: UICollectionView!
     @IBOutlet weak var yearMonthLabel: UILabel!
+    @IBOutlet weak var addButtonWidthCT: NSLayoutConstraint!
 
     //MARK: properties
     private let transitionManager = TransitionManager()
@@ -22,13 +23,44 @@ class HomeVC: UIViewController {
     private var firstLaunch = true
     let screenSize: CGRect = UIScreen.mainScreen().bounds
     
+    enum ScreenHeight: CGFloat {
+        case ip4 = 480.0
+        case ip5 = 568.0
+        case ip6 = 667.0
+        case ip6Plus = 736.0
+    }
+    
     //MARK: getter & setter
     private var itemCGSize: CGSize {
-        return CGSizeMake(screenSize.size.width*0.86, self.collectionView.bounds.size.height)
+        var cvh = self.collectionView.bounds.size.height;
+        
+        if let screenHeight = ScreenHeight(rawValue: screenSize.height) {
+            switch screenHeight {
+            case .ip4:
+                cvh = cvh * 0.75
+            case .ip5:
+                cvh = cvh * 0.9
+            case .ip6Plus:
+                cvh = self.collectionView.bounds.size.height + 80
+            default:
+                cvh = self.collectionView.bounds.size.height + 20;
+            }
+        }
+        return CGSizeMake(screenSize.size.width*0.86, cvh)
     }
     
     private var circleDateItemCGSize: CGSize {
-        let circleCVHeight: CGFloat = self.circleDateCollectionView.frame.size.height * 0.8
+        var circleCVHeight: CGFloat = self.circleDateCollectionView.frame.size.height
+        if let screenHeight = ScreenHeight(rawValue: screenSize.height) {
+            switch screenHeight {
+            case .ip4:
+                circleCVHeight = circleCVHeight * 0.64
+            case .ip5:
+                circleCVHeight = circleCVHeight * 0.7
+            default:
+                circleCVHeight = circleCVHeight * 0.8;
+            }
+        }
         return CGSizeMake(circleCVHeight, circleCVHeight)
     }
     
@@ -54,11 +86,15 @@ class HomeVC: UIViewController {
     
     //MARK: private method
     private func configLayout() {
-        print(self.screenSize.height)
-        let sh = self.screenSize.height
-        //4=480 5=568  6=667 6plus=736
-        if sh == 568 {
-            self.collectionViewHeightCT.constant = -20
+        if let screenHeight = ScreenHeight(rawValue: screenSize.height) {
+            switch screenHeight {
+            case .ip4:
+                self.addButtonWidthCT.constant = 30
+            case .ip5:
+                self.addButtonWidthCT.constant = 40
+            default:
+                self.addButtonWidthCT.constant = 44
+            }
         }
     }
     
@@ -66,7 +102,16 @@ class HomeVC: UIViewController {
         self.view.backgroundColor = CustomColors.getBackgroundColor()
         self.yearMonthLabel.textColor = CustomColors.getMainColor()
         self.yearMonthLabel.text = "\(self.currentDate.year)年\(self.currentDate.month)月"
-        
+        if let screenHeight = ScreenHeight(rawValue: screenSize.height) {
+            switch screenHeight {
+            case .ip4:
+                self.yearMonthLabel.font = UIFont(name: "NotoSansCJKtc-Medium", size:12)
+            case .ip5:
+                self.yearMonthLabel.font = UIFont(name: "NotoSansCJKtc-Medium", size:16)
+            default:
+                self.yearMonthLabel.font = UIFont(name: "NotoSansCJKtc-Medium", size:19)
+            }
+        }
     }
     
     private func configCollectionView() {

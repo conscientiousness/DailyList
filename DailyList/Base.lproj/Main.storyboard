@@ -29,64 +29,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYJ-H2-HIJ">
-                                <rect key="frame" x="277.5" y="546" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="AYJ-H2-HIJ" secondAttribute="height" multiplier="1:1" id="6St-2J-Qe0"/>
-                                    <constraint firstAttribute="height" constant="44" id="6WH-Ju-yIH"/>
-                                    <constraint firstAttribute="width" constant="46" id="9y2-31-OBw"/>
-                                    <constraint firstAttribute="height" constant="30" id="UD6-vc-O43"/>
-                                    <constraint firstAttribute="width" constant="44" id="itE-pU-h7D"/>
-                                    <constraint firstAttribute="width" constant="44" id="vBL-Bm-12X"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="main_add_icon"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="6WH-Ju-yIH"/>
-                                        <exclude reference="9y2-31-OBw"/>
-                                        <exclude reference="UD6-vc-O43"/>
-                                        <exclude reference="itE-pU-h7D"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="iCR-Lc-Ugo" kind="presentation" identifier="AddTaskSegue" id="Li0-K9-EVr"/>
-                                </connections>
-                            </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sg3-pQ-mR9">
-                                <rect key="frame" x="5" y="51" width="590" height="79"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="79" id="90k-e0-DCZ"/>
-                                    <constraint firstAttribute="height" constant="80" id="owF-bD-gZJ"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K0d-b7-okP">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="90k-e0-DCZ"/>
-                                        <exclude reference="owF-bD-gZJ"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="nxQ-TH-mHC" id="Xw0-hK-7d9"/>
-                                    <outlet property="delegate" destination="nxQ-TH-mHC" id="qfA-Rg-Olb"/>
-                                </connections>
-                            </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016年3月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="H1j-gJ-VC2">
-                                <rect key="frame" x="200" y="30" width="200" height="19"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Ueq-5T-PTP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="19"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="mainList" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fq7-kj-lWI">
-                                <rect key="frame" x="0.0" y="132" width="600" height="409"/>
+                                <rect key="frame" x="0.0" y="141" width="600" height="409"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pGK-ZC-i2f">
                                     <size key="itemSize" width="50" height="50"/>
@@ -100,6 +44,58 @@
                                     <outlet property="delegate" destination="nxQ-TH-mHC" id="IHL-Dj-DbQ"/>
                                 </connections>
                             </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sg3-pQ-mR9">
+                                <rect key="frame" x="5" y="57" width="590" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="79" id="5bQ-xJ-dcF"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="79" id="90k-e0-DCZ"/>
+                                    <constraint firstAttribute="height" constant="80" id="owF-bD-gZJ"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K0d-b7-okP">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5bQ-xJ-dcF"/>
+                                        <exclude reference="90k-e0-DCZ"/>
+                                        <exclude reference="owF-bD-gZJ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="nxQ-TH-mHC" id="Xw0-hK-7d9"/>
+                                    <outlet property="delegate" destination="nxQ-TH-mHC" id="qfA-Rg-Olb"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016年3月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="H1j-gJ-VC2">
+                                <rect key="frame" x="200" y="28" width="200" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Ueq-5T-PTP"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="19" id="wmc-oN-wna"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wmc-oN-wna"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYJ-H2-HIJ">
+                                <rect key="frame" x="285" y="555" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AYJ-H2-HIJ" secondAttribute="height" multiplier="1:1" id="6St-2J-Qe0"/>
+                                    <constraint firstAttribute="width" constant="30" id="vBL-Bm-12X"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="main_add_icon"/>
+                                <connections>
+                                    <segue destination="iCR-Lc-Ugo" kind="presentation" identifier="AddTaskSegue" id="Li0-K9-EVr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -108,17 +104,25 @@
                             <constraint firstItem="Fq7-kj-lWI" firstAttribute="leading" secondItem="KSe-bZ-LsG" secondAttribute="leading" id="3IT-9O-TNK"/>
                             <constraint firstItem="H1j-gJ-VC2" firstAttribute="height" secondItem="KSe-bZ-LsG" secondAttribute="height" multiplier="0.03" constant="1" id="9PP-Ma-uPN"/>
                             <constraint firstAttribute="trailing" secondItem="sg3-pQ-mR9" secondAttribute="trailing" constant="5" id="F2M-ru-AUH"/>
+                            <constraint firstItem="H1j-gJ-VC2" firstAttribute="height" secondItem="KSe-bZ-LsG" secondAttribute="height" multiplier="0.035" constant="1" id="FbT-Oy-CMr"/>
                             <constraint firstItem="H1j-gJ-VC2" firstAttribute="centerX" secondItem="KSe-bZ-LsG" secondAttribute="centerX" id="G0Q-ao-WUa"/>
                             <constraint firstItem="Fq7-kj-lWI" firstAttribute="height" secondItem="KSe-bZ-LsG" secondAttribute="height" multiplier="0.68" constant="1" id="JRO-ER-77f"/>
                             <constraint firstItem="AYJ-H2-HIJ" firstAttribute="centerX" secondItem="KSe-bZ-LsG" secondAttribute="centerX" id="N8g-Gu-deg"/>
-                            <constraint firstItem="H1j-gJ-VC2" firstAttribute="top" secondItem="I95-MW-gfE" secondAttribute="bottom" constant="10" id="cpO-SX-nsl"/>
+                            <constraint firstItem="H1j-gJ-VC2" firstAttribute="top" secondItem="I95-MW-gfE" secondAttribute="bottom" constant="8" id="cpO-SX-nsl"/>
                             <constraint firstItem="AYJ-H2-HIJ" firstAttribute="top" secondItem="Fq7-kj-lWI" secondAttribute="bottom" constant="5" id="dpg-0o-nik"/>
                             <constraint firstItem="sg3-pQ-mR9" firstAttribute="top" secondItem="H1j-gJ-VC2" secondAttribute="bottom" constant="2" id="lyB-bT-FHH"/>
-                            <constraint firstItem="1B4-UU-ce8" firstAttribute="top" secondItem="AYJ-H2-HIJ" secondAttribute="bottom" constant="10" id="mC9-2N-9Jw"/>
+                            <constraint firstItem="1B4-UU-ce8" firstAttribute="top" secondItem="AYJ-H2-HIJ" secondAttribute="bottom" constant="15" id="mC9-2N-9Jw"/>
                             <constraint firstItem="Fq7-kj-lWI" firstAttribute="top" secondItem="sg3-pQ-mR9" secondAttribute="bottom" constant="2" id="uiZ-Mh-Bqs"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9PP-Ma-uPN"/>
+                                <exclude reference="FbT-Oy-CMr"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="addButtonWidthCT" destination="vBL-Bm-12X" id="y1t-ci-enQ"/>
                         <outlet property="circleDateCollectionView" destination="sg3-pQ-mR9" id="Qe5-57-86w"/>
                         <outlet property="collectionView" destination="Fq7-kj-lWI" id="niA-oK-r1r"/>
                         <outlet property="collectionViewHeightCT" destination="JRO-ER-77f" id="4me-fU-7z7"/>
