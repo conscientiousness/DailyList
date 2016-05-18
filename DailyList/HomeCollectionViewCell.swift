@@ -13,15 +13,20 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var taskTableView: UITableView!
     @IBOutlet weak var emptyImageView: UIImageView!
     @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var cellContentView: SpringView!
+
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.backgroundColor = CustomColors.getTextFieldBgGreyColor()
+        self.backgroundColor = CustomColors.getBackgroundColor()
         self.taskTableView.registerNib(UINib(nibName: "TaskTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
         self.taskTableView.separatorStyle = .None
-        self.taskTableView.backgroundColor = CustomColors.getTextFieldBgGreyColor()
-        self.fullyRound(8, borderColor: nil, borderWidth: nil)
+        self.taskTableView.backgroundColor = CustomColors.getBackgroundColor()
+        
+        self.cellContentView.fullyRound(8, borderColor: nil, borderWidth: nil)
+        self.cellContentView.backgroundColor = CustomColors.getTextFieldBgGreyColor()
     }
     
     func configCell(indexPath: NSIndexPath, currentDate: NSDate) {

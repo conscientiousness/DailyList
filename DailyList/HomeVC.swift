@@ -14,7 +14,8 @@ class HomeVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeightCT: NSLayoutConstraint!
     @IBOutlet weak var circleDateCollectionView: UICollectionView!
-    @IBOutlet weak var yearMonthLabel: UILabel!
+    @IBOutlet weak var yearMonthLabel: DesignableLabel!
+    @IBOutlet weak var addButton: DesignableButton!
     @IBOutlet weak var addButtonWidthCT: NSLayoutConstraint!
 
     //MARK: properties
@@ -79,9 +80,32 @@ class HomeVC: UIViewController {
         // 移動到今天的cell
         if(firstLaunch) {
             firstLaunch = false
-            self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: NSDate().day - 1, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)
-            self.circleDateCollectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: NSDate().day - 1, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: true)
+            let indexPath: NSIndexPath = NSIndexPath(forRow: NSDate().day - 1, inSection: 0)
+            if indexPath.row < 3 {
+                self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: true)
+            } else {
+                let indexPathBefore: NSIndexPath = NSIndexPath(forRow: NSDate().day - 3, inSection: 0)
+                self.collectionView.scrollToItemAtIndexPath(indexPathBefore, atScrollPosition: .CenteredHorizontally, animated: false)
+                UIView.animateWithDuration(1.0, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: .CurveLinear, animations: {
+                        self.collectionView.alpha = 1
+                        self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: false)
+                        self.circleDateCollectionView.alpha = 1
+                        self.circleDateCollectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: false)
+                    }, completion: { (finish: Bool) in
+                        if finish {
+                            self.yearMonthLabel.hidden = false
+                            self.yearMonthLabel.animation = "zoomIn"
+                            self.yearMonthLabel.animate()
+                            
+                            self.addButton.alpha = 1;
+                            self.addButton.animation = "fadeInUp"
+                            self.addButton.curve = "spring"
+                            self.addButton.animate()
+                        }
+                })
+            }
         }
+        
     }
     
     //MARK: private method
@@ -99,7 +123,12 @@ class HomeVC: UIViewController {
     }
     
     private func configViewController() {
+        
         self.view.backgroundColor = CustomColors.getBackgroundColor()
+        
+        self.addButton.alpha = 0
+        
+        self.yearMonthLabel.hidden = true
         self.yearMonthLabel.textColor = CustomColors.getMainColor()
         self.yearMonthLabel.text = "\(self.currentDate.year)年\(self.currentDate.month)月"
         if let screenHeight = ScreenHeight(rawValue: screenSize.height) {
@@ -120,11 +149,13 @@ class HomeVC: UIViewController {
         self.collectionView.registerNib(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "homeCollectionViewCell")
         self.collectionView.collectionViewLayout = LGHorizontalLinearFlowLayout.configureLayout(collectionView: self.collectionView, itemSize: self.itemCGSize, minimumLineSpacing: -15)
         self.collectionView.backgroundColor = UIColor.clearColor()
+        self.collectionView.alpha = 0
         
         // config circle date Collection View
         self.circleDateCollectionView.registerNib(UINib(nibName: "CircleDateCollectionCell", bundle: nil), forCellWithReuseIdentifier: "circleDateCollectionCell")
         self.circleDateCollectionView.collectionViewLayout = CircleDateFlowLayout.configureLayout(collectionView: self.circleDateCollectionView, itemSize: self.circleDateItemCGSize, minimumLineSpacing: 10)
         self.circleDateCollectionView.backgroundColor = UIColor.clearColor()
+        self.circleDateCollectionView.alpha = 0
 
         self.navigationController?.navigationBarHidden = true
     }
