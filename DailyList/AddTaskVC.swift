@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class AddTaskVC: UIViewController, UITextFieldDelegate {
+class AddTaskVC: UIViewController {
     
     // @IBOutlet
     @IBOutlet weak var taskNameTextField: DesignableTextField!
@@ -23,13 +24,31 @@ class AddTaskVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var saveButton: DesignableButton!
     @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var displayDateLabel: UILabel!
     
     // property
     var currentDate: NSDate?
+    var itemToEdit: Page?
+    var pages = [Page]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configVC()
+        
+        let request = NSFetchRequest(entityName: "Page")
+        do {
+            self.pages = try ad.managedObjectContext.executeFetchRequest(request) as! [Page]
+        } catch {}
+        
+        for page: Page in pages {
+
+            if let pageItems = page.pageItems {
+                for item: PageItem in pageItems.allObjects as! [PageItem] {
+                    print("task name = \(item.title!)")
+                }
+            }
+            
+        }
     }
     
     //MARK: Private Method
@@ -46,9 +65,19 @@ class AddTaskVC: UIViewController, UITextFieldDelegate {
         self.taskTimeTextField.backgroundColor = CustomColors.getTextFieldBgGreyColor()
         self.taskTimeTextField.delegate = self
         
-        self.taskAlertBgView.fullyRound(3, borderColor: CustomColors.getTextFieldBgGreyColor(), borderWidth: 2)
+        self.taskAlertBgView.fullyRound(5, borderColor: CustomColors.getTextFieldBgGreyColor(), borderWidth: 2)
+        
+        self.displayDateLabel.fullyRound(5, borderColor: nil, borderWidth: nil)
+        if let currentDate = currentDate {
+            self.displayDateLabel.text = "\(currentDate.year)/\(currentDate.month)/\(currentDate.day)"
+        }
         
         self.saveButton.backgroundColor = CustomColors.getMainColor()
+    }
+    
+    //MARK: Touch event
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
     }
 
     //MARK: Button Method
@@ -57,7 +86,6 @@ class AddTaskVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func alertSwitchChanged(sender: UISwitch) {
-        
         if sender.on {
             self.taskAlertImageView.image = UIImage(named: "bell_icon")
             self.taskAlertImageView.animation = "zoomIn"
@@ -68,7 +96,30 @@ class AddTaskVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    //MARK: textField Delegate
+    @IBAction func saveBtnPressed(sender: AnyObject) {
+        
+        var page: Page!
+        var pageItem: PageItem!
+        
+        if itemToEdit == nil {
+            page = NSEntityDescription.insertNewObjectForEntityForName("Page", inManagedObjectContext: ad.managedObjectContext) as! Page
+            pageItem = NSEntityDescription.insertNewObjectForEntityForName("PageItem", inManagedObjectContext: ad.managedObjectContext) as! PageItem
+        } else {
+            page = itemToEdit
+        }
+        
+        if let taskName = taskNameTextField.text {
+            pageItem.title = taskName
+        }
+        
+        page.addPageItems(pageItem)
+        ad.saveContext()
+        
+    }
+}
+
+extension AddTaskVC: UITextFieldDelegate {
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         
         let hasText: Bool = textField.text!.length > 0
@@ -115,9 +166,4 @@ class AddTaskVC: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        view.endEditing(true)
-    }
-
 }

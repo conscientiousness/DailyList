@@ -14,6 +14,7 @@
             <string>NotoSansCJKtc-Medium</string>
             <string>NotoSansCJKtc-Medium</string>
             <string>NotoSansCJKtc-Medium</string>
+            <string>NotoSansCJKtc-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -169,7 +170,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="開始日期" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PU5-xg-Tqx" customClass="DesignableTextField" customModule="DailyList" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="開始日期" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PU5-xg-Tqx" customClass="DesignableTextField" customModule="DailyList" customModuleProvider="target">
                                         <rect key="frame" x="20" y="132" width="560" height="50"/>
                                         <color key="backgroundColor" red="0.93245741800000004" green="0.93865859709999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -221,19 +222,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_gray_icon" translatesAutoresizingMaskIntoConstraints="NO" id="4FH-ZI-OOM" customClass="SpringImageView" customModule="DailyList" customModuleProvider="target">
-                                        <rect key="frame" x="34" y="146" width="23" height="23"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="23" id="Uiw-aj-fOA"/>
-                                            <constraint firstAttribute="width" constant="23" id="uBc-Sv-d2f"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="task_gray_icon" translatesAutoresizingMaskIntoConstraints="NO" id="G3E-nN-015" customClass="SpringImageView" customModule="DailyList" customModuleProvider="target">
                                         <rect key="frame" x="34" y="87" width="23" height="23"/>
                                         <constraints>
@@ -268,6 +256,9 @@
                                                 <exclude reference="mjd-3w-xk0"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="saveBtnPressed:" destination="iCR-Lc-Ugo" eventType="touchUpInside" id="CPd-EU-Zzr"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新增任務" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzp-Fz-VlC">
                                         <rect key="frame" x="245" y="15" width="111" height="39"/>
@@ -334,6 +325,29 @@
                                             </mask>
                                         </variation>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016/03/14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDu-Ff-teB">
+                                        <rect key="frame" x="456" y="140" width="112" height="34"/>
+                                        <color key="backgroundColor" red="0.99215686270000003" green="0.72156862749999995" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="112" id="0OE-Tn-Tao"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_gray_icon" translatesAutoresizingMaskIntoConstraints="NO" id="4FH-ZI-OOM" customClass="SpringImageView" customModule="DailyList" customModuleProvider="target">
+                                        <rect key="frame" x="34" y="145" width="23" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="Uiw-aj-fOA"/>
+                                            <constraint firstAttribute="width" constant="23" id="uBc-Sv-d2f"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -361,11 +375,13 @@
                                     <constraint firstItem="KZQ-6X-e8O" firstAttribute="width" secondItem="CXV-Xm-kbU" secondAttribute="width" multiplier="0.47" id="PcX-aI-vyJ"/>
                                     <constraint firstItem="KZQ-6X-e8O" firstAttribute="trailing" secondItem="CXV-Xm-kbU" secondAttribute="trailing" id="PmD-JT-Djd"/>
                                     <constraint firstAttribute="trailing" secondItem="CXV-Xm-kbU" secondAttribute="trailing" constant="20" id="Pnr-Ug-k0L"/>
+                                    <constraint firstItem="FDu-Ff-teB" firstAttribute="top" secondItem="PU5-xg-Tqx" secondAttribute="top" constant="8" id="QEA-sx-xGJ"/>
                                     <constraint firstItem="PU5-xg-Tqx" firstAttribute="leading" secondItem="CXV-Xm-kbU" secondAttribute="leading" id="Rjp-Wm-ZjM"/>
                                     <constraint firstItem="CXV-Xm-kbU" firstAttribute="top" secondItem="jzp-Fz-VlC" secondAttribute="bottom" constant="20" id="Szr-03-pMP"/>
                                     <constraint firstItem="KZQ-6X-e8O" firstAttribute="trailing" secondItem="CXV-Xm-kbU" secondAttribute="trailing" id="UHA-1P-ITN"/>
                                     <constraint firstItem="CXV-Xm-kbU" firstAttribute="leading" secondItem="uaq-ah-kL9" secondAttribute="leading" id="a9i-rX-sXp"/>
                                     <constraint firstItem="NGt-Ua-Gxe" firstAttribute="leading" secondItem="CXV-Xm-kbU" secondAttribute="leading" id="bTd-lw-Be7"/>
+                                    <constraint firstItem="FDu-Ff-teB" firstAttribute="trailing" secondItem="PU5-xg-Tqx" secondAttribute="trailing" constant="-12" id="bVY-ne-dsZ"/>
                                     <constraint firstItem="CXV-Xm-kbU" firstAttribute="leading" secondItem="voS-Pr-Qhf" secondAttribute="leading" constant="20" id="bn0-nr-qNb"/>
                                     <constraint firstAttribute="trailing" secondItem="CXV-Xm-kbU" secondAttribute="trailing" constant="20" id="dPS-wc-p5t"/>
                                     <constraint firstItem="NGt-Ua-Gxe" firstAttribute="centerY" secondItem="voS-Pr-Qhf" secondAttribute="centerY" id="e3O-SA-AZA"/>
@@ -381,9 +397,11 @@
                                     <constraint firstItem="4FH-ZI-OOM" firstAttribute="leading" secondItem="PU5-xg-Tqx" secondAttribute="leading" constant="14" id="nl6-wE-Ta5"/>
                                     <constraint firstItem="KZQ-6X-e8O" firstAttribute="leading" secondItem="CXV-Xm-kbU" secondAttribute="leading" id="pv1-nB-BXi"/>
                                     <constraint firstItem="KZQ-6X-e8O" firstAttribute="top" secondItem="PU5-xg-Tqx" secondAttribute="bottom" constant="8" id="qD8-qD-IM8"/>
+                                    <constraint firstItem="FDu-Ff-teB" firstAttribute="bottom" secondItem="PU5-xg-Tqx" secondAttribute="bottom" constant="-8" id="qOC-5p-doV"/>
                                     <constraint firstItem="uaq-ah-kL9" firstAttribute="leading" secondItem="voS-Pr-Qhf" secondAttribute="leading" constant="20" id="rvQ-u6-4tg"/>
                                     <constraint firstAttribute="trailing" secondItem="CXV-Xm-kbU" secondAttribute="trailing" constant="20" id="thP-FK-NG3"/>
                                     <constraint firstItem="Y1j-Hd-CUb" firstAttribute="trailing" secondItem="CXV-Xm-kbU" secondAttribute="trailing" id="toP-zN-wDh"/>
+                                    <constraint firstItem="FDu-Ff-teB" firstAttribute="centerY" secondItem="PU5-xg-Tqx" secondAttribute="centerY" id="wge-iB-Syu"/>
                                     <constraint firstItem="PU5-xg-Tqx" firstAttribute="top" secondItem="CXV-Xm-kbU" secondAttribute="bottom" constant="8" id="zQo-BQ-GH9"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -407,6 +425,7 @@
                                         <exclude reference="DZX-fs-E7F"/>
                                         <exclude reference="M7U-4y-mUK"/>
                                         <exclude reference="e3O-SA-AZA"/>
+                                        <exclude reference="wge-iB-Syu"/>
                                         <exclude reference="8AF-Uc-EDq"/>
                                         <exclude reference="Omn-Qe-lbn"/>
                                         <exclude reference="l04-Ns-SSg"/>
@@ -442,6 +461,7 @@
                     <connections>
                         <outlet property="backBtn" destination="uaq-ah-kL9" id="mxv-Us-wPd"/>
                         <outlet property="contentView" destination="voS-Pr-Qhf" id="2L8-8W-dOh"/>
+                        <outlet property="displayDateLabel" destination="FDu-Ff-teB" id="TNA-xd-Imc"/>
                         <outlet property="saveButton" destination="Y1j-Hd-CUb" id="yfs-jG-q3i"/>
                         <outlet property="taskAlertBgView" destination="NGt-Ua-Gxe" id="UqL-Vo-4e7"/>
                         <outlet property="taskAlertImageView" destination="CS6-Mm-CFk" id="iG0-WZ-c8l"/>

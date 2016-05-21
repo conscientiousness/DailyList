@@ -49,6 +49,10 @@
 		F45FB5BF1CD2681B006510CF /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5AC1CD2681B006510CF /* Region.swift */; };
 		F45FB5C61CD26866006510CF /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5C41CD26866006510CF /* HomeCollectionViewCell.swift */; };
 		F45FB5C71CD26866006510CF /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */; };
+		F4DEC7B41CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7B01CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift */; };
+		F4DEC7B51CF0BB6B00828D06 /* PageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7B11CF0BB6B00828D06 /* PageItem.swift */; };
+		F4DEC7B81CF0CA8400828D06 /* Page+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7B61CF0CA8400828D06 /* Page+CoreDataProperties.swift */; };
+		F4DEC7B91CF0CA8400828D06 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7B71CF0CA8400828D06 /* Page.swift */; };
 		F4E217D01CE4F1B50025F361 /* CircleDateCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E217CF1CE4F1B50025F361 /* CircleDateCollectionCell.xib */; };
 		F4E217D21CE4F1D80025F361 /* CircleDateCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E217D11CE4F1D80025F361 /* CircleDateCollectionCell.swift */; };
 		F4E217D41CE587160025F361 /* CircleDateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E217D31CE587160025F361 /* CircleDateFlowLayout.swift */; };
@@ -92,10 +96,6 @@
 		F4E218341CE8FF810025F361 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E2182E1CE8FF810025F361 /* TPKeyboardAvoidingScrollView.m */; };
 		F4E218351CE8FF810025F361 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E218301CE8FF810025F361 /* TPKeyboardAvoidingTableView.m */; };
 		F4E218361CE8FF810025F361 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E218321CE8FF810025F361 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
-		F4EE94AD1CD87B3B00105A70 /* Page+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE94A91CD87B3B00105A70 /* Page+CoreDataProperties.swift */; };
-		F4EE94AE1CD87B3B00105A70 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE94AA1CD87B3B00105A70 /* Page.swift */; };
-		F4EE94AF1CD87B3B00105A70 /* PageItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE94AB1CD87B3B00105A70 /* PageItem+CoreDataProperties.swift */; };
-		F4EE94B01CD87B3B00105A70 /* PageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EE94AC1CD87B3B00105A70 /* PageItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +164,10 @@
 		F45FB5AC1CD2681B006510CF /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Region.swift; path = Lib/SwiftDate/Region.swift; sourceTree = "<group>"; };
 		F45FB5C41CD26866006510CF /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		F4DEC7B01CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F4DEC7B11CF0BB6B00828D06 /* PageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItem.swift; sourceTree = "<group>"; };
+		F4DEC7B61CF0CA8400828D06 /* Page+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Page+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F4DEC7B71CF0CA8400828D06 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		F4E217CF1CE4F1B50025F361 /* CircleDateCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleDateCollectionCell.xib; sourceTree = "<group>"; };
 		F4E217D11CE4F1D80025F361 /* CircleDateCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDateCollectionCell.swift; sourceTree = "<group>"; };
 		F4E217D31CE587160025F361 /* CircleDateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDateFlowLayout.swift; sourceTree = "<group>"; };
@@ -213,10 +217,6 @@
 		F4E218301CE8FF810025F361 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingTableView.m; path = Lib/TPKeyboardAvoiding/TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		F4E218311CE8FF810025F361 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+TPKeyboardAvoidingAdditions.h"; path = "Lib/TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		F4E218321CE8FF810025F361 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+TPKeyboardAvoidingAdditions.m"; path = "Lib/TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
-		F4EE94A91CD87B3B00105A70 /* Page+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Page+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F4EE94AA1CD87B3B00105A70 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
-		F4EE94AB1CD87B3B00105A70 /* PageItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F4EE94AC1CD87B3B00105A70 /* PageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -512,8 +512,8 @@
 		F4EE94B11CD87B5700105A70 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				F4EE94AA1CD87B3B00105A70 /* Page.swift */,
-				F4EE94AC1CD87B3B00105A70 /* PageItem.swift */,
+				F4DEC7B71CF0CA8400828D06 /* Page.swift */,
+				F4DEC7B11CF0BB6B00828D06 /* PageItem.swift */,
 				F4EE94B21CD87B6600105A70 /* Generated */,
 			);
 			name = CoreData;
@@ -522,8 +522,8 @@
 		F4EE94B21CD87B6600105A70 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				F4EE94A91CD87B3B00105A70 /* Page+CoreDataProperties.swift */,
-				F4EE94AB1CD87B3B00105A70 /* PageItem+CoreDataProperties.swift */,
+				F4DEC7B61CF0CA8400828D06 /* Page+CoreDataProperties.swift */,
+				F4DEC7B01CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -679,6 +679,7 @@
 				F45FB5BB1CD2681B006510CF /* NSDateInterval.swift in Sources */,
 				F45FB5B41CD2681B006510CF /* DateInRegion+Operations.swift in Sources */,
 				F4E218141CE8F0DF0025F361 /* DesignableTextField.swift in Sources */,
+				F4DEC7B91CF0CA8400828D06 /* Page.swift in Sources */,
 				F45FB5AF1CD2681B006510CF /* DateInRegion+Comparisons.swift in Sources */,
 				F4E2181C1CE8F0DF0025F361 /* Misc.swift in Sources */,
 				F4E218111CE8F0DF0025F361 /* DesignableImageView.swift in Sources */,
@@ -692,6 +693,7 @@
 				F45FB5C61CD26866006510CF /* HomeCollectionViewCell.swift in Sources */,
 				F4E218121CE8F0DF0025F361 /* DesignableLabel.swift in Sources */,
 				F45FB5B31CD2681B006510CF /* DateInRegion+NSDatePort.swift in Sources */,
+				F4DEC7B81CF0CA8400828D06 /* Page+CoreDataProperties.swift in Sources */,
 				F40175051CD618A500F27461 /* AddTaskVC.swift in Sources */,
 				F4E2180F1CE8F0DF0025F361 /* BlurView.swift in Sources */,
 				F45FB5AE1CD2681B006510CF /* DateInRegion.swift in Sources */,
@@ -705,13 +707,9 @@
 				F4E218341CE8FF810025F361 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				F45FB5561CD266F7006510CF /* HomeVC.swift in Sources */,
 				F4E218271CE8F0DF0025F361 /* TransitionZoom.swift in Sources */,
-				F4EE94AF1CD87B3B00105A70 /* PageItem+CoreDataProperties.swift in Sources */,
 				F45FB58F1CD2675E006510CF /* UIColor+hex.swift in Sources */,
-				F4EE94AD1CD87B3B00105A70 /* Page+CoreDataProperties.swift in Sources */,
 				F4E218201CE8F0DF0025F361 /* SpringButton.swift in Sources */,
 				F4E2181D1CE8F0DF0025F361 /* SoundPlayer.swift in Sources */,
-				F4EE94B01CD87B3B00105A70 /* PageItem.swift in Sources */,
-				F4EE94AE1CD87B3B00105A70 /* Page.swift in Sources */,
 				F4E218361CE8FF810025F361 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				F4E218231CE8F0DF0025F361 /* SpringTextField.swift in Sources */,
 				F45FB5BC1CD2681B006510CF /* NSLocale+SwiftDate.swift in Sources */,
@@ -719,6 +717,7 @@
 				F45FB5B11CD2681B006510CF /* DateInRegion+Equations.swift in Sources */,
 				F4E218261CE8F0DF0025F361 /* TransitionManager.swift in Sources */,
 				F45FB5981CD267B0006510CF /* DateCenter.swift in Sources */,
+				F4DEC7B51CF0BB6B00828D06 /* PageItem.swift in Sources */,
 				F4E217D41CE587160025F361 /* CircleDateFlowLayout.swift in Sources */,
 				F45FB5971CD267B0006510CF /* CustomColors.swift in Sources */,
 				F45FB5B21CD2681B006510CF /* DateInRegion+Formatter.swift in Sources */,
@@ -737,6 +736,7 @@
 				F45FB5AD1CD2681B006510CF /* Additions.swift in Sources */,
 				F4E218191CE8F0DF0025F361 /* KeyboardLayoutConstraint.swift in Sources */,
 				F45FB5901CD2675E006510CF /* UIView+RoundingCorners.swift in Sources */,
+				F4DEC7B41CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift in Sources */,
 				F4E218251CE8F0DF0025F361 /* SpringView.swift in Sources */,
 				F45FB5B71CD2681B006510CF /* NSCalendar+SwiftDate.swift in Sources */,
 				F45FB5921CD26765006510CF /* LGHorizontalLinearFlowLayout.swift in Sources */,
