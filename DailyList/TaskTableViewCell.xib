@@ -120,7 +120,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="detailLabel" destination="DH8-hL-oRG" id="sO7-mU-L3w"/>
                 <outlet property="taskIconImageView" destination="hdK-VD-1OX" id="DZR-4q-pWM"/>
+                <outlet property="titleLabel" destination="WMJ-ux-FC7" id="sA8-NM-jgo"/>
             </connections>
             <point key="canvasLocation" x="415.5" y="220"/>
         </tableViewCell>

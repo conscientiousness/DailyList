@@ -119,13 +119,13 @@
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="9wJ-OG-p06"/>
-                                                <exclude reference="M53-IZ-yrV"/>
                                                 <exclude reference="Gob-hK-yBb"/>
+                                                <exclude reference="M53-IZ-yrV"/>
                                                 <exclude reference="bkM-H2-j5T"/>
-                                                <exclude reference="lhb-Pu-8sR"/>
+                                                <exclude reference="J6R-2B-NGN"/>
                                                 <exclude reference="KXJ-Sp-egp"/>
                                                 <exclude reference="Tq3-2o-imi"/>
-                                                <exclude reference="J6R-2B-NGN"/>
+                                                <exclude reference="lhb-Pu-8sR"/>
                                                 <exclude reference="mc6-3o-S7D"/>
                                             </mask>
                                         </variation>
@@ -250,10 +250,10 @@
                                                 <exclude reference="AOn-lQ-71V"/>
                                                 <exclude reference="BFH-7n-Wlu"/>
                                                 <exclude reference="fU2-AT-427"/>
-                                                <exclude reference="SDY-Lr-9ju"/>
                                                 <exclude reference="0vd-5s-91M"/>
-                                                <exclude reference="xv1-8m-5Dj"/>
+                                                <exclude reference="SDY-Lr-9ju"/>
                                                 <exclude reference="jVd-TC-XNb"/>
+                                                <exclude reference="xv1-8m-5Dj"/>
                                                 <exclude reference="ygG-JX-CAT"/>
                                             </mask>
                                         </variation>
@@ -302,6 +302,7 @@
                 <outlet property="dataListView" destination="MPZ-ww-1Ue" id="TAK-QG-7wl"/>
                 <outlet property="emptyImageView" destination="tAU-kR-jA6" id="QrS-Bl-Mq9"/>
                 <outlet property="emptyLabel" destination="baF-dk-TqC" id="Vcl-ot-zn7"/>
+                <outlet property="emptyView" destination="XrS-IY-MH5" id="e9x-g7-6zT"/>
                 <outlet property="taskTableView" destination="9zS-ak-E6d" id="gKO-Z3-HmK"/>
             </connections>
             <point key="canvasLocation" x="28" y="216"/>

@@ -51,4 +51,9 @@ struct DateCenter {
         }
     }
     
+    static func getDateString(date: NSDate) -> String {
+        
+        return "\(date.year)\(date.month)\(date.day)"
+    }
+    
 }

@@ -112,6 +112,9 @@ class AddTaskVC: UIViewController {
             pageItem.title = taskName
         }
         
+        if let currentDate = currentDate {
+            page.pageDate = "\(currentDate.year)\(currentDate.month)\(currentDate.day)"
+        }
         page.addPageItems(pageItem)
         ad.saveContext()
         

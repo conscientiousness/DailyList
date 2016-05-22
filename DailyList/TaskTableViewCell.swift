@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class TaskTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var taskIconImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -18,7 +21,9 @@ class TaskTableViewCell: UITableViewCell {
         self.backgroundColor = CustomColors.getTextFieldBgGreyColor()
     }
 
-    func configCell(indexPath: NSIndexPath) {
+    func configCell(indexPath: NSIndexPath, pageItem: PageItem) {
+        
+        titleLabel.text = pageItem.title
         
         if indexPath.row % 5 == 0 {
             

@@ -51,8 +51,8 @@
 		F45FB5C71CD26866006510CF /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */; };
 		F4DEC7B41CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7B01CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift */; };
 		F4DEC7B51CF0BB6B00828D06 /* PageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7B11CF0BB6B00828D06 /* PageItem.swift */; };
-		F4DEC7B81CF0CA8400828D06 /* Page+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7B61CF0CA8400828D06 /* Page+CoreDataProperties.swift */; };
-		F4DEC7B91CF0CA8400828D06 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7B71CF0CA8400828D06 /* Page.swift */; };
+		F4DEC7BE1CF20E0C00828D06 /* Page+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7BC1CF20E0C00828D06 /* Page+CoreDataProperties.swift */; };
+		F4DEC7BF1CF20E0C00828D06 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7BD1CF20E0C00828D06 /* Page.swift */; };
 		F4E217D01CE4F1B50025F361 /* CircleDateCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E217CF1CE4F1B50025F361 /* CircleDateCollectionCell.xib */; };
 		F4E217D21CE4F1D80025F361 /* CircleDateCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E217D11CE4F1D80025F361 /* CircleDateCollectionCell.swift */; };
 		F4E217D41CE587160025F361 /* CircleDateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E217D31CE587160025F361 /* CircleDateFlowLayout.swift */; };
@@ -166,8 +166,8 @@
 		F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		F4DEC7B01CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F4DEC7B11CF0BB6B00828D06 /* PageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItem.swift; sourceTree = "<group>"; };
-		F4DEC7B61CF0CA8400828D06 /* Page+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Page+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F4DEC7B71CF0CA8400828D06 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		F4DEC7BC1CF20E0C00828D06 /* Page+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Page+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F4DEC7BD1CF20E0C00828D06 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		F4E217CF1CE4F1B50025F361 /* CircleDateCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleDateCollectionCell.xib; sourceTree = "<group>"; };
 		F4E217D11CE4F1D80025F361 /* CircleDateCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDateCollectionCell.swift; sourceTree = "<group>"; };
 		F4E217D31CE587160025F361 /* CircleDateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDateFlowLayout.swift; sourceTree = "<group>"; };
@@ -512,8 +512,8 @@
 		F4EE94B11CD87B5700105A70 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				F4DEC7B71CF0CA8400828D06 /* Page.swift */,
 				F4DEC7B11CF0BB6B00828D06 /* PageItem.swift */,
+				F4DEC7BD1CF20E0C00828D06 /* Page.swift */,
 				F4EE94B21CD87B6600105A70 /* Generated */,
 			);
 			name = CoreData;
@@ -522,8 +522,8 @@
 		F4EE94B21CD87B6600105A70 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				F4DEC7B61CF0CA8400828D06 /* Page+CoreDataProperties.swift */,
 				F4DEC7B01CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift */,
+				F4DEC7BC1CF20E0C00828D06 /* Page+CoreDataProperties.swift */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -679,7 +679,6 @@
 				F45FB5BB1CD2681B006510CF /* NSDateInterval.swift in Sources */,
 				F45FB5B41CD2681B006510CF /* DateInRegion+Operations.swift in Sources */,
 				F4E218141CE8F0DF0025F361 /* DesignableTextField.swift in Sources */,
-				F4DEC7B91CF0CA8400828D06 /* Page.swift in Sources */,
 				F45FB5AF1CD2681B006510CF /* DateInRegion+Comparisons.swift in Sources */,
 				F4E2181C1CE8F0DF0025F361 /* Misc.swift in Sources */,
 				F4E218111CE8F0DF0025F361 /* DesignableImageView.swift in Sources */,
@@ -693,12 +692,12 @@
 				F45FB5C61CD26866006510CF /* HomeCollectionViewCell.swift in Sources */,
 				F4E218121CE8F0DF0025F361 /* DesignableLabel.swift in Sources */,
 				F45FB5B31CD2681B006510CF /* DateInRegion+NSDatePort.swift in Sources */,
-				F4DEC7B81CF0CA8400828D06 /* Page+CoreDataProperties.swift in Sources */,
 				F40175051CD618A500F27461 /* AddTaskVC.swift in Sources */,
 				F4E2180F1CE8F0DF0025F361 /* BlurView.swift in Sources */,
 				F45FB5AE1CD2681B006510CF /* DateInRegion.swift in Sources */,
 				F45FB5B61CD2681B006510CF /* Dictionary+SwiftDate.swift in Sources */,
 				F4E218211CE8F0DF0025F361 /* SpringImageView.swift in Sources */,
+				F4DEC7BF1CF20E0C00828D06 /* Page.swift in Sources */,
 				F4E218131CE8F0DF0025F361 /* DesignableTabBarController.swift in Sources */,
 				F401750F1CD62DF700F27461 /* TaskTableViewCell.swift in Sources */,
 				F4E2180E1CE8F0DF0025F361 /* AutoTextView.swift in Sources */,
@@ -736,6 +735,7 @@
 				F45FB5AD1CD2681B006510CF /* Additions.swift in Sources */,
 				F4E218191CE8F0DF0025F361 /* KeyboardLayoutConstraint.swift in Sources */,
 				F45FB5901CD2675E006510CF /* UIView+RoundingCorners.swift in Sources */,
+				F4DEC7BE1CF20E0C00828D06 /* Page+CoreDataProperties.swift in Sources */,
 				F4DEC7B41CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift in Sources */,
 				F4E218251CE8F0DF0025F361 /* SpringView.swift in Sources */,
 				F45FB5B71CD2681B006510CF /* NSCalendar+SwiftDate.swift in Sources */,

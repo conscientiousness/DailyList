@@ -14,7 +14,7 @@ import CoreData
 
 extension Page {
 
-    @NSManaged var pageDate: NSDate?
+    @NSManaged var pageDate: String?
     @NSManaged var pageItems: NSSet?
 
 }
