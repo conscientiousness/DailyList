@@ -10,18 +10,19 @@ import Foundation
 
 struct DateCenter {
     
-    static func getCurrentDateWithCellIndex(currentCellIdx: Int, date: NSDate) -> NSDate {
+    static func getCurrentDateWithCellIndex(currentCellIdx: Int) -> DateInRegion {
         
         let day = currentCellIdx + 1
-        let newDate = NSDate(year: date.year, month: date.month, day: day)
+        let currentDate = CurrentDate.sharedInstance.nowDate
+        let newDate = DateInRegion(year: currentDate.year, month: currentDate.month, day: day)
 
         return newDate
     }
     
-    static func getWeekDayString(date: NSDate, shortString: Bool) -> String {
+    static func getWeekDayString(shortString: Bool) -> String {
         
         
-        let weekDay = date.weekday
+        let weekDay = CurrentDate.sharedInstance.nowDate.weekday
         var weekDayStr: (shortString: String,normalString: String)
         
         switch weekDay {

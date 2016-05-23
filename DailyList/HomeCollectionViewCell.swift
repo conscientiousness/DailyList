@@ -35,10 +35,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     func configCell(indexPath: NSIndexPath) {
         
-        print("idx = \(indexPath.row)")
         let imgName: String = "empty_photo\((indexPath.row % 6) + 1)"
         self.emptyImageView.image = UIImage(named: imgName)
-        let cellDate = DateCenter.getCurrentDateWithCellIndex(indexPath.row, date: CurrentDate.sharedInstance.nowDate)
+        let cellDate = DateCenter.getCurrentDateWithCellIndex(indexPath.row)
         self.emptyLabel.text = "You have nothing on \(cellDate.month)/\(cellDate.day)"
     }
 }

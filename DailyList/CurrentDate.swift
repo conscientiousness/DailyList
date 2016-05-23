@@ -10,12 +10,12 @@ import Foundation
 
 class CurrentDate {
 
-    var nowDate: NSDate = NSDate()
+    var nowDate = DateInRegion(year: NSDate().year, month: NSDate().month, day: NSDate().day)
     
     static let sharedInstance = CurrentDate()
     
-    func changeDay(index: Int) {
-        self.nowDate = NSDate(year: nowDate.year, month: nowDate.month, day: (index + 1))
+    func changeDayWithIndex(index: Int) {
+        self.nowDate = DateInRegion(year: nowDate.year, month: nowDate.month, day: (index + 1))
     }
     
 }

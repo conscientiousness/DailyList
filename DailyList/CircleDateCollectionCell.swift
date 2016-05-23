@@ -17,11 +17,11 @@ class CircleDateCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func configCell(indexPath: NSIndexPath, currentDate: NSDate) {
+    func configCell(indexPath: NSIndexPath, currentDate: DateInRegion) {
         
         let dayInt: Int = indexPath.row + 1
         self.fullyRound(self.frame.size.width, borderColor: CustomColors.getMainColor(), borderWidth: 0)
-        self.weekLabel.text =  DateCenter.getWeekDayString(DateCenter.getCurrentDateWithCellIndex(indexPath.row, date:currentDate), shortString: true)
+        self.weekLabel.text =  DateCenter.getWeekDayString(true)
         self.dayLabel.text = String(dayInt)
             
         if self.selected {

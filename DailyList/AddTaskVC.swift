@@ -27,9 +27,9 @@ class AddTaskVC: UIViewController {
     @IBOutlet weak var displayDateLabel: UILabel!
     
     // property
-    var currentCellDate: NSDate?
-    var itemToEdit: Page?
-    var pages = [Page]()
+    private var currentDate: DateInRegion = CurrentDate.sharedInstance.nowDate
+    private var itemToEdit: Page?
+    private var pages = [Page]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,9 +68,8 @@ class AddTaskVC: UIViewController {
         self.taskAlertBgView.fullyRound(5, borderColor: CustomColors.getTextFieldBgGreyColor(), borderWidth: 2)
         
         self.displayDateLabel.fullyRound(5, borderColor: nil, borderWidth: nil)
-        if let currentDate = currentCellDate {
-            self.displayDateLabel.text = "\(currentDate.year)/\(currentDate.month)/\(currentDate.day)"
-        }
+        print(currentDate)
+        self.displayDateLabel.text = "\(currentDate.year)/\(currentDate.month)/\(currentDate.day)"
         
         self.saveButton.backgroundColor = CustomColors.getMainColor()
     }
@@ -112,9 +111,7 @@ class AddTaskVC: UIViewController {
             pageItem.title = taskName
         }
         
-        if let currentDate = currentCellDate {
-            page.pageDate = "\(currentDate.year)\(currentDate.month)\(currentDate.day)"
-        }
+        page.pageDate = "\(currentDate.year)\(currentDate.month)\(currentDate.day)"
         page.addPageItems(pageItem)
         ad.saveContext()
         

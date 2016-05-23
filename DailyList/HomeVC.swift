@@ -20,19 +20,26 @@ class HomeVC: UIViewController {
     @IBOutlet weak var addButtonWidthCT: NSLayoutConstraint!
 
     //MARK: properties
-    private let transitionManager = TransitionManager()
-    private let currentDate = CurrentDate.sharedInstance.nowDate
-    private var firstLaunch = true
-    let screenSize: CGRect = UIScreen.mainScreen().bounds
-    var itemsArray = [PageItem]()
-    var fetchedResultsController: NSFetchedResultsController!
-    
     enum ScreenHeight: CGFloat {
         case ip4 = 480.0
         case ip5 = 568.0
         case ip6 = 667.0
         case ip6Plus = 736.0
     }
+    
+    enum ScrollDirection {
+        case right,left
+    }
+    
+    private let transitionManager = TransitionManager()
+    private let currentDate = CurrentDate.sharedInstance.nowDate
+    private var firstLaunch = true
+    private var lastContentOffset: CGFloat = 0
+    private var scrollDirection: ScrollDirection = .right
+    
+    let screenSize: CGRect = UIScreen.mainScreen().bounds
+    var itemsArray = [PageItem]()
+    var fetchedResultsController: NSFetchedResultsController!
     
     //MARK: getter & setter
     private var itemCGSize: CGSize {
@@ -71,7 +78,6 @@ class HomeVC: UIViewController {
     //MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.configLayout()
         self.configViewController()
         self.configCollectionView()
@@ -163,7 +169,7 @@ class HomeVC: UIViewController {
         self.navigationController?.navigationBarHidden = true
     }
     
-    private func getCurrentCellRow() -> Int {
+    private func getCenterCellRow() -> Int? {
         
         var rowAry = [Int]()
         for cell in self.collectionView.visibleCells() {
@@ -174,14 +180,15 @@ class HomeVC: UIViewController {
         }
         rowAry = rowAry.sort()
         //print("rowAry = \(rowAry))")
-        if(rowAry.count == 3) {
+        if rowAry.count == 3 {
             return rowAry[1]
         }
-        else if(rowAry.count == 2) {
-            return rowAry[0] == 0 ? 0:rowAry[1]
+        else if rowAry.count == 2 {
+
+            return self.scrollDirection == .right ? rowAry[0]:rowAry[1]
         }
         
-        return rowAry[0]
+        return nil
     }
     
     private func changeCellBgColorWithIndexPath(indexPath: NSIndexPath, didSelected: Bool) {
@@ -229,11 +236,10 @@ extension HomeVC: UICollectionViewDataSource,UICollectionViewDelegate {
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
+
         if(collectionView == self.collectionView) {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("homeCollectionViewCell", forIndexPath: indexPath) as! HomeCollectionViewCell
             cell.configCell(indexPath)
-            
             return cell
         }
         else {
@@ -265,28 +271,49 @@ extension HomeVC: UICollectionViewDataSource,UICollectionViewDelegate {
 //MARK: UIScrollViewDelegate
 extension HomeVC: UIScrollViewDelegate {
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        if self.lastContentOffset > scrollView.contentOffset.x {
+            // move right
+            self.scrollDirection = .right
+        }
+        else if self.lastContentOffset < scrollView.contentOffset.x {
+            // move left
+            self.scrollDirection = .left
+        }
+    
+        // update the new position acquired
+        self.lastContentOffset = scrollView.contentOffset.x
+        
+        if let idx = self.getCenterCellRow() {
+            CurrentDate.sharedInstance.changeDayWithIndex(idx)
+        }
+    }
+    
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         
-        let className = NSStringFromClass(view.classForCoder).componentsSeparatedByString(".").last!
-        if(className == "HomeCollectionViewCell") {
-            self.addButton.enabled = false
+        if let view: UIView = scrollView.subviews.first {
+            let className = NSStringFromClass(view.classForCoder).componentsSeparatedByString(".").last!
+            if(className == "HomeCollectionViewCell") {
+                self.addButton.enabled = false
+            }
         }
     }
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         
         if let view: UIView = scrollView.subviews.first {
-            
             let className = NSStringFromClass(view.classForCoder).componentsSeparatedByString(".").last!
             if(className == "HomeCollectionViewCell") {
                 
-                let indexPath: NSIndexPath = NSIndexPath(forRow: self.getCurrentCellRow(), inSection: 0)
-                // 同步移動快捷日曆列
-                self.circleDateCollectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: .CenteredHorizontally)
-                self.collectionView(self.circleDateCollectionView, didSelectItemAtIndexPath: indexPath)
+                if let idx = self.getCenterCellRow() {
+                    let indexPath: NSIndexPath = NSIndexPath(forRow: idx, inSection: 0)
+                    // 同步移動快捷日曆列
+                    self.circleDateCollectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: .CenteredHorizontally)
+                    self.collectionView(self.circleDateCollectionView, didSelectItemAtIndexPath: indexPath)
+                }
                 self.addButton.enabled = true
             }
-            
         }
     }
 }
