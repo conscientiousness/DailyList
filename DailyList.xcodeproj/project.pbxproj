@@ -53,6 +53,7 @@
 		F4DEC7B51CF0BB6B00828D06 /* PageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7B11CF0BB6B00828D06 /* PageItem.swift */; };
 		F4DEC7BE1CF20E0C00828D06 /* Page+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7BC1CF20E0C00828D06 /* Page+CoreDataProperties.swift */; };
 		F4DEC7BF1CF20E0C00828D06 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7BD1CF20E0C00828D06 /* Page.swift */; };
+		F4DEC7C31CF2C7B800828D06 /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7C21CF2C7B800828D06 /* CurrentDate.swift */; };
 		F4E217D01CE4F1B50025F361 /* CircleDateCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E217CF1CE4F1B50025F361 /* CircleDateCollectionCell.xib */; };
 		F4E217D21CE4F1D80025F361 /* CircleDateCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E217D11CE4F1D80025F361 /* CircleDateCollectionCell.swift */; };
 		F4E217D41CE587160025F361 /* CircleDateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E217D31CE587160025F361 /* CircleDateFlowLayout.swift */; };
@@ -168,6 +169,7 @@
 		F4DEC7B11CF0BB6B00828D06 /* PageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItem.swift; sourceTree = "<group>"; };
 		F4DEC7BC1CF20E0C00828D06 /* Page+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Page+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F4DEC7BD1CF20E0C00828D06 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		F4DEC7C21CF2C7B800828D06 /* CurrentDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
 		F4E217CF1CE4F1B50025F361 /* CircleDateCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleDateCollectionCell.xib; sourceTree = "<group>"; };
 		F4E217D11CE4F1D80025F361 /* CircleDateCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDateCollectionCell.swift; sourceTree = "<group>"; };
 		F4E217D31CE587160025F361 /* CircleDateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDateFlowLayout.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				F4EE94B11CD87B5700105A70 /* CoreData */,
+				F4DEC7C21CF2C7B800828D06 /* CurrentDate.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				F45FB5971CD267B0006510CF /* CustomColors.swift in Sources */,
 				F45FB5B21CD2681B006510CF /* DateInRegion+Formatter.swift in Sources */,
 				F4E218241CE8F0DF0025F361 /* SpringTextView.swift in Sources */,
+				F4DEC7C31CF2C7B800828D06 /* CurrentDate.swift in Sources */,
 				F4E2180D1CE8F0DF0025F361 /* AsyncImageView.swift in Sources */,
 				F4E218351CE8FF810025F361 /* TPKeyboardAvoidingTableView.m in Sources */,
 				F4E217D21CE4F1D80025F361 /* CircleDateCollectionCell.swift in Sources */,

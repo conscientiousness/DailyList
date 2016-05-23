@@ -31,7 +31,7 @@ class CircleDateCollectionCell: UICollectionViewCell {
             self.backgroundColor = UIColor.clearColor()
         }
         
-        if dayInt == currentDate.day {
+        if dayInt == NSDate().day {
             self.backgroundColor = CustomColors.getMainColor()
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeVC: UIViewController {
     
@@ -20,9 +21,11 @@ class HomeVC: UIViewController {
 
     //MARK: properties
     private let transitionManager = TransitionManager()
-    private var currentDate :NSDate = NSDate()
+    private let currentDate = CurrentDate.sharedInstance.nowDate
     private var firstLaunch = true
     let screenSize: CGRect = UIScreen.mainScreen().bounds
+    var itemsArray = [PageItem]()
+    var fetchedResultsController: NSFetchedResultsController!
     
     enum ScreenHeight: CGFloat {
         case ip4 = 480.0
@@ -181,13 +184,6 @@ class HomeVC: UIViewController {
         return rowAry[0]
     }
     
-    private func updateDateTitleLabel() {
-        //print("cell idx = \(self.getCurrentCellRow())")
-        let currentIdx = self.getCurrentCellRow()
-        self.currentDate = DateCenter.getCurrentDateWithCellIndex(currentIdx, date: self.currentDate)
-        //self.dayLabel.text = String(self.currentDate.day)
-    }
-    
     private func changeCellBgColorWithIndexPath(indexPath: NSIndexPath, didSelected: Bool) {
         
         if(didSelected) {
@@ -206,7 +202,7 @@ class HomeVC: UIViewController {
         else {
             let cell = self.circleDateCollectionView.cellForItemAtIndexPath(indexPath) as? CircleDateCollectionCell
             if let cell = cell {
-                if((indexPath.row + 1) != self.currentDate.day) {
+                if((indexPath.row + 1) != NSDate().day) {
                     cell.backgroundColor = UIColor.clearColor()
                 } else {
                     cell.backgroundColor = CustomColors.getMainColor()
@@ -220,15 +216,8 @@ class HomeVC: UIViewController {
         if segue.identifier == "AddTaskSegue" {
             
             let addTaskVC = segue.destinationViewController as! AddTaskVC
-            addTaskVC.currentDate = self.currentDate
             addTaskVC.transitioningDelegate = self.transitionManager
         }
-    }
-    
-    //MARK: date delegate
-    func didChangeCurrentDate(date: NSDate) {
-        print("This is delegate date = \(date)")
-        self.currentDate = date
     }
 }
 
@@ -243,7 +232,7 @@ extension HomeVC: UICollectionViewDataSource,UICollectionViewDelegate {
         
         if(collectionView == self.collectionView) {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("homeCollectionViewCell", forIndexPath: indexPath) as! HomeCollectionViewCell
-            cell.configCell(indexPath, currentDate: self.currentDate)
+            cell.configCell(indexPath)
             
             return cell
         }
@@ -276,6 +265,14 @@ extension HomeVC: UICollectionViewDataSource,UICollectionViewDelegate {
 //MARK: UIScrollViewDelegate
 extension HomeVC: UIScrollViewDelegate {
     
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        
+        let className = NSStringFromClass(view.classForCoder).componentsSeparatedByString(".").last!
+        if(className == "HomeCollectionViewCell") {
+            self.addButton.enabled = false
+        }
+    }
+    
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         
         if let view: UIView = scrollView.subviews.first {
@@ -287,11 +284,85 @@ extension HomeVC: UIScrollViewDelegate {
                 // 同步移動快捷日曆列
                 self.circleDateCollectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: .CenteredHorizontally)
                 self.collectionView(self.circleDateCollectionView, didSelectItemAtIndexPath: indexPath)
+                self.addButton.enabled = true
             }
             
         }
     }
+}
+
+extension HomeVC: NSFetchedResultsControllerDelegate {
     
-    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+    func attemptFetch() {
+        
+        do {
+            try self.fetchedResultsController.performFetch()
+        } catch {
+            let error = error as NSError
+            print("\(error), \(error.userInfo)")
+        }
+    }
+    
+    func setFetchedResults(currentDate: NSDate) {
+        
+        let fetchRequest = NSFetchRequest(entityName: "PageItem")
+        fetchRequest.predicate = NSPredicate(format:"page.pageDate == %@", "\(DateCenter.getDateString(currentDate))")
+        let sortDescriptor = NSSortDescriptor(key: "createDate", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        do {
+            self.itemsArray = try ad.managedObjectContext.executeFetchRequest(fetchRequest) as! [PageItem]
+            if self.itemsArray.count > 0 {
+                let item: PageItem = self.itemsArray.first!
+                print("COUNT = \(self.itemsArray.count), item.page = \(item.page?.pageDate), currentDate = \(DateCenter.getDateString(currentDate))")
+            }
+            
+        } catch {}
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: ad.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        controller.delegate = self
+        
+        fetchedResultsController = controller
+    }
+    
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        //self.taskTableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        //self.taskTableView.endUpdates()
+    }
+    
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        
+        switch(type) {
+        case .Insert:
+            //            if let indexPath = newIndexPath {
+            //                self.taskTableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            //            }
+            break
+        case .Delete:
+            //            if let indexPath =  indexPath {
+            //                self.taskTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            //            }
+            break
+        case .Update:
+            //            if let indexPath = indexPath {
+            //                let cell = tableView.cellForRowAtIndexPath(indexPath) as! ItemCell
+            //                configureCell(cell, indexPath: indexPath)
+            //            }
+            break
+        case .Move:
+            //            if let indexPath = indexPath  {
+            //                self.taskTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            //            }
+            //
+            //            if let newIndexPath = newIndexPath {
+            //                self.taskTableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+            //            }
+            break
+        }
     }
 }
+

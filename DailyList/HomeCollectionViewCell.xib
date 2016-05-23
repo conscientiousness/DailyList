@@ -28,7 +28,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XrS-IY-MH5" userLabel="EmptyView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tAU-kR-jA6">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_photo1.png" translatesAutoresizingMaskIntoConstraints="NO" id="tAU-kR-jA6">
                                         <rect key="frame" x="165" y="75" width="270" height="270"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="tAU-kR-jA6" secondAttribute="height" multiplier="1:1" id="qoJ-gO-jNQ"/>
@@ -309,6 +309,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="empty_photo1.png" width="786" height="795"/>
         <image name="task_done_icon" width="32" height="32"/>
         <image name="task_expired_icon" width="32" height="33"/>
         <image name="task_todo_icon" width="32" height="33"/>
