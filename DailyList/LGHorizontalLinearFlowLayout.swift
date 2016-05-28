@@ -99,7 +99,7 @@ public class LGHorizontalLinearFlowLayout: UICollectionViewFlowLayout {
             let pageWidth = self.itemSize.width + self.minimumLineSpacing
             newOffsetX += velocity.x > 0 ? pageWidth : -pageWidth
         }
-        
+
         return CGPointMake(newOffsetX, proposedContentOffset.y)
     }
     

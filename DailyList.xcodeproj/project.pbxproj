@@ -15,6 +15,8 @@
 		F401750F1CD62DF700F27461 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401750D1CD62DF700F27461 /* TaskTableViewCell.swift */; };
 		F40175101CD62DF700F27461 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F401750E1CD62DF700F27461 /* TaskTableViewCell.xib */; };
 		F4221A4F1CEADE73001735B9 /* cell_test_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = F4221A4E1CEADE73001735B9 /* cell_test_photo.png */; };
+		F448E86C1CF3851200B2B993 /* Page+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448E86A1CF3851200B2B993 /* Page+CoreDataProperties.swift */; };
+		F448E86D1CF3851200B2B993 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448E86B1CF3851200B2B993 /* Page.swift */; };
 		F45FB5541CD266F7006510CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5531CD266F7006510CF /* AppDelegate.swift */; };
 		F45FB5561CD266F7006510CF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5551CD266F7006510CF /* HomeVC.swift */; };
 		F45FB5591CD266F7006510CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45FB5571CD266F7006510CF /* Main.storyboard */; };
@@ -51,8 +53,6 @@
 		F45FB5C71CD26866006510CF /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */; };
 		F4DEC7B41CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7B01CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift */; };
 		F4DEC7B51CF0BB6B00828D06 /* PageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7B11CF0BB6B00828D06 /* PageItem.swift */; };
-		F4DEC7BE1CF20E0C00828D06 /* Page+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7BC1CF20E0C00828D06 /* Page+CoreDataProperties.swift */; };
-		F4DEC7BF1CF20E0C00828D06 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7BD1CF20E0C00828D06 /* Page.swift */; };
 		F4DEC7C31CF2C7B800828D06 /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DEC7C21CF2C7B800828D06 /* CurrentDate.swift */; };
 		F4E217D01CE4F1B50025F361 /* CircleDateCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E217CF1CE4F1B50025F361 /* CircleDateCollectionCell.xib */; };
 		F4E217D21CE4F1D80025F361 /* CircleDateCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E217D11CE4F1D80025F361 /* CircleDateCollectionCell.swift */; };
@@ -125,6 +125,8 @@
 		F401750D1CD62DF700F27461 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		F401750E1CD62DF700F27461 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
 		F4221A4E1CEADE73001735B9 /* cell_test_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_test_photo.png; sourceTree = "<group>"; };
+		F448E86A1CF3851200B2B993 /* Page+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Page+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F448E86B1CF3851200B2B993 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		F45FB5501CD266F7006510CF /* DailyList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45FB5531CD266F7006510CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F45FB5551CD266F7006510CF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -167,8 +169,6 @@
 		F45FB5C51CD26866006510CF /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		F4DEC7B01CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PageItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F4DEC7B11CF0BB6B00828D06 /* PageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageItem.swift; sourceTree = "<group>"; };
-		F4DEC7BC1CF20E0C00828D06 /* Page+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Page+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F4DEC7BD1CF20E0C00828D06 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		F4DEC7C21CF2C7B800828D06 /* CurrentDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
 		F4E217CF1CE4F1B50025F361 /* CircleDateCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleDateCollectionCell.xib; sourceTree = "<group>"; };
 		F4E217D11CE4F1D80025F361 /* CircleDateCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleDateCollectionCell.swift; sourceTree = "<group>"; };
@@ -516,7 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				F4DEC7B11CF0BB6B00828D06 /* PageItem.swift */,
-				F4DEC7BD1CF20E0C00828D06 /* Page.swift */,
+				F448E86B1CF3851200B2B993 /* Page.swift */,
 				F4EE94B21CD87B6600105A70 /* Generated */,
 			);
 			name = CoreData;
@@ -526,7 +526,7 @@
 			isa = PBXGroup;
 			children = (
 				F4DEC7B01CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift */,
-				F4DEC7BC1CF20E0C00828D06 /* Page+CoreDataProperties.swift */,
+				F448E86A1CF3851200B2B993 /* Page+CoreDataProperties.swift */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -700,13 +700,13 @@
 				F45FB5AE1CD2681B006510CF /* DateInRegion.swift in Sources */,
 				F45FB5B61CD2681B006510CF /* Dictionary+SwiftDate.swift in Sources */,
 				F4E218211CE8F0DF0025F361 /* SpringImageView.swift in Sources */,
-				F4DEC7BF1CF20E0C00828D06 /* Page.swift in Sources */,
 				F4E218131CE8F0DF0025F361 /* DesignableTabBarController.swift in Sources */,
 				F401750F1CD62DF700F27461 /* TaskTableViewCell.swift in Sources */,
 				F4E2180E1CE8F0DF0025F361 /* AutoTextView.swift in Sources */,
 				F4E218171CE8F0DF0025F361 /* ImageLoader.swift in Sources */,
 				F4E218281CE8F0DF0025F361 /* UnwindSegue.swift in Sources */,
 				F4E218341CE8FF810025F361 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				F448E86C1CF3851200B2B993 /* Page+CoreDataProperties.swift in Sources */,
 				F45FB5561CD266F7006510CF /* HomeVC.swift in Sources */,
 				F4E218271CE8F0DF0025F361 /* TransitionZoom.swift in Sources */,
 				F45FB58F1CD2675E006510CF /* UIColor+hex.swift in Sources */,
@@ -739,11 +739,11 @@
 				F45FB5AD1CD2681B006510CF /* Additions.swift in Sources */,
 				F4E218191CE8F0DF0025F361 /* KeyboardLayoutConstraint.swift in Sources */,
 				F45FB5901CD2675E006510CF /* UIView+RoundingCorners.swift in Sources */,
-				F4DEC7BE1CF20E0C00828D06 /* Page+CoreDataProperties.swift in Sources */,
 				F4DEC7B41CF0BB6B00828D06 /* PageItem+CoreDataProperties.swift in Sources */,
 				F4E218251CE8F0DF0025F361 /* SpringView.swift in Sources */,
 				F45FB5B71CD2681B006510CF /* NSCalendar+SwiftDate.swift in Sources */,
 				F45FB5921CD26765006510CF /* LGHorizontalLinearFlowLayout.swift in Sources */,
+				F448E86D1CF3851200B2B993 /* Page.swift in Sources */,
 				F45FB5BA1CD2681B006510CF /* NSDateFormatter+SwiftDate.swift in Sources */,
 				F4E2180C1CE8F0DF0025F361 /* AsyncButton.swift in Sources */,
 				F45FB5BE1CD2681B006510CF /* NSTimeZone+SwiftDate.swift in Sources */,

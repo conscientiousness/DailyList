@@ -15,6 +15,7 @@ class AddTaskVC: UIViewController {
     @IBOutlet weak var taskNameTextField: DesignableTextField!
     @IBOutlet weak var taskDateTextField: DesignableTextField!
     @IBOutlet weak var taskTimeTextField: DesignableTextField!
+    @IBOutlet weak var memoTextView: DesignableTextView!
     @IBOutlet weak var taskNameImageView: SpringImageView!
     @IBOutlet weak var taskDateImageView: SpringImageView!
     @IBOutlet weak var taskTimeImageView: SpringImageView!
@@ -28,27 +29,12 @@ class AddTaskVC: UIViewController {
     
     // property
     private var currentDate: DateInRegion = CurrentDate.sharedInstance.nowDate
-    private var itemToEdit: Page?
-    private var pages = [Page]()
+    var pageData: Page?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configVC()
-        
-        let request = NSFetchRequest(entityName: "Page")
-        do {
-            self.pages = try ad.managedObjectContext.executeFetchRequest(request) as! [Page]
-        } catch {}
-        
-        for page: Page in pages {
-
-            if let pageItems = page.pageItems {
-                for item: PageItem in pageItems.allObjects as! [PageItem] {
-                    print("task name = \(item.title!)")
-                }
-            }
-            
-        }
+        print(pageData)
     }
     
     //MARK: Private Method
@@ -65,10 +51,11 @@ class AddTaskVC: UIViewController {
         self.taskTimeTextField.backgroundColor = CustomColors.getTextFieldBgGreyColor()
         self.taskTimeTextField.delegate = self
         
+        self.memoTextView.borderColor = CustomColors.getTextFieldBgGreyColor()
+        
         self.taskAlertBgView.fullyRound(5, borderColor: CustomColors.getTextFieldBgGreyColor(), borderWidth: 2)
         
         self.displayDateLabel.fullyRound(5, borderColor: nil, borderWidth: nil)
-        print(currentDate)
         self.displayDateLabel.text = "\(currentDate.year)/\(currentDate.month)/\(currentDate.day)"
         
         self.saveButton.backgroundColor = CustomColors.getMainColor()
@@ -100,18 +87,21 @@ class AddTaskVC: UIViewController {
         var page: Page!
         var pageItem: PageItem!
         
-        if itemToEdit == nil {
-            page = NSEntityDescription.insertNewObjectForEntityForName("Page", inManagedObjectContext: ad.managedObjectContext) as! Page
-            pageItem = NSEntityDescription.insertNewObjectForEntityForName("PageItem", inManagedObjectContext: ad.managedObjectContext) as! PageItem
+        pageItem = NSEntityDescription.insertNewObjectForEntityForName("PageItem", inManagedObjectContext: ad.managedObjectContext) as! PageItem
+        
+        if let p = pageData {
+            page = p
         } else {
-            page = itemToEdit
+            page = NSEntityDescription.insertNewObjectForEntityForName("Page", inManagedObjectContext: ad.managedObjectContext) as! Page
         }
         
         if let taskName = taskNameTextField.text {
             pageItem.title = taskName
         }
-        
-        page.pageDate = "\(currentDate.year)\(currentDate.month)\(currentDate.day)"
+
+        page.year = String(currentDate.year)
+        page.month = String(currentDate.month)
+        page.day = String(currentDate.day)
         page.addPageItems(pageItem)
         ad.saveContext()
         

@@ -2,7 +2,7 @@
 //  Page.swift
 //  DailyList
 //
-//  Created by Jesselin on 2016/5/22.
+//  Created by Jesselin on 2016/5/24.
 //  Copyright © 2016年 JesseLin. All rights reserved.
 //
 
@@ -22,5 +22,5 @@ class Page: NSManagedObject {
             }
         }
     }
-
 }
+

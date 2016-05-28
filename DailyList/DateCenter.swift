@@ -52,9 +52,8 @@ struct DateCenter {
         }
     }
     
-    static func getDateString(date: NSDate) -> String {
-        
-        return "\(date.year)\(date.month)\(date.day)"
+    static func getDateString(date: DateInRegion) -> (year: String, month: String, day: String) {
+        return (String(date.year), String(format: "%02d", date.month), String(format: "%02d", date.day))
     }
     
 }

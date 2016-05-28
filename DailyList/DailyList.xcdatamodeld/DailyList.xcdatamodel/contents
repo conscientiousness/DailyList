@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15F34" minimumToolsVersion="Automatic">
     <entity name="Page" representedClassName=".Page" syncable="YES">
-        <attribute name="pageDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="day" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="pageItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PageItem" inverseName="page" inverseEntity="PageItem" syncable="YES"/>
     </entity>
     <entity name="PageItem" representedClassName=".PageItem" syncable="YES">
@@ -17,7 +19,7 @@
         <relationship name="page" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Page" inverseName="pageItems" inverseEntity="Page" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Page" positionX="-110" positionY="42" width="128" height="73"/>
+        <element name="Page" positionX="-110" positionY="42" width="128" height="105"/>
         <element name="PageItem" positionX="171" positionY="36" width="128" height="193"/>
     </elements>
 </model>

@@ -2,7 +2,7 @@
 //  Page+CoreDataProperties.swift
 //  DailyList
 //
-//  Created by Jesselin on 2016/5/22.
+//  Created by Jesselin on 2016/5/24.
 //  Copyright © 2016年 JesseLin. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,7 +14,9 @@ import CoreData
 
 extension Page {
 
-    @NSManaged var pageDate: String?
+    @NSManaged var year: String?
+    @NSManaged var month: String?
+    @NSManaged var day: String?
     @NSManaged var pageItems: NSSet?
 
 }

@@ -17,7 +17,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellContentView: SpringView!
     @IBOutlet weak var dataListView: UIView!
     @IBOutlet weak var emptyView: UIView!
-    var itemsArray = [PageItem]()
+    
+    var itemsAry = [PageItem]()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         self.taskTableView.registerNib(UINib(nibName: "TaskTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
         self.taskTableView.separatorStyle = .None
         self.taskTableView.backgroundColor = CustomColors.getTextFieldBgGreyColor()
+        self.taskTableView.rowHeight = UITableViewAutomaticDimension
         
         self.cellContentView.fullyRound(8, borderColor: nil, borderWidth: nil)
         self.cellContentView.backgroundColor = CustomColors.getTextFieldBgGreyColor()
@@ -33,12 +35,26 @@ class HomeCollectionViewCell: UICollectionViewCell {
         self.dataListView.backgroundColor = CustomColors.getTextFieldBgGreyColor()
     }
     
-    func configCell(indexPath: NSIndexPath) {
+    override func prepareForReuse() {
+        itemsAry = [PageItem]()
+        self.taskTableView.reloadData()
+    }
+    
+    func configCell(indexPath: NSIndexPath, dataDict: Dictionary<String, Page>) {
+        
         
         let imgName: String = "empty_photo\((indexPath.row % 6) + 1)"
         self.emptyImageView.image = UIImage(named: imgName)
         let cellDate = DateCenter.getCurrentDateWithCellIndex(indexPath.row)
         self.emptyLabel.text = "You have nothing on \(cellDate.month)/\(cellDate.day)"
+
+        if let value = dataDict[String(cellDate.day)] {
+            if let items = value.pageItems {
+                self.itemsAry = items.allObjects as! [PageItem]
+            }
+            self.taskTableView.reloadData()
+        }
+        
     }
 }
 
@@ -46,10 +62,10 @@ extension HomeCollectionViewCell: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if self.itemsArray.count > 0 {
+        if self.itemsAry.count > 0 {
             self.dataListView.hidden = false
             self.emptyView.hidden = true
-            return self.itemsArray.count
+            return self.itemsAry.count
         }
         
         self.dataListView.hidden = true
@@ -61,15 +77,12 @@ extension HomeCollectionViewCell: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TaskTableViewCell
         
-        cell.configCell(indexPath, pageItem: self.itemsArray[indexPath.row])
+        cell.configCell(indexPath, pageItem: self.itemsAry[indexPath.row])
         
         return cell
     }
-}
-
-extension HomeCollectionViewCell: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 180;
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80;
     }
 }

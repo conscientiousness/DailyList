@@ -18,7 +18,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var yearMonthLabel: DesignableLabel!
     @IBOutlet weak var addButton: DesignableButton!
     @IBOutlet weak var addButtonWidthCT: NSLayoutConstraint!
-
+    
     //MARK: properties
     enum ScreenHeight: CGFloat {
         case ip4 = 480.0
@@ -32,13 +32,11 @@ class HomeVC: UIViewController {
     }
     
     private let transitionManager = TransitionManager()
-    private let currentDate = CurrentDate.sharedInstance.nowDate
     private var firstLaunch = true
     private var lastContentOffset: CGFloat = 0
     private var scrollDirection: ScrollDirection = .right
-    
     let screenSize: CGRect = UIScreen.mainScreen().bounds
-    var itemsArray = [PageItem]()
+    var tableViewsDict = [String: Page]()
     var fetchedResultsController: NSFetchedResultsController!
     
     //MARK: getter & setter
@@ -81,6 +79,9 @@ class HomeVC: UIViewController {
         self.configLayout()
         self.configViewController()
         self.configCollectionView()
+        
+        self.setFetchedResults(CurrentDate.sharedInstance.nowDate)
+        self.attemptFetch()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -139,7 +140,7 @@ class HomeVC: UIViewController {
         
         self.yearMonthLabel.hidden = true
         self.yearMonthLabel.textColor = CustomColors.getMainColor()
-        self.yearMonthLabel.text = "\(self.currentDate.year)年\(self.currentDate.month)月"
+        self.yearMonthLabel.text = "\(CurrentDate.sharedInstance.nowDate.year)年\(CurrentDate.sharedInstance.nowDate.month)月"
         if let screenHeight = ScreenHeight(rawValue: screenSize.height) {
             switch screenHeight {
             case .ip4:
@@ -179,13 +180,17 @@ class HomeVC: UIViewController {
             }
         }
         rowAry = rowAry.sort()
-        //print("rowAry = \(rowAry))")
+        
         if rowAry.count == 3 {
             return rowAry[1]
         }
         else if rowAry.count == 2 {
-
-            return self.scrollDirection == .right ? rowAry[0]:rowAry[1]
+            if(rowAry[0] == 0 || rowAry[1] == CurrentDate.sharedInstance.nowDate.monthDays - 1) {
+                return rowAry[0] == 0 ? rowAry[0]:rowAry[1]
+            } else {
+                return self.scrollDirection == .right ? rowAry[0]:rowAry[1]
+            }
+            
         }
         
         return nil
@@ -198,7 +203,7 @@ class HomeVC: UIViewController {
             if let cell = cell {
                 cell.backgroundColor = CustomColors.getLightGreenColor()
             }
-            for i in 0 ... (self.currentDate.monthDays - 1) {
+            for i in 0 ... (CurrentDate.sharedInstance.nowDate.monthDays - 1) {
                 if indexPath.row != i {
 
                     let deIndexPath: NSIndexPath = NSIndexPath(forRow: i, inSection: 0)
@@ -221,8 +226,8 @@ class HomeVC: UIViewController {
     //MARK: prepareForSegue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "AddTaskSegue" {
-            
             let addTaskVC = segue.destinationViewController as! AddTaskVC
+            addTaskVC.pageData = tableViewsDict[String(CurrentDate.sharedInstance.nowDate.day)];
             addTaskVC.transitioningDelegate = self.transitionManager
         }
     }
@@ -232,19 +237,20 @@ class HomeVC: UIViewController {
 extension HomeVC: UICollectionViewDataSource,UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.currentDate.monthDays;
+        return CurrentDate.sharedInstance.nowDate.monthDays;
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
         if(collectionView == self.collectionView) {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("homeCollectionViewCell", forIndexPath: indexPath) as! HomeCollectionViewCell
-            cell.configCell(indexPath)
+            cell.configCell(indexPath, dataDict: self.tableViewsDict)
+            
             return cell
         }
         else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("circleDateCollectionCell", forIndexPath: indexPath) as! CircleDateCollectionCell
-            cell.configCell(indexPath, currentDate: self.currentDate)
+            cell.configCell(indexPath, currentDate: CurrentDate.sharedInstance.nowDate)
             
             return cell
         }
@@ -255,6 +261,7 @@ extension HomeVC: UICollectionViewDataSource,UICollectionViewDelegate {
         if(collectionView == self.circleDateCollectionView) {
             self.circleDateCollectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: .CenteredHorizontally)
             self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: true)
+            CurrentDate.sharedInstance.changeDayWithIndex(indexPath.row)
             self.changeCellBgColorWithIndexPath(indexPath, didSelected: true)
         }
     }
@@ -271,22 +278,23 @@ extension HomeVC: UICollectionViewDataSource,UICollectionViewDelegate {
 //MARK: UIScrollViewDelegate
 extension HomeVC: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         
-        if self.lastContentOffset > scrollView.contentOffset.x {
-            // move right
-            self.scrollDirection = .right
-        }
-        else if self.lastContentOffset < scrollView.contentOffset.x {
-            // move left
-            self.scrollDirection = .left
-        }
-    
-        // update the new position acquired
-        self.lastContentOffset = scrollView.contentOffset.x
-        
-        if let idx = self.getCenterCellRow() {
-            CurrentDate.sharedInstance.changeDayWithIndex(idx)
+        if let view: UIView = scrollView.subviews.first {
+            let className = NSStringFromClass(view.classForCoder).componentsSeparatedByString(".").last!
+            if(className == "HomeCollectionViewCell") {
+                if self.lastContentOffset > scrollView.contentOffset.x {
+                    // move right
+                    self.scrollDirection = .right
+                }
+                else if self.lastContentOffset < scrollView.contentOffset.x {
+                    // move left
+                    self.scrollDirection = .left
+                }
+                
+                // update the new position acquired
+                self.lastContentOffset = scrollView.contentOffset.x
+            }
         }
     }
     
@@ -311,6 +319,7 @@ extension HomeVC: UIScrollViewDelegate {
                     // 同步移動快捷日曆列
                     self.circleDateCollectionView.selectItemAtIndexPath(indexPath, animated: true, scrollPosition: .CenteredHorizontally)
                     self.collectionView(self.circleDateCollectionView, didSelectItemAtIndexPath: indexPath)
+                    CurrentDate.sharedInstance.changeDayWithIndex(idx)
                 }
                 self.addButton.enabled = true
             }
@@ -318,7 +327,31 @@ extension HomeVC: UIScrollViewDelegate {
     }
 }
 
+//MARK: NSFetchedResultsController
 extension HomeVC: NSFetchedResultsControllerDelegate {
+    
+    func setFetchedResults(currentDate: DateInRegion) {
+        
+        let fetchRequest = NSFetchRequest(entityName: "Page")
+        let sortDescriptor = NSSortDescriptor(key: "day", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        var pages = [Page]()
+        do {
+            pages = try ad.managedObjectContext.executeFetchRequest(fetchRequest) as! [Page]
+        } catch {}
+        
+        for page in pages {
+            if let day = page.day {
+                self.tableViewsDict[day] = page
+            }
+        }
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: ad.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        controller.delegate = self
+        fetchedResultsController = controller
+    }
     
     func attemptFetch() {
         
@@ -330,28 +363,6 @@ extension HomeVC: NSFetchedResultsControllerDelegate {
         }
     }
     
-    func setFetchedResults(currentDate: NSDate) {
-        
-        let fetchRequest = NSFetchRequest(entityName: "PageItem")
-        fetchRequest.predicate = NSPredicate(format:"page.pageDate == %@", "\(DateCenter.getDateString(currentDate))")
-        let sortDescriptor = NSSortDescriptor(key: "createDate", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        do {
-            self.itemsArray = try ad.managedObjectContext.executeFetchRequest(fetchRequest) as! [PageItem]
-            if self.itemsArray.count > 0 {
-                let item: PageItem = self.itemsArray.first!
-                print("COUNT = \(self.itemsArray.count), item.page = \(item.page?.pageDate), currentDate = \(DateCenter.getDateString(currentDate))")
-            }
-            
-        } catch {}
-        
-        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: ad.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        
-        controller.delegate = self
-        
-        fetchedResultsController = controller
-    }
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         //self.taskTableView.beginUpdates()
@@ -365,22 +376,26 @@ extension HomeVC: NSFetchedResultsControllerDelegate {
         
         switch(type) {
         case .Insert:
-            //            if let indexPath = newIndexPath {
-            //                self.taskTableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            //            }
+            if let indexPath = newIndexPath {
+                print("insert = \(indexPath.row)")
+                //                self.taskTableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
             break
         case .Delete:
-            //            if let indexPath =  indexPath {
-            //                self.taskTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            //            }
+            if let indexPath =  indexPath {
+                print("Delete = \(indexPath)")
+                //                self.taskTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
             break
         case .Update:
+            print("Update")
             //            if let indexPath = indexPath {
             //                let cell = tableView.cellForRowAtIndexPath(indexPath) as! ItemCell
             //                configureCell(cell, indexPath: indexPath)
             //            }
             break
         case .Move:
+            print("Move")
             //            if let indexPath = indexPath  {
             //                self.taskTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             //            }
@@ -392,4 +407,3 @@ extension HomeVC: NSFetchedResultsControllerDelegate {
         }
     }
 }
-
