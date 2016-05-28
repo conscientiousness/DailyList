@@ -26,21 +26,30 @@ class AddTaskVC: UIViewController {
     @IBOutlet weak var saveButton: DesignableButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var displayDateLabel: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var datePickerBottomCT: NSLayoutConstraint!
+    @IBOutlet weak var toolBar: UIToolbar!
     
     // property
     private var currentDate: DateInRegion = CurrentDate.sharedInstance.nowDate
+    private var datePickerHeight: CGFloat?
     var pageData: Page?
+    
+    enum DatePickerType {
+        case DatePickerTypeDate, DatePickerTypeTime
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configVC()
-        print(pageData)
+        // print(pageData)
     }
     
     //MARK: Private Method
     private func configVC() {
         
         self.view.backgroundColor = CustomColors.getBackgroundColor()
+        self.contentView.fullyRound(3.0, borderColor: nil, borderWidth: nil)
         
         self.taskNameTextField.backgroundColor = CustomColors.getTextFieldBgGreyColor()
         self.taskNameTextField.delegate = self
@@ -59,11 +68,41 @@ class AddTaskVC: UIViewController {
         self.displayDateLabel.text = "\(currentDate.year)/\(currentDate.month)/\(currentDate.day)"
         
         self.saveButton.backgroundColor = CustomColors.getMainColor()
+        
+        self.datePicker.backgroundColor = CustomColors.getTextFieldBgGreyColor()
+        datePickerHeight = -(self.datePicker.frame.size.height + self.toolBar.frame.size.height)
+        self.datePickerBottomCT.constant = datePickerHeight!
+        self.view.updateConstraintsIfNeeded()
+    }
+    
+    private func callDatePicker(type: DatePickerType) {
+
+        switch type {
+        case .DatePickerTypeDate:
+            datePicker.datePickerMode = .Date
+            datePicker.minimumDate = CurrentDate.sharedInstance.nowDate.f
+        default:
+            <#code#>
+        }
+        
+        self.datePickerBottomCT.constant = 0;
+        UIView.animateWithDuration(0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func closeDatePicker() {
+        
+        self.datePickerBottomCT.constant = self.datePickerHeight!;
+        UIView.animateWithDuration(0.5) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     //MARK: Touch event
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
+        self.closeDatePicker()
     }
 
     //MARK: Button Method
@@ -123,19 +162,23 @@ extension AddTaskVC: UITextFieldDelegate {
             }
         }
         else if textField == self.taskDateTextField {
+            textField.resignFirstResponder()
             self.taskDateImageView.image = UIImage(named: "calendar_yellow_icon")
             if !hasText {
                 self.taskDateImageView.animation = "zoomIn"
                 self.taskNameImageView.duration = 1.0
                 self.taskDateImageView.animate()
+                self.callDatePicker(.DatePickerTypeDate)
             }
         }
         else if textField == self.taskTimeTextField {
+            textField.resignFirstResponder()
             self.taskTimeImageView.image = UIImage(named: "taskTime_yellow_icon")
             if !hasText {
                 self.taskTimeImageView.animation = "zoomIn"
                 self.taskNameImageView.duration = 1.0
                 self.taskTimeImageView.animate()
+                self.callDatePicker(.DatePickerTypeTime)
             }
         }
     }
