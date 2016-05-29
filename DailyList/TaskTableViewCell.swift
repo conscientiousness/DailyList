@@ -32,19 +32,23 @@ class TaskTableViewCell: UITableViewCell {
         
         self.updateConstraintsIfNeeded()
         
-        titleLabel.text = pageItem.title
+        if let title = pageItem.title {
+            titleLabel.text = title
+        }
         
-        if indexPath.row % 5 == 0 {
-            
-            self.taskIconImageView.image = UIImage(named: "task_done_icon")
-            
-        } else if indexPath.row % 5 == 1 {
-            
-            self.taskIconImageView.image = UIImage(named: "task_todo_icon")
-            
-        } else {
-            
-            self.taskIconImageView.image = UIImage(named: "task_expired_icon")
+        if let detail = pageItem.detail {
+            detailLabel.text = detail
+        }
+        
+        if let status = pageItem.status {
+            switch Int(status) {
+            case 1:
+                self.taskIconImageView.image = UIImage(named: "task_done_icon")
+            case 2:
+                self.taskIconImageView.image = UIImage(named: "task_expired_icon")
+            default:
+                self.taskIconImageView.image = UIImage(named: "task_todo_icon")
+            }
         }
     }
 }

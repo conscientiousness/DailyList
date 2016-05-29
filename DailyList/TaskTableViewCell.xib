@@ -27,7 +27,7 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-GI-Ca9">
                         <rect key="frame" x="8" y="4" width="403" height="182"/>
                         <subviews>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_test_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-YZ-pr3" customClass="DesignableImageView" customModule="DailyList" customModuleProvider="target">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cell_test_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-YZ-pr3" customClass="DesignableImageView" customModule="DailyList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="403" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="98" id="ife-27-6O1"/>

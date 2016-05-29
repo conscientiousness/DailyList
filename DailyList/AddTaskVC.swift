@@ -26,13 +26,15 @@ class AddTaskVC: UIViewController {
     @IBOutlet weak var saveButton: DesignableButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var displayDateLabel: UILabel!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var datePickerBottomCT: NSLayoutConstraint!
-    @IBOutlet weak var toolBar: UIToolbar!
+    var datePicker: UIDatePicker!
+    var timePicker: UIDatePicker!
     
     // property
     private var currentDate: DateInRegion = CurrentDate.sharedInstance.nowDate
     private var datePickerHeight: CGFloat?
+    private var pickerDate: DateInRegion?
+    private var pickerTime: DateInRegion?
+    private var pickType: DatePickerType = .DatePickerTypeDate
     var pageData: Page?
     
     enum DatePickerType {
@@ -51,14 +53,38 @@ class AddTaskVC: UIViewController {
         self.view.backgroundColor = CustomColors.getBackgroundColor()
         self.contentView.fullyRound(3.0, borderColor: nil, borderWidth: nil)
         
+        //let toolBar = UIToolbar()
+        //toolBar.barTintColor = CustomColors.getTextFieldBgGreyColor()
+        //toolBar.barStyle = .BlackTranslucent
+        //toolBar.translucent = false
+        //let barItem = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: #selector(self.pickerDonePressed))
+        //let flexItem = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        //toolBar.items = [barItem,flexItem]
+        
         self.taskNameTextField.backgroundColor = CustomColors.getTextFieldBgGreyColor()
         self.taskNameTextField.delegate = self
 
         self.taskDateTextField.backgroundColor = CustomColors.getTextFieldBgGreyColor()
         self.taskDateTextField.delegate = self
+        datePicker = UIDatePicker(frame: CGRectZero)
+        datePicker.datePickerMode = .Date
+        datePicker.minimumDate = NSDate(year: currentDate.year, month: currentDate.month, day: 1)
+        datePicker.maximumDate = NSDate(year: currentDate.year, month: currentDate.month, day: currentDate.monthDays)
+        datePicker.backgroundColor = CustomColors.getTextFieldBgGreyColor()
+        datePicker.addTarget(self, action: #selector(self.datePickerValChg(_:)), forControlEvents: .ValueChanged)
+        self.taskDateTextField.inputView = datePicker
+        self.taskDateTextField.inputAccessoryView?.backgroundColor = CustomColors.getTextFieldBgGreyColor()
+        //self.taskDateTextField.inputAccessoryView = toolBar
+        
         
         self.taskTimeTextField.backgroundColor = CustomColors.getTextFieldBgGreyColor()
         self.taskTimeTextField.delegate = self
+        timePicker = UIDatePicker(frame: CGRectZero)
+        timePicker.datePickerMode = .Time
+        timePicker.backgroundColor = CustomColors.getTextFieldBgGreyColor()
+        timePicker.addTarget(self, action: #selector(self.timePickerValChg(_:)), forControlEvents: .ValueChanged)
+        self.taskTimeTextField.inputView = timePicker
+        //self.taskTimeTextField.inputAccessoryView = toolBar
         
         self.memoTextView.borderColor = CustomColors.getTextFieldBgGreyColor()
         
@@ -68,46 +94,26 @@ class AddTaskVC: UIViewController {
         self.displayDateLabel.text = "\(currentDate.year)/\(currentDate.month)/\(currentDate.day)"
         
         self.saveButton.backgroundColor = CustomColors.getMainColor()
-        
-        self.datePicker.backgroundColor = CustomColors.getTextFieldBgGreyColor()
-        datePickerHeight = -(self.datePicker.frame.size.height + self.toolBar.frame.size.height)
-        self.datePickerBottomCT.constant = datePickerHeight!
-        self.view.updateConstraintsIfNeeded()
-    }
-    
-    private func callDatePicker(type: DatePickerType) {
-
-        switch type {
-        case .DatePickerTypeDate:
-            datePicker.datePickerMode = .Date
-            datePicker.minimumDate = CurrentDate.sharedInstance.nowDate.f
-        default:
-            <#code#>
-        }
-        
-        self.datePickerBottomCT.constant = 0;
-        UIView.animateWithDuration(0.5) {
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-    private func closeDatePicker() {
-        
-        self.datePickerBottomCT.constant = self.datePickerHeight!;
-        UIView.animateWithDuration(0.5) {
-            self.view.layoutIfNeeded()
-        }
     }
     
     //MARK: Touch event
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
-        self.closeDatePicker()
     }
 
     //MARK: Button Method
     @IBAction func backBtnPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func datePickerValChg(sender: UIDatePicker) {
+        pickerDate = DateInRegion(year: datePicker.date.year, month: datePicker.date.month, day: datePicker.date.day)
+        taskDateTextField.text = "\(pickerDate!.year)/\(pickerDate!.month)/\(pickerDate!.day)"
+    }
+    
+    func timePickerValChg(sender: UIDatePicker) {
+        pickerTime = DateInRegion(year: timePicker.date.year, month: timePicker.date.month, day: timePicker.date.day, hour: timePicker.date.hour, minute: timePicker.date.minute)
+        taskTimeTextField.text = "\(pickerTime!.hour):\(pickerTime!.minute)"
     }
     
     @IBAction func alertSwitchChanged(sender: UISwitch) {
@@ -136,14 +142,25 @@ class AddTaskVC: UIViewController {
         
         if let taskName = taskNameTextField.text {
             pageItem.title = taskName
+            if let pickerTime = self.pickerTime {
+                pageItem.hour = pickerTime.hour
+                pageItem.min = pickerTime.minute
+            }
+            pageItem.detail = memoTextView.text
+            pageItem.needAlert = taskAlertSwitch.on
+            pageItem.status = 0
+            
+            page.year = String(currentDate.year)
+            page.month = String(currentDate.month)
+            if let pickerDate = self.pickerDate {
+                page.day = String(pickerDate.day)
+            } else {
+               page.day = String(currentDate.day)
+            }
+            
+            page.addPageItems(pageItem)
+            ad.saveContext()
         }
-
-        page.year = String(currentDate.year)
-        page.month = String(currentDate.month)
-        page.day = String(currentDate.day)
-        page.addPageItems(pageItem)
-        ad.saveContext()
-        
     }
 }
 
@@ -162,23 +179,19 @@ extension AddTaskVC: UITextFieldDelegate {
             }
         }
         else if textField == self.taskDateTextField {
-            textField.resignFirstResponder()
             self.taskDateImageView.image = UIImage(named: "calendar_yellow_icon")
             if !hasText {
                 self.taskDateImageView.animation = "zoomIn"
                 self.taskNameImageView.duration = 1.0
                 self.taskDateImageView.animate()
-                self.callDatePicker(.DatePickerTypeDate)
             }
         }
         else if textField == self.taskTimeTextField {
-            textField.resignFirstResponder()
             self.taskTimeImageView.image = UIImage(named: "taskTime_yellow_icon")
             if !hasText {
                 self.taskTimeImageView.animation = "zoomIn"
                 self.taskNameImageView.duration = 1.0
                 self.taskTimeImageView.animate()
-                self.callDatePicker(.DatePickerTypeTime)
             }
         }
     }
@@ -198,5 +211,10 @@ extension AddTaskVC: UITextFieldDelegate {
                 self.taskTimeImageView.image = UIImage(named: "taskTime_gray_icon")
             }
         }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

@@ -368,36 +368,15 @@
                                             <outlet property="delegate" destination="iCR-Lc-Ugo" id="6mH-en-RKA"/>
                                         </connections>
                                     </textView>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="brz-Ts-YkG">
-                                        <rect key="frame" x="0.0" y="364" width="600" height="216"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="486146725.557603">
-                                            <!--2016-05-28 16:45:25 +0000-->
-                                        </date>
-                                    </datePicker>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmq-GY-0nU">
-                                        <rect key="frame" x="0.0" y="320" width="600" height="44"/>
-                                        <items>
-                                            <barButtonItem style="done" systemItem="done" id="wkh-Xv-wia">
-                                                <color key="tintColor" red="0.23296622049999999" green="0.70785389269999999" blue="0.75439893229999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </barButtonItem>
-                                        </items>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadowDesign" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </toolbar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Y1j-Hd-CUb" firstAttribute="centerX" secondItem="voS-Pr-Qhf" secondAttribute="centerX" id="0y5-rt-Nm2"/>
                                     <constraint firstItem="KZQ-6X-e8O" firstAttribute="leading" secondItem="CXV-Xm-kbU" secondAttribute="leading" id="4DR-Fd-jpC"/>
-                                    <constraint firstItem="xmq-GY-0nU" firstAttribute="leading" secondItem="voS-Pr-Qhf" secondAttribute="leading" id="6De-wC-216"/>
                                     <constraint firstItem="DvX-2s-hCO" firstAttribute="trailing" secondItem="4FH-ZI-OOM" secondAttribute="trailing" id="6KQ-qg-KnN"/>
                                     <constraint firstItem="Y1j-Hd-CUb" firstAttribute="leading" secondItem="CXV-Xm-kbU" secondAttribute="leading" id="83f-fH-rT2"/>
                                     <constraint firstItem="G3E-nN-015" firstAttribute="centerY" secondItem="CXV-Xm-kbU" secondAttribute="centerY" id="8kc-uW-paA"/>
                                     <constraint firstItem="jzp-Fz-VlC" firstAttribute="centerY" secondItem="uaq-ah-kL9" secondAttribute="centerY" id="ACR-Dd-nlz"/>
-                                    <constraint firstItem="brz-Ts-YkG" firstAttribute="top" secondItem="xmq-GY-0nU" secondAttribute="bottom" id="AsE-t2-akw"/>
-                                    <constraint firstItem="brz-Ts-YkG" firstAttribute="leading" secondItem="voS-Pr-Qhf" secondAttribute="leading" id="Aus-Ft-6gK"/>
-                                    <constraint firstAttribute="bottom" secondItem="brz-Ts-YkG" secondAttribute="bottom" id="DQb-eB-BtO"/>
                                     <constraint firstItem="CS6-Mm-CFk" firstAttribute="leading" secondItem="4FH-ZI-OOM" secondAttribute="leading" id="ESg-90-3zF"/>
                                     <constraint firstItem="DvX-2s-hCO" firstAttribute="leading" secondItem="4FH-ZI-OOM" secondAttribute="leading" id="Fbq-qk-csP"/>
                                     <constraint firstItem="y1I-1t-Tm5" firstAttribute="top" secondItem="NGt-Ua-Gxe" secondAttribute="bottom" constant="8" id="Hvo-a8-GrP"/>
@@ -407,7 +386,6 @@
                                     <constraint firstItem="jzp-Fz-VlC" firstAttribute="centerX" secondItem="voS-Pr-Qhf" secondAttribute="centerX" id="JbM-SB-gUj"/>
                                     <constraint firstItem="CXV-Xm-kbU" firstAttribute="leading" secondItem="voS-Pr-Qhf" secondAttribute="leading" constant="20" id="KCK-TT-nBT"/>
                                     <constraint firstItem="4FH-ZI-OOM" firstAttribute="centerY" secondItem="PU5-xg-Tqx" secondAttribute="centerY" id="KWm-B0-S9v"/>
-                                    <constraint firstAttribute="trailing" secondItem="brz-Ts-YkG" secondAttribute="trailing" id="Kfh-ko-OXU"/>
                                     <constraint firstItem="FDu-Ff-teB" firstAttribute="top" secondItem="PU5-xg-Tqx" secondAttribute="top" constant="8" id="QEA-sx-xGJ"/>
                                     <constraint firstItem="PU5-xg-Tqx" firstAttribute="leading" secondItem="CXV-Xm-kbU" secondAttribute="leading" id="Rjp-Wm-ZjM"/>
                                     <constraint firstItem="CXV-Xm-kbU" firstAttribute="top" secondItem="jzp-Fz-VlC" secondAttribute="bottom" constant="20" id="Szr-03-pMP"/>
@@ -426,7 +404,6 @@
                                     <constraint firstItem="4FH-ZI-OOM" firstAttribute="leading" secondItem="PU5-xg-Tqx" secondAttribute="leading" constant="14" id="nl6-wE-Ta5"/>
                                     <constraint firstItem="KZQ-6X-e8O" firstAttribute="top" secondItem="PU5-xg-Tqx" secondAttribute="bottom" constant="8" id="qD8-qD-IM8"/>
                                     <constraint firstItem="FDu-Ff-teB" firstAttribute="bottom" secondItem="PU5-xg-Tqx" secondAttribute="bottom" constant="-8" id="qOC-5p-doV"/>
-                                    <constraint firstAttribute="trailing" secondItem="xmq-GY-0nU" secondAttribute="trailing" id="rZ9-RK-VcT"/>
                                     <constraint firstAttribute="trailing" secondItem="CXV-Xm-kbU" secondAttribute="trailing" constant="20" id="thP-FK-NG3"/>
                                     <constraint firstItem="Y1j-Hd-CUb" firstAttribute="trailing" secondItem="CXV-Xm-kbU" secondAttribute="trailing" id="toP-zN-wDh"/>
                                     <constraint firstItem="PU5-xg-Tqx" firstAttribute="top" secondItem="CXV-Xm-kbU" secondAttribute="bottom" constant="8" id="zQo-BQ-GH9"/>
@@ -464,8 +441,6 @@
                     <connections>
                         <outlet property="backBtn" destination="uaq-ah-kL9" id="mxv-Us-wPd"/>
                         <outlet property="contentView" destination="voS-Pr-Qhf" id="2L8-8W-dOh"/>
-                        <outlet property="datePicker" destination="brz-Ts-YkG" id="fGX-or-xTn"/>
-                        <outlet property="datePickerBottomCT" destination="DQb-eB-BtO" id="vkN-uj-pww"/>
                         <outlet property="displayDateLabel" destination="FDu-Ff-teB" id="TNA-xd-Imc"/>
                         <outlet property="memoTextView" destination="y1I-1t-Tm5" id="Rwq-AN-Z2H"/>
                         <outlet property="saveButton" destination="Y1j-Hd-CUb" id="yfs-jG-q3i"/>
@@ -478,7 +453,6 @@
                         <outlet property="taskNameTextField" destination="CXV-Xm-kbU" id="87r-XT-ls1"/>
                         <outlet property="taskTimeImageView" destination="DvX-2s-hCO" id="LGM-6J-5Zs"/>
                         <outlet property="taskTimeTextField" destination="KZQ-6X-e8O" id="4YX-HK-YeV"/>
-                        <outlet property="toolBar" destination="xmq-GY-0nU" id="4s9-9U-OZ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azN-6i-bqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
