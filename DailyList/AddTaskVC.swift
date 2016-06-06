@@ -129,8 +129,8 @@ class AddTaskVC: UIViewController {
     
     @IBAction func saveBtnPressed(sender: AnyObject) {
         
-        var page: Page!
-        var pageItem: PageItem!
+        var page: Page
+        var pageItem: PageItem
         
         pageItem = NSEntityDescription.insertNewObjectForEntityForName("PageItem", inManagedObjectContext: ad.managedObjectContext) as! PageItem
         
