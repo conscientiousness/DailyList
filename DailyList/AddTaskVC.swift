@@ -26,6 +26,7 @@ class AddTaskVC: UIViewController {
     @IBOutlet weak var saveButton: DesignableButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var displayDateLabel: UILabel!
+    @IBOutlet weak var displayTimeLabel: UILabel!
     var datePicker: UIDatePicker!
     var timePicker: UIDatePicker!
     
@@ -52,14 +53,6 @@ class AddTaskVC: UIViewController {
         
         self.view.backgroundColor = CustomColors.getBackgroundColor()
         self.contentView.fullyRound(3.0, borderColor: nil, borderWidth: nil)
-        
-        //let toolBar = UIToolbar()
-        //toolBar.barTintColor = CustomColors.getTextFieldBgGreyColor()
-        //toolBar.barStyle = .BlackTranslucent
-        //toolBar.translucent = false
-        //let barItem = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: #selector(self.pickerDonePressed))
-        //let flexItem = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-        //toolBar.items = [barItem,flexItem]
         
         self.taskNameTextField.backgroundColor = CustomColors.getTextFieldBgGreyColor()
         self.taskNameTextField.delegate = self
@@ -90,10 +83,19 @@ class AddTaskVC: UIViewController {
         
         self.taskAlertBgView.fullyRound(5, borderColor: CustomColors.getTextFieldBgGreyColor(), borderWidth: 2)
         
+        currentDate = DateInRegion(year: currentDate.year, month: currentDate.month, day: currentDate.day, hour: NSDate().hour, minute: NSDate().minute)
+        
         self.displayDateLabel.fullyRound(5, borderColor: nil, borderWidth: nil)
         self.displayDateLabel.text = "\(currentDate.year)/\(currentDate.month)/\(currentDate.day)"
         
+        self.displayTimeLabel.fullyRound(5, borderColor: nil, borderWidth: nil)
+        self.displayTimeLabel.text = "\(timeWithLeadingZero(currentDate.hour)):\(timeWithLeadingZero(currentDate.minute))"
+        
         self.saveButton.backgroundColor = CustomColors.getMainColor()
+    }
+    
+    func timeWithLeadingZero(time: Int) -> String {
+        return String(format: "%02d", time)
     }
     
     //MARK: Touch event
@@ -113,7 +115,7 @@ class AddTaskVC: UIViewController {
     
     func timePickerValChg(sender: UIDatePicker) {
         pickerTime = DateInRegion(year: timePicker.date.year, month: timePicker.date.month, day: timePicker.date.day, hour: timePicker.date.hour, minute: timePicker.date.minute)
-        taskTimeTextField.text = "\(pickerTime!.hour):\(pickerTime!.minute)"
+        taskTimeTextField.text = "\(timeWithLeadingZero(pickerTime!.hour)):\(timeWithLeadingZero(pickerTime!.minute))"
     }
     
     @IBAction func alertSwitchChanged(sender: UISwitch) {
@@ -151,7 +153,7 @@ class AddTaskVC: UIViewController {
             pageItem.status = 0
             
             page.year = String(currentDate.year)
-            page.month = String(currentDate.month)
+            page.month = timeWithLeadingZero(currentDate.month)
             if let pickerDate = self.pickerDate {
                 page.day = String(pickerDate.day)
             } else {

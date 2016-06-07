@@ -15,6 +15,7 @@
             <string>NotoSansCJKtc-Medium</string>
             <string>NotoSansCJKtc-Medium</string>
             <string>NotoSansCJKtc-Medium</string>
+            <string>NotoSansCJKtc-Medium</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -368,6 +369,16 @@
                                             <outlet property="delegate" destination="iCR-Lc-Ugo" id="6mH-en-RKA"/>
                                         </connections>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOM-ZG-r0x">
+                                        <rect key="frame" x="456" y="198" width="112" height="34"/>
+                                        <color key="backgroundColor" red="0.99215686270000003" green="0.72156862749999995" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="112" id="cbE-jO-uok"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -379,6 +390,7 @@
                                     <constraint firstItem="jzp-Fz-VlC" firstAttribute="centerY" secondItem="uaq-ah-kL9" secondAttribute="centerY" id="ACR-Dd-nlz"/>
                                     <constraint firstItem="CS6-Mm-CFk" firstAttribute="leading" secondItem="4FH-ZI-OOM" secondAttribute="leading" id="ESg-90-3zF"/>
                                     <constraint firstItem="DvX-2s-hCO" firstAttribute="leading" secondItem="4FH-ZI-OOM" secondAttribute="leading" id="Fbq-qk-csP"/>
+                                    <constraint firstItem="QOM-ZG-r0x" firstAttribute="top" secondItem="KZQ-6X-e8O" secondAttribute="top" constant="8" id="GR0-Hj-2aa"/>
                                     <constraint firstItem="y1I-1t-Tm5" firstAttribute="top" secondItem="NGt-Ua-Gxe" secondAttribute="bottom" constant="8" id="Hvo-a8-GrP"/>
                                     <constraint firstItem="4FH-ZI-OOM" firstAttribute="leading" secondItem="G3E-nN-015" secondAttribute="leading" id="J07-u9-VBs"/>
                                     <constraint firstItem="DvX-2s-hCO" firstAttribute="centerY" secondItem="KZQ-6X-e8O" secondAttribute="centerY" id="JCs-4b-iSG"/>
@@ -389,9 +401,11 @@
                                     <constraint firstItem="FDu-Ff-teB" firstAttribute="top" secondItem="PU5-xg-Tqx" secondAttribute="top" constant="8" id="QEA-sx-xGJ"/>
                                     <constraint firstItem="PU5-xg-Tqx" firstAttribute="leading" secondItem="CXV-Xm-kbU" secondAttribute="leading" id="Rjp-Wm-ZjM"/>
                                     <constraint firstItem="CXV-Xm-kbU" firstAttribute="top" secondItem="jzp-Fz-VlC" secondAttribute="bottom" constant="20" id="Szr-03-pMP"/>
+                                    <constraint firstItem="QOM-ZG-r0x" firstAttribute="trailing" secondItem="KZQ-6X-e8O" secondAttribute="trailing" constant="-12" id="TNf-FA-bcl"/>
                                     <constraint firstItem="KZQ-6X-e8O" firstAttribute="trailing" secondItem="CXV-Xm-kbU" secondAttribute="trailing" id="UHA-1P-ITN"/>
                                     <constraint firstItem="Y1j-Hd-CUb" firstAttribute="top" secondItem="y1I-1t-Tm5" secondAttribute="bottom" constant="8" id="a03-sb-yMe"/>
                                     <constraint firstItem="CXV-Xm-kbU" firstAttribute="leading" secondItem="uaq-ah-kL9" secondAttribute="leading" id="a9i-rX-sXp"/>
+                                    <constraint firstItem="QOM-ZG-r0x" firstAttribute="bottom" secondItem="KZQ-6X-e8O" secondAttribute="bottom" constant="-8" id="bIh-U8-XhA"/>
                                     <constraint firstItem="NGt-Ua-Gxe" firstAttribute="leading" secondItem="CXV-Xm-kbU" secondAttribute="leading" id="bTd-lw-Be7"/>
                                     <constraint firstItem="FDu-Ff-teB" firstAttribute="trailing" secondItem="PU5-xg-Tqx" secondAttribute="trailing" constant="-12" id="bVY-ne-dsZ"/>
                                     <constraint firstItem="y1I-1t-Tm5" firstAttribute="leading" secondItem="voS-Pr-Qhf" secondAttribute="leading" constant="20" id="cUB-AZ-epx"/>
@@ -442,6 +456,7 @@
                         <outlet property="backBtn" destination="uaq-ah-kL9" id="mxv-Us-wPd"/>
                         <outlet property="contentView" destination="voS-Pr-Qhf" id="2L8-8W-dOh"/>
                         <outlet property="displayDateLabel" destination="FDu-Ff-teB" id="TNA-xd-Imc"/>
+                        <outlet property="displayTimeLabel" destination="QOM-ZG-r0x" id="GZw-ZG-h8I"/>
                         <outlet property="memoTextView" destination="y1I-1t-Tm5" id="Rwq-AN-Z2H"/>
                         <outlet property="saveButton" destination="Y1j-Hd-CUb" id="yfs-jG-q3i"/>
                         <outlet property="taskAlertBgView" destination="NGt-Ua-Gxe" id="UqL-Vo-4e7"/>

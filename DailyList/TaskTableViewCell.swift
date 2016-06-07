@@ -14,15 +14,6 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var taskIconImageView: UIImageView!
-//  @IBOutlet weak var imgHeightCT: NSLayoutConstraint!
-    
-//    override func setSelected(selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//        
-//        if selected {
-//            self.taskBgView.backgroundColor = UIColor.lightGrayColor()
-//        }
-//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
