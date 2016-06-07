@@ -28,6 +28,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         self.taskTableView.separatorStyle = .None
         self.taskTableView.backgroundColor = CustomColors.getTextFieldBgGreyColor()
         self.taskTableView.rowHeight = UITableViewAutomaticDimension
+        self.taskTableView.estimatedRowHeight = 50
         
         self.cellContentView.fullyRound(8, borderColor: nil, borderWidth: nil)
         self.cellContentView.backgroundColor = CustomColors.getTextFieldBgGreyColor()
@@ -77,12 +78,26 @@ extension HomeCollectionViewCell: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TaskTableViewCell
         
+        cell.selectionStyle = .None
+        
         cell.configCell(indexPath, pageItem: self.itemsAry[indexPath.row])
         
         return cell
     }
+}
+
+extension HomeCollectionViewCell: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80;
+    func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell :TaskTableViewCell = tableView.cellForRowAtIndexPath(indexPath) as? TaskTableViewCell {
+            cell.taskBgView.backgroundColor = CustomColors.getVeryLightGreyColor()
+        }
     }
+    
+    func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell :TaskTableViewCell = tableView.cellForRowAtIndexPath(indexPath) as? TaskTableViewCell {
+            cell.taskBgView.backgroundColor = UIColor.whiteColor()
+        }
+    }
+
 }

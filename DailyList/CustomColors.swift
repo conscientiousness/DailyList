@@ -34,4 +34,7 @@ struct CustomColors{
     static func getTextFieldBgGreyColor() -> UIColor{
         return UIColor(hex: "F1F4F9", alpha: 1)
     }
+    static func getVeryLightGreyColor() -> UIColor{
+        return UIColor(hex: "9B9B9B", alpha: 1)
+    }
 }

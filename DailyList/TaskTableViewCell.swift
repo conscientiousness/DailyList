@@ -10,11 +10,19 @@ import UIKit
 
 class TaskTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var taskBgView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var taskIconImageView: UIImageView!
-    @IBOutlet weak var imgHeightCT: NSLayoutConstraint!
+//  @IBOutlet weak var imgHeightCT: NSLayoutConstraint!
     
+//    override func setSelected(selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//        
+//        if selected {
+//            self.taskBgView.backgroundColor = UIColor.lightGrayColor()
+//        }
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,12 +31,6 @@ class TaskTableViewCell: UITableViewCell {
     }
 
     func configCell(indexPath: NSIndexPath, pageItem: PageItem) {
-        
-        if taskIconImageView.hidden {
-            imgHeightCT.constant = 0;
-        } else {
-            imgHeightCT.constant = 98;
-        }
         
         self.updateConstraintsIfNeeded()
         

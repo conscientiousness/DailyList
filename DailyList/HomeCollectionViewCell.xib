@@ -57,16 +57,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPZ-ww-1Ue" userLabel="DataView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9zS-ak-E6d">
-                                        <rect key="frame" x="0.0" y="39" width="600" height="561"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="gTV-IL-0wX" id="O9j-zZ-aLS"/>
-                                            <outlet property="delegate" destination="gTV-IL-0wX" id="AHb-E0-ex8"/>
-                                        </connections>
-                                    </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pwt-PZ-3Dz" customClass="DesignableView" customModule="DailyList" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pwt-PZ-3Dz" customClass="DesignableView" customModule="DailyList" customModuleProvider="target">
                                         <rect key="frame" x="198" y="8" width="63" height="23"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="task_todo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="iIC-w7-I0Q">
@@ -130,7 +121,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naL-Sc-aWQ" customClass="DesignableView" customModule="DailyList" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naL-Sc-aWQ" customClass="DesignableView" customModule="DailyList" customModuleProvider="target">
                                         <rect key="frame" x="269" y="8" width="63" height="23"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="task_done_icon" translatesAutoresizingMaskIntoConstraints="NO" id="f3a-4C-IB4">
@@ -194,7 +185,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncE-4a-e6w" customClass="DesignableView" customModule="DailyList" customModuleProvider="target">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncE-4a-e6w" customClass="DesignableView" customModule="DailyList" customModuleProvider="target">
                                         <rect key="frame" x="340" y="8" width="63" height="23"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="task_expired_icon" translatesAutoresizingMaskIntoConstraints="NO" id="uIe-yK-mM1">
@@ -258,20 +249,35 @@
                                             </mask>
                                         </variation>
                                     </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9zS-ak-E6d">
+                                        <rect key="frame" x="0.0" y="8" width="600" height="584"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="gTV-IL-0wX" id="O9j-zZ-aLS"/>
+                                            <outlet property="delegate" destination="gTV-IL-0wX" id="AHb-E0-ex8"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="9zS-ak-E6d" firstAttribute="leading" secondItem="MPZ-ww-1Ue" secondAttribute="leading" id="4wK-i3-h1q"/>
                                     <constraint firstItem="naL-Sc-aWQ" firstAttribute="top" secondItem="MPZ-ww-1Ue" secondAttribute="top" constant="8" id="4xC-G9-VbB"/>
-                                    <constraint firstAttribute="bottom" secondItem="9zS-ak-E6d" secondAttribute="bottom" id="SVQ-xH-qd8"/>
+                                    <constraint firstAttribute="bottom" secondItem="9zS-ak-E6d" secondAttribute="bottom" constant="8" id="SVQ-xH-qd8"/>
                                     <constraint firstItem="naL-Sc-aWQ" firstAttribute="centerX" secondItem="MPZ-ww-1Ue" secondAttribute="centerX" id="Stx-6b-HvH"/>
                                     <constraint firstItem="naL-Sc-aWQ" firstAttribute="leading" secondItem="Pwt-PZ-3Dz" secondAttribute="trailing" constant="8" id="axP-K2-yvc"/>
                                     <constraint firstItem="ncE-4a-e6w" firstAttribute="centerY" secondItem="naL-Sc-aWQ" secondAttribute="centerY" id="bbK-YO-WYN"/>
                                     <constraint firstItem="naL-Sc-aWQ" firstAttribute="centerY" secondItem="Pwt-PZ-3Dz" secondAttribute="centerY" id="lmf-Pe-E6s"/>
                                     <constraint firstAttribute="trailing" secondItem="9zS-ak-E6d" secondAttribute="trailing" id="rjZ-EV-zAF"/>
                                     <constraint firstItem="ncE-4a-e6w" firstAttribute="leading" secondItem="naL-Sc-aWQ" secondAttribute="trailing" constant="8" id="vPx-a2-Wvt"/>
+                                    <constraint firstItem="9zS-ak-E6d" firstAttribute="top" secondItem="MPZ-ww-1Ue" secondAttribute="top" constant="8" id="xn5-VJ-u2a"/>
                                     <constraint firstItem="9zS-ak-E6d" firstAttribute="top" secondItem="naL-Sc-aWQ" secondAttribute="bottom" constant="8" id="xvg-kL-Aje"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="xvg-kL-Aje"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
