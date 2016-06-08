@@ -378,8 +378,12 @@ extension HomeVC: NSFetchedResultsControllerDelegate {
         case .Insert:
             if let indexPath = newIndexPath {
                 print("insert = \(indexPath.row)")
-                //                self.taskTableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
+            let indexPath = NSIndexPath(forRow: CurrentDate.sharedInstance.nowDate.day - 1, inSection: 0)
+            let collectionCell = self.collectionView.cellForItemAtIndexPath(indexPath) as! HomeCollectionViewCell
+            self.setFetchedResults(CurrentDate.sharedInstance.nowDate)
+            self.attemptFetch()
+            collectionCell.configCell(indexPath, dataDict: self.tableViewsDict)
             break
         case .Delete:
             if let indexPath =  indexPath {
@@ -389,10 +393,12 @@ extension HomeVC: NSFetchedResultsControllerDelegate {
             break
         case .Update:
             print("Update")
-            //            if let indexPath = indexPath {
-            //                let cell = tableView.cellForRowAtIndexPath(indexPath) as! ItemCell
-            //                configureCell(cell, indexPath: indexPath)
-            //            }
+            
+            let indexPath = NSIndexPath(forRow: CurrentDate.sharedInstance.nowDate.day - 1, inSection: 0)
+            let collectionCell = self.collectionView.cellForItemAtIndexPath(indexPath) as! HomeCollectionViewCell
+            self.attemptFetch()
+            collectionCell.configCell(indexPath, dataDict: self.tableViewsDict)
+            
             break
         case .Move:
             print("Move")

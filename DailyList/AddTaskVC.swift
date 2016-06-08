@@ -27,9 +27,11 @@ class AddTaskVC: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var displayDateLabel: UILabel!
     @IBOutlet weak var displayTimeLabel: UILabel!
+    @IBOutlet weak var containerTopCT: NSLayoutConstraint!
+    @IBOutlet weak var buttonBottomCT: NSLayoutConstraint!
     var datePicker: UIDatePicker!
     var timePicker: UIDatePicker!
-    
+
     // property
     private var currentDate: DateInRegion = CurrentDate.sharedInstance.nowDate
     private var datePickerHeight: CGFloat?
@@ -45,7 +47,9 @@ class AddTaskVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configVC()
-        // print(pageData)
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AddTaskVC.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AddTaskVC.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     //MARK: Private Method
@@ -89,18 +93,39 @@ class AddTaskVC: UIViewController {
         self.displayDateLabel.text = "\(currentDate.year)/\(currentDate.month)/\(currentDate.day)"
         
         self.displayTimeLabel.fullyRound(5, borderColor: nil, borderWidth: nil)
-        self.displayTimeLabel.text = "\(timeWithLeadingZero(currentDate.hour)):\(timeWithLeadingZero(currentDate.minute))"
+        self.displayTimeLabel.text = "\(DateCenter.timeWithLeadingZero(currentDate.hour)):\(DateCenter.timeWithLeadingZero(currentDate.minute))"
         
         self.saveButton.backgroundColor = CustomColors.getMainColor()
-    }
-    
-    func timeWithLeadingZero(time: Int) -> String {
-        return String(format: "%02d", time)
     }
     
     //MARK: Touch event
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
+    }
+    
+    func focusTextField() {
+        self.taskNameTextField.becomeFirstResponder()
+    }
+    
+    //MARK: Keyboard Event
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if memoTextView.isFirstResponder() {
+            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                self.containerTopCT.constant -= keyboardSize.height
+                self.buttonBottomCT.constant += keyboardSize.height;
+                UIView.animateWithDuration(0.3, animations: { () -> Void in self.view.layoutIfNeeded() })
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        
+        if memoTextView.isFirstResponder() {
+            self.containerTopCT.constant = 0
+            self.buttonBottomCT.constant = 20;
+            UIView.animateWithDuration(0.3, animations: { () -> Void in self.view.layoutIfNeeded() })
+        }
     }
 
     //MARK: Button Method
@@ -115,7 +140,7 @@ class AddTaskVC: UIViewController {
     
     func timePickerValChg(sender: UIDatePicker) {
         pickerTime = DateInRegion(year: timePicker.date.year, month: timePicker.date.month, day: timePicker.date.day, hour: timePicker.date.hour, minute: timePicker.date.minute)
-        taskTimeTextField.text = "\(timeWithLeadingZero(pickerTime!.hour)):\(timeWithLeadingZero(pickerTime!.minute))"
+        taskTimeTextField.text = "\(DateCenter.timeWithLeadingZero(pickerTime!.hour)):\(DateCenter.timeWithLeadingZero(pickerTime!.minute))"
     }
     
     @IBAction func alertSwitchChanged(sender: UISwitch) {
@@ -142,18 +167,23 @@ class AddTaskVC: UIViewController {
             page = NSEntityDescription.insertNewObjectForEntityForName("Page", inManagedObjectContext: ad.managedObjectContext) as! Page
         }
         
-        if let taskName = taskNameTextField.text {
+        if let taskName = taskNameTextField.text where taskNameTextField.text?.length > 0 {
             pageItem.title = taskName
+            
             if let pickerTime = self.pickerTime {
                 pageItem.hour = pickerTime.hour
                 pageItem.min = pickerTime.minute
+            } else {
+                pageItem.hour = currentDate.hour
+                pageItem.min = currentDate.minute
             }
+            
             pageItem.detail = memoTextView.text
             pageItem.needAlert = taskAlertSwitch.on
             pageItem.status = 0
             
             page.year = String(currentDate.year)
-            page.month = timeWithLeadingZero(currentDate.month)
+            page.month = String(currentDate.month)
             if let pickerDate = self.pickerDate {
                 page.day = String(pickerDate.day)
             } else {
@@ -162,6 +192,11 @@ class AddTaskVC: UIViewController {
             
             page.addPageItems(pageItem)
             ad.saveContext()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            self.showAlert({ 
+                self.focusTextField()
+            })
         }
     }
 }

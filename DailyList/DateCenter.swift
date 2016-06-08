@@ -10,6 +10,11 @@ import Foundation
 
 struct DateCenter {
     
+    static func timeWithLeadingZero(time: Int) -> String {
+        return String(format: "%02d", time)
+    }
+    
+    
     static func getCurrentDateWithCellIndex(currentCellIdx: Int) -> DateInRegion {
         
         let day = currentCellIdx + 1

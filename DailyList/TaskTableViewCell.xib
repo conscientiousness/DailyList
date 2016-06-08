@@ -41,17 +41,6 @@
                                 <fontDescription key="fontDescription" name="NotoSansCJKtc-Regular" family="Noto Sans CJK TC" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WMJ-ux-FC7">
-                                <rect key="frame" x="40" y="8" width="355" height="24"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOr-Q6-3dy">
                                 <rect key="frame" x="40" y="37" width="358" height="18"/>
@@ -66,6 +55,12 @@
                                     <constraint firstAttribute="width" secondItem="hdK-VD-1OX" secondAttribute="height" multiplier="1:1" id="CWi-Xn-gtF"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WMJ-ux-FC7">
+                                <rect key="frame" x="40" y="8" width="355" height="24"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -124,6 +119,7 @@
                 <outlet property="detailLabel" destination="DH8-hL-oRG" id="sO7-mU-L3w"/>
                 <outlet property="taskBgView" destination="CNS-GI-Ca9" id="uQV-oZ-LEj"/>
                 <outlet property="taskIconImageView" destination="hdK-VD-1OX" id="DZR-4q-pWM"/>
+                <outlet property="timeLabel" destination="QOr-Q6-3dy" id="0Ow-bc-UPh"/>
                 <outlet property="titleLabel" destination="WMJ-ux-FC7" id="sA8-NM-jgo"/>
             </connections>
             <point key="canvasLocation" x="415.5" y="206.5"/>

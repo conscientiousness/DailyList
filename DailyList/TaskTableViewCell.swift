@@ -13,6 +13,7 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskBgView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var taskIconImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -31,6 +32,12 @@ class TaskTableViewCell: UITableViewCell {
         
         if let detail = pageItem.detail {
             detailLabel.text = detail
+        }
+        
+        if let hour = pageItem.hour {
+            if let min = pageItem.min {
+                timeLabel.text = "\(DateCenter.timeWithLeadingZero(hour.integerValue)):\(DateCenter.timeWithLeadingZero(min.integerValue))"
+            }
         }
         
         if let status = pageItem.status {

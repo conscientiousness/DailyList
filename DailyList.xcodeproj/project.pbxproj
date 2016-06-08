@@ -17,6 +17,7 @@
 		F4221A4F1CEADE73001735B9 /* cell_test_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = F4221A4E1CEADE73001735B9 /* cell_test_photo.png */; };
 		F448E86C1CF3851200B2B993 /* Page+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448E86A1CF3851200B2B993 /* Page+CoreDataProperties.swift */; };
 		F448E86D1CF3851200B2B993 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448E86B1CF3851200B2B993 /* Page.swift */; };
+		F44CCCBC1D07B7B6003167D4 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CCCBB1D07B7B6003167D4 /* UIViewController+Alert.swift */; };
 		F45FB5541CD266F7006510CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5531CD266F7006510CF /* AppDelegate.swift */; };
 		F45FB5561CD266F7006510CF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45FB5551CD266F7006510CF /* HomeVC.swift */; };
 		F45FB5591CD266F7006510CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45FB5571CD266F7006510CF /* Main.storyboard */; };
@@ -127,6 +128,7 @@
 		F4221A4E1CEADE73001735B9 /* cell_test_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_test_photo.png; sourceTree = "<group>"; };
 		F448E86A1CF3851200B2B993 /* Page+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Page+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F448E86B1CF3851200B2B993 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		F44CCCBB1D07B7B6003167D4 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		F45FB5501CD266F7006510CF /* DailyList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45FB5531CD266F7006510CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F45FB5551CD266F7006510CF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				F45FB58D1CD2675E006510CF /* UIColor+hex.swift */,
 				F45FB58E1CD2675E006510CF /* UIView+RoundingCorners.swift */,
 				F40175011CD506C800F27461 /* UIView+ShadowView.swift */,
+				F44CCCBB1D07B7B6003167D4 /* UIViewController+Alert.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				F4E218331CE8FF810025F361 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				F45FB5B91CD2681B006510CF /* NSDateComponents+SwiftDate.swift in Sources */,
 				F45FB55C1CD266F7006510CF /* DailyList.xcdatamodeld in Sources */,
+				F44CCCBC1D07B7B6003167D4 /* UIViewController+Alert.swift in Sources */,
 				F4E218151CE8F0DF0025F361 /* DesignableTextView.swift in Sources */,
 				F4E2181E1CE8F0DF0025F361 /* Spring.swift in Sources */,
 				F45FB5541CD266F7006510CF /* AppDelegate.swift in Sources */,
@@ -895,10 +899,11 @@
 				INFOPLIST_FILE = DailyList/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyMind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DailyList/DailyList-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -911,9 +916,10 @@
 				INFOPLIST_FILE = DailyList/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JesseLin.DailyMind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DailyList/DailyList-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

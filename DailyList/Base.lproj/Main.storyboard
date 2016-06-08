@@ -171,7 +171,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="開始日期" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PU5-xg-Tqx" customClass="DesignableTextField" customModule="DailyList" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="目前日期" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PU5-xg-Tqx" customClass="DesignableTextField" customModule="DailyList" customModuleProvider="target">
                                         <rect key="frame" x="20" y="132" width="560" height="50"/>
                                         <color key="backgroundColor" red="0.93245741800000004" green="0.93865859709999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -256,7 +256,17 @@
                                             <action selector="backBtnPressed:" destination="iCR-Lc-Ugo" eventType="touchUpInside" id="mQ6-VQ-qhb"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGt-Ua-Gxe">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016/03/14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDu-Ff-teB">
+                                        <rect key="frame" x="456" y="140" width="112" height="34"/>
+                                        <color key="backgroundColor" red="0.99215686270000003" green="0.72156862749999995" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="112" id="0OE-Tn-Tao"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGt-Ua-Gxe">
                                         <rect key="frame" x="20" y="252" width="560" height="46"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="muE-es-xU6">
@@ -300,17 +310,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016/03/14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDu-Ff-teB">
-                                        <rect key="frame" x="456" y="140" width="112" height="34"/>
-                                        <color key="backgroundColor" red="0.99215686270000003" green="0.72156862749999995" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="112" id="0OE-Tn-Tao"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_gray_icon" translatesAutoresizingMaskIntoConstraints="NO" id="4FH-ZI-OOM" customClass="SpringImageView" customModule="DailyList" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_yellow_icon" translatesAutoresizingMaskIntoConstraints="NO" id="4FH-ZI-OOM" customClass="SpringImageView" customModule="DailyList" customModuleProvider="target">
                                         <rect key="frame" x="34" y="145" width="23" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="Uiw-aj-fOA"/>
@@ -352,6 +352,9 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="y1I-1t-Tm5" customClass="DesignableTextView" customModule="DailyList" customModuleProvider="target">
                                         <rect key="frame" x="20" y="306" width="560" height="204"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="b2n-na-Yeb"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
@@ -365,6 +368,11 @@
                                                 <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="b2n-na-Yeb"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outlet property="delegate" destination="iCR-Lc-Ugo" id="6mH-en-RKA"/>
                                         </connections>
@@ -430,30 +438,14 @@
                         <constraints>
                             <constraint firstItem="gKV-UV-jSi" firstAttribute="top" secondItem="voS-Pr-Qhf" secondAttribute="bottom" id="AE7-oA-5bx"/>
                             <constraint firstItem="voS-Pr-Qhf" firstAttribute="top" secondItem="9My-dx-2sP" secondAttribute="bottom" id="CJM-UM-XVE"/>
-                            <constraint firstItem="gKV-UV-jSi" firstAttribute="top" secondItem="voS-Pr-Qhf" secondAttribute="bottom" id="E2O-lQ-Z2V"/>
                             <constraint firstItem="voS-Pr-Qhf" firstAttribute="leading" secondItem="tpm-yf-C13" secondAttribute="leading" id="Izh-YM-0WP"/>
-                            <constraint firstAttribute="trailing" secondItem="voS-Pr-Qhf" secondAttribute="trailing" id="Mv8-Cs-T5P"/>
-                            <constraint firstItem="voS-Pr-Qhf" firstAttribute="leading" secondItem="tpm-yf-C13" secondAttribute="leading" id="Myk-o9-2Nx"/>
-                            <constraint firstItem="gKV-UV-jSi" firstAttribute="top" secondItem="voS-Pr-Qhf" secondAttribute="bottom" id="Vvq-pt-jtd"/>
-                            <constraint firstAttribute="trailing" secondItem="voS-Pr-Qhf" secondAttribute="trailing" id="Xyo-BA-fbM"/>
                             <constraint firstAttribute="trailing" secondItem="voS-Pr-Qhf" secondAttribute="trailing" id="YdU-cc-R8b"/>
-                            <constraint firstItem="voS-Pr-Qhf" firstAttribute="leading" secondItem="tpm-yf-C13" secondAttribute="leading" id="sA3-9s-ycI"/>
-                            <constraint firstItem="voS-Pr-Qhf" firstAttribute="top" secondItem="9My-dx-2sP" secondAttribute="bottom" id="xmy-Hk-jXC"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Mv8-Cs-T5P"/>
-                                <exclude reference="Myk-o9-2Nx"/>
-                                <exclude reference="Xyo-BA-fbM"/>
-                                <exclude reference="sA3-9s-ycI"/>
-                                <exclude reference="xmy-Hk-jXC"/>
-                                <exclude reference="E2O-lQ-Z2V"/>
-                                <exclude reference="Vvq-pt-jtd"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="uaq-ah-kL9" id="mxv-Us-wPd"/>
+                        <outlet property="buttonBottomCT" destination="mf3-pO-mYq" id="7LT-Ed-NBl"/>
+                        <outlet property="containerTopCT" destination="CJM-UM-XVE" id="qTW-ag-5xa"/>
                         <outlet property="contentView" destination="voS-Pr-Qhf" id="2L8-8W-dOh"/>
                         <outlet property="displayDateLabel" destination="FDu-Ff-teB" id="TNA-xd-Imc"/>
                         <outlet property="displayTimeLabel" destination="QOM-ZG-r0x" id="GZw-ZG-h8I"/>
@@ -472,12 +464,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azN-6i-bqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="922" y="417"/>
+            <point key="canvasLocation" x="981" y="417"/>
         </scene>
     </scenes>
     <resources>
         <image name="bell_gray_icon" width="31" height="37"/>
-        <image name="calendar_gray_icon" width="36" height="32"/>
+        <image name="calendar_yellow_icon" width="36" height="32"/>
         <image name="close_icon" width="34" height="34"/>
         <image name="main_add_icon" width="32" height="32"/>
         <image name="taskTime_gray_icon" width="32" height="32"/>
