@@ -5,14 +5,12 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NotoSansCJKtc-Medium.otf">
-            <string>NotoSansCJKtc-Medium</string>
+        <mutableArray key="NotoSansCJKtc-Medium.ttf">
+            <string>NotoSans-Bold</string>
         </mutableArray>
-        <mutableArray key="NotoSansCJKtc-Regular.otf">
-            <string>NotoSansCJKtc-Regular</string>
-        </mutableArray>
-        <mutableArray key="NotoSansCJKtc-Thin.otf">
-            <string>NotoSansCJKtc-Thin</string>
+        <mutableArray key="NotoSansCJKtc-Regular.ttf">
+            <string>NotoSans</string>
+            <string>NotoSans</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -37,27 +35,27 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detail" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DH8-hL-oRG">
-                                <rect key="frame" x="40" y="60" width="355" height="21"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Regular" family="Noto Sans CJK TC" pointSize="14"/>
+                                <rect key="frame" x="40" y="57" width="355" height="19"/>
+                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOr-Q6-3dy">
-                                <rect key="frame" x="40" y="37" width="358" height="18"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Thin" family="Noto Sans CJK TC" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="40" y="35" width="358" height="17"/>
+                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="task_done_icon" translatesAutoresizingMaskIntoConstraints="NO" id="hdK-VD-1OX">
-                                <rect key="frame" x="8" y="8" width="24" height="24"/>
+                                <rect key="frame" x="8" y="7" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="154-y4-5Hf"/>
                                     <constraint firstAttribute="width" secondItem="hdK-VD-1OX" secondAttribute="height" multiplier="1:1" id="CWi-Xn-gtF"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WMJ-ux-FC7">
-                                <rect key="frame" x="40" y="8" width="355" height="24"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="16"/>
+                                <rect key="frame" x="40" y="8" width="355" height="22"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

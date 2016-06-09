@@ -10,7 +10,9 @@
             <string>NotoSansCJKtc-Regular</string>
             <string>NotoSansCJKtc-Regular</string>
             <string>NotoSansCJKtc-Regular</string>
-            <string>NotoSansCJKtc-Regular</string>
+        </mutableArray>
+        <mutableArray key="NotoSansCJKtc-Regular.ttf">
+            <string>NotoSans</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -39,7 +41,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="9io-wi-eCf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKtc-Regular" family="Noto Sans CJK TC" pointSize="19"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="19"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -315,7 +317,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="empty_photo1.png" width="786" height="795"/>
+        <image name="empty_photo1.png" width="396" height="400"/>
         <image name="task_done_icon" width="32" height="32"/>
         <image name="task_expired_icon" width="32" height="33"/>
         <image name="task_todo_icon" width="32" height="33"/>

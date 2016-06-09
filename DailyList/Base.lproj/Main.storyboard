@@ -8,14 +8,19 @@
     <customFonts key="customFonts">
         <mutableArray key="NotoSansCJKtc-Medium.otf">
             <string>NotoSansCJKtc-Medium</string>
-            <string>NotoSansCJKtc-Medium</string>
-            <string>NotoSansCJKtc-Medium</string>
-            <string>NotoSansCJKtc-Medium</string>
-            <string>NotoSansCJKtc-Medium</string>
-            <string>NotoSansCJKtc-Medium</string>
-            <string>NotoSansCJKtc-Medium</string>
-            <string>NotoSansCJKtc-Medium</string>
-            <string>NotoSansCJKtc-Medium</string>
+        </mutableArray>
+        <mutableArray key="NotoSansCJKtc-Medium.ttf">
+            <string>NotoSans-Bold</string>
+            <string>NotoSans-Bold</string>
+            <string>NotoSans-Bold</string>
+        </mutableArray>
+        <mutableArray key="NotoSansCJKtc-Regular.ttf">
+            <string>NotoSans</string>
+            <string>NotoSans</string>
+            <string>NotoSans</string>
+            <string>NotoSans</string>
+            <string>NotoSans</string>
+            <string>NotoSans</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -58,7 +63,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sg3-pQ-mR9">
-                                <rect key="frame" x="5" y="57" width="590" height="82"/>
+                                <rect key="frame" x="5" y="55" width="590" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="79" id="5bQ-xJ-dcF"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="79" id="90k-e0-DCZ"/>
@@ -84,12 +89,12 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016年3月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="H1j-gJ-VC2" customClass="DesignableLabel" customModule="DailyList" customModuleProvider="target">
-                                <rect key="frame" x="200" y="28" width="200" height="27"/>
+                                <rect key="frame" x="200" y="28" width="200" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Ueq-5T-PTP"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="19" id="wmc-oN-wna"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -157,7 +162,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="gdS-W0-Iak"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -177,7 +182,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="9g3-c7-HMO"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -196,7 +201,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="zsb-cK-G4k"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
@@ -217,7 +222,7 @@
                                             <constraint firstAttribute="height" constant="42" id="ljf-nb-uom"/>
                                             <constraint firstAttribute="width" constant="200" id="mjd-3w-xk0"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="16"/>
                                         <state key="normal" title="儲存">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -241,7 +246,7 @@
                                             <constraint firstAttribute="height" constant="39" id="1bT-gJ-VKW"/>
                                             <constraint firstAttribute="width" constant="111" id="sqH-GB-fsD"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.20784313725490197" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -262,7 +267,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="112" id="0OE-Tn-Tao"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -355,7 +360,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="b2n-na-Yeb"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -383,7 +388,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="112" id="cbE-jO-uok"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKtc-Medium" family="Noto Sans CJK TC" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
